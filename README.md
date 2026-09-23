@@ -1,4 +1,4 @@
-# ARDC Dataspace Educator
+# ARDC AI Educators
 
 Everything needed to stand up your own copy of the ARDC's two AI learning assistants
 for the dataspaces domain:
