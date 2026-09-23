@@ -1,0 +1,271 @@
+{
+  "comment": "Control file for the ARDC Wiki Brain corpus. method: full = scrape whole page to markdown; crawl = sitemap-limited multi-page scrape; raw_md = fetch file that is already markdown; summary = fetch to raw/ only, human-written summary goes in markdown/; pointer = no fetch, human-written stub only. Every markdown file records source URL, licence and retrieval date.",
+  "sources": [
+    {
+      "id": "ardc-dataspaces-faqs",
+      "url": "https://ardc.edu.au/resource/australian-dataspaces-faqs/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-dataspaces-program",
+      "url": "https://ardc.edu.au/program/australian-dataspaces/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-implementers-intro",
+      "url": "https://ardc.edu.au/resource/dataspace-implementers-introduction/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-biosecurity-dataspaces",
+      "url": "https://ardc.edu.au/project/biosecurity-dataspaces/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-seaf-project",
+      "url": "https://ardc.edu.au/project/leveraging-dataspaces-to-operationalise-data-sharing-for-a-shared-environmental-analytics-facility-seaf/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-seaf-pilbara",
+      "url": "https://ardc.edu.au/project/seaf-for-pilbara-and-cockburn-sound/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-testbed-project",
+      "url": "https://ardc.edu.au/project/prototype-australian-dataspace-testbed-service/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-seafood-traceability",
+      "url": "https://ardc.edu.au/project/building-a-traceability-data-infrastructure-to-track-provenance-and-quality-in-australian-seafood-supply-chains/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-planet-rdc",
+      "url": "https://ardc.edu.au/planet-research-data-commons/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-making-data-fair",
+      "url": "https://ardc.edu.au/resource-hub/making-data-fair/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-care-principles",
+      "url": "https://ardc.edu.au/resource/the-care-principles/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-sensitive-indigenous-guide",
+      "url": "https://ardc.edu.au/resource/research-with-sensitive-and-indigenous-data-a-guide/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-indigenous-data-framework",
+      "url": "https://ardc.edu.au/resource/framework-for-the-governance-of-indigenous-data-hass-and-indigenous-research-data-commons/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-workshop-article",
+      "url": "https://ardc.edu.au/article/australian-dataspaces-workshop-charts-the-future-of-trusted-data-sharing/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-testbed-viability-article",
+      "url": "https://ardc.edu.au/article/australian-dataspace-testbed-confirms-viability-for-secure-governed-data-exchange/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-joins-idsa-article",
+      "url": "https://ardc.edu.au/article/the-ardc-joins-the-international-data-spaces-association/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-data-retention-article",
+      "url": "https://ardc.edu.au/article/ardc-launches-phase-2-of-the-data-retention-project-significant-national-data-collections/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-tre-program",
+      "url": "https://ardc.edu.au/program/trusted-research-environments/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-trusted-env-data-program",
+      "url": "https://ardc.edu.au/program/trusted-environmental-data-and-information-supply-chains/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-fair-secure-access-program",
+      "url": "https://ardc.edu.au/program/ncris-fair-data-and-secure-access/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-dataspaces-course",
+      "url": "https://ardc.edu.au/event/dataspaces-fundamentals-course/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-data-sharing-agreement-guidelines",
+      "url": "https://ardc.edu.au/resource/data-sharing-agreement-development-guidelines/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-data-sharing-policy-guidelines",
+      "url": "https://ardc.edu.au/resource/data-sharing-policy-development-guidelines/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-data-governance-quality",
+      "url": "https://ardc.edu.au/resource/data-governance-and-data-quality/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "ardc-data-governance-checklists",
+      "url": "https://ardc.edu.au/resource/data-governance-checklists-for-research-projects-and-institutions/",
+      "method": "full",
+      "licence": "ARDC (CC-BY-4.0 site content)"
+    },
+    {
+      "id": "edc-handbook",
+      "url": "https://raw.githubusercontent.com/eclipse-edc/docs/main/developer/handbook.md",
+      "method": "raw_md",
+      "licence": "Eclipse EDC docs (open source, CC-BY-4.0/EPL)"
+    },
+    {
+      "id": "dataspace-protocol",
+      "url": "https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1/",
+      "method": "full",
+      "licence": "Eclipse Dataspace Protocol (open specification)"
+    },
+    {
+      "id": "odrl-model",
+      "url": "https://www.w3.org/TR/odrl-model/",
+      "method": "full",
+      "licence": "W3C Document Licence (attribution, retrieval-only)"
+    },
+    {
+      "id": "idsa-connector-docs",
+      "url": "https://international-data-spaces-association.github.io/DataspaceConnector/",
+      "method": "crawl",
+      "max_pages": 40,
+      "licence": "IDSA (open documentation)"
+    },
+    {
+      "id": "idsa-kb",
+      "url": "https://kb.internationaldataspaces.org/",
+      "method": "crawl",
+      "max_pages": 40,
+      "licence": "IDSA (CC-BY-4.0, verify per page)"
+    },
+    {
+      "id": "dataplace-au",
+      "url": "https://www.dataplace.gov.au/",
+      "method": "full",
+      "licence": "Australian Government (CC-BY-4.0, verify)"
+    },
+    {
+      "id": "dataplace-aaf-kb",
+      "url": "https://www.dataplace.gov.au/kb/?id=/KA-01173/australian-access-federation",
+      "method": "full",
+      "licence": "Australian Government (CC-BY-4.0, verify)"
+    },
+    {
+      "id": "aaf-trust",
+      "url": "https://trust.aaf.edu.au/",
+      "method": "full",
+      "licence": "AAF (openly published; courtesy notice sent)"
+    },
+    {
+      "id": "ldaca-careful-fairness",
+      "url": "https://www.ldaca.edu.au/news/posts/careful_fairness/",
+      "method": "full",
+      "licence": "LDaCA (CC-BY-4.0, verify page footer)"
+    },
+    {
+      "id": "ondc-data-scheme",
+      "url": "https://www.datacommissioner.gov.au/the-data-scheme",
+      "method": "full",
+      "licence": "Australian Government (CC-BY-4.0)"
+    },
+    {
+      "id": "ondc-about",
+      "url": "https://www.datacommissioner.gov.au/",
+      "method": "full",
+      "licence": "Australian Government (CC-BY-4.0)"
+    },
+    {
+      "id": "gaiax-what-is",
+      "url": "https://gaia-x.eu/about/",
+      "method": "full",
+      "licence": "Gaia-X AISBL (verify; overview page)"
+    },
+    {
+      "id": "idsa-iso20151-article",
+      "url": "https://internationaldataspaces.org/standardization-in-data-spaces-where-iso-iec-20151-stands-in-2026/",
+      "method": "summary",
+      "licence": "IDSA website (no explicit licence - summary only)"
+    },
+    {
+      "id": "ausagdx",
+      "url": "https://www.ausagdx.com.au/",
+      "method": "summary",
+      "licence": "Industry site (no open licence - summary only)"
+    },
+    {
+      "id": "indigenous-data-lab-guidelines",
+      "url": "https://indigenousdatalab.org/wp-content/uploads/2026/08/Guidelines-for-ID-Sov-for-Publishers-FINAL01.pdf",
+      "method": "pointer",
+      "licence": "Indigenous Data Lab (pointer only pending permission)"
+    },
+    {
+      "id": "aws-dataspace-connector",
+      "url": "https://raw.githubusercontent.com/awslabs/dataspace-connector-on-aws/main/README.md",
+      "method": "raw_md",
+      "licence": "AWS Labs, Apache-2.0"
+    },
+    {
+      "id": "aws-dataspace-connector-mcp",
+      "url": "https://raw.githubusercontent.com/awslabs/dataspace-connector-on-aws/main/mcp/README.md",
+      "method": "raw_md",
+      "licence": "AWS Labs, Apache-2.0"
+    },
+    {
+      "id": "biocommons-guardians",
+      "url": "https://www.biocommons.org.au/guardians",
+      "method": "full",
+      "licence": "Australian BioCommons (openly published; verify licence on page)"
+    },
+    {
+      "id": "aaf-case-studies",
+      "url": "https://trust.aaf.edu.au/case-studies/",
+      "method": "full",
+      "licence": "AAF (openly published; courtesy notice sent for trust.aaf.edu.au)"
+    }
+  ]
+}
