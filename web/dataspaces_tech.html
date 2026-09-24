@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataspace Technical Coach | ARDC</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ardc-navy: #0C223F;
+            --ardc-teal: #00B0D5;
+            --ardc-yellow: #f8b20e;
+            --ardc-bg: #F4F7F9;
+            --text-main: #404041;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--ardc-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            background-color: #FFFFFF;
+            width: 100%;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-img {
+            height: 60px;
+            display: block;
+        }
+
+        .hero-section {
+            background: var(--ardc-navy);
+            width: 100%;
+            padding: 60px 0 80px 0;
+            border-bottom: 6px solid var(--ardc-teal);
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .hero-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.6rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            color: #E0E7ED;
+        }
+
+        .hero-section a {
+            color: var(--ardc-teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .hero-section a:hover {
+            color: var(--ardc-yellow);
+            text-decoration: underline;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: -40px auto 40px auto;
+            /* Reduced bottom margin to fit footer */
+            height: 75vh;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-toolbar {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 10px 18px;
+            background: #F4F8F7;
+            border-bottom: 1px solid #E0E7ED;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .fullwindow-btn {
+            background: var(--ardc-teal);
+            color: #FFFFFF;
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.2s ease;
+        }
+
+        .fullwindow-btn:hover {
+            background: var(--ardc-navy);
+            color: #FFFFFF;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            flex: 1 1 auto;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-bar">
+        <div class="content-wrapper">
+            <img class="logo-img" alt="Australian Research Data Commons Logo" src="ardc-logo.jpg">
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="content-wrapper">
+            <h1>Dataspace Technical Coach</h1>
+            <p>
+                A guided module on the build side of dataspaces: using the IDS-RAM as your map, building or
+                adopting a connector, expressing policies in ODRL on W3C standards, why the Dataspace Protocol
+                exists and how to implement it &mdash; and proving your setup in a testbed before you commit.
+                The coach asks before it tells; bring your real implementation.
+                Rules and rulebooks? See the <a href="/dataspaces_governance/">Governance Coach</a>;
+                fundamentals in the <a href="/dataspaces_101/">Dataspaces 101 Coach</a>;
+                open Q&amp;A with the <a href="/dataspaces_ed/">ARDC Dataspace Educator</a>.
+            </p>
+            <p style="font-size: 0.95rem;">
+                This module draws on the
+                <a href="https://github.com/International-Data-Spaces-Association/IDS-RAM_4_0" target="_blank" rel="noopener">IDS-RAM 4.0</a>,
+                the <a href="https://github.com/eclipse-edc" target="_blank" rel="noopener">Eclipse EDC</a> stack and
+                <a href="https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/" target="_blank" rel="noopener">Dataspace Protocol</a>,
+                the <a href="https://www.w3.org/TR/odrl-model/" target="_blank" rel="noopener">W3C ODRL model</a>,
+                the <a href="https://github.com/International-Data-Spaces-Association/IDS-testbed" target="_blank" rel="noopener">IDSA IDS-testbed</a>,
+                and the <a href="https://ardc.edu.au/project/prototype-australian-dataspace-testbed-service/" target="_blank" rel="noopener">prototype Australian Dataspace Testbed Service</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-toolbar">
+            <span>Want to come back to this conversation later? Chats in this embedded window may not keep
+                their history in every browser &mdash; a full window remembers more reliably.</span>
+            <a class="fullwindow-btn" href="https://chat.dresa.org.au/chat/DsTechCoachV5xP3"
+               target="_blank" rel="noopener">Open in full window &#8599;</a>
+        </div>
+        <iframe id="educator-frame" src="" data-src="https://chat.dresa.org.au/chat/DsTechCoachV5xP3"
+            style="width: 100%;" frameborder="0" allow="microphone">
+        </iframe>
+    </div>
+
+    <script>
+        // The chat autofocuses its input when it loads, which makes the browser
+        // scroll the page down past the header and title. Load the chat only
+        // after the page has settled, and pin the scroll position back to the
+        // top in case the focus still tugs it.
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        // Keep the page pinned to the top while the chat wakes up, but back off
+        // the instant the user scrolls, taps or types themselves.
+        var userMoved = false;
+        ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (e) {
+            window.addEventListener(e, function () { userMoved = true; }, { passive: true, once: true });
+        });
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var f = document.getElementById('educator-frame');
+                f.src = f.getAttribute('data-src');
+                var pin = setInterval(function () {
+                    if (userMoved) { clearInterval(pin); return; }
+                    if ((window.scrollY || document.documentElement.scrollTop) > 0) { window.scrollTo(0, 0); }
+                }, 250);
+                setTimeout(function () { clearInterval(pin); }, 10000);
+            }, 1200);
+        });
+    </script>
+
+    <p style="font-size: 0.85em; color: #666; text-align: center; margin: -28px auto 6px; max-width: 700px;">
+        Answers can take 15&ndash;30 seconds &mdash; the educator retrieves and checks its curated sources before it responds.
+    </p>
+
+    <div
+        style="font-size: 0.85em; color: #666; text-align: center; padding: 15px 20px 40px 20px; line-height: 1.5; max-width: 1000px; margin: 0 auto;">
+        <p style="margin-bottom: 8px;">
+            <strong>Knowledge Base &amp; Attributions:</strong> This AI Educator draws on ARDC materials and openly
+            licensed community frameworks and standards.
+        </p>
+        <p style="margin: 0 0 8px 0;">
+            International frameworks: the
+            <a href="https://github.com/International-Data-Spaces-Association/IDS-RAM_4_0" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">IDS-RAM 4.0</a>,
+            <a href="https://github.com/International-Data-Spaces-Association/IDSA-Rulebook" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">IDSA Rulebook</a> and
+            <a href="https://kb.internationaldataspaces.org/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">IDSA Knowledge Base</a> by IDSA, the
+            <a href="https://dssc.eu/" target="_blank" rel="noopener noreferrer"
+                style="color: #0056b3; text-decoration: none;">Data Spaces Blueprint</a> by the DSSC,
+            and the <a href="https://www.sitra.fi/en/publication/rulebook-for-a-fair-data-economy/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Rulebook for a Fair Data
+                Economy</a> by Sitra
+            (all <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">CC BY 4.0</a>); the
+            <a href="https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Eclipse Dataspace Protocol</a> and
+            <a href="https://github.com/eclipse-edc/docs" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Eclipse EDC documentation</a>
+            by the Eclipse Foundation; the
+            <a href="https://www.w3.org/TR/odrl-model/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">ODRL Information Model</a>
+            by W3C; and the
+            <a href="https://github.com/awslabs/dataspace-connector-on-aws" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Dataspace Connector on AWS</a>
+            by AWS Labs (Apache 2.0).
+        </p>
+        <p style="margin: 0;">
+            Australian sources: content from the
+            <a href="https://ardc.edu.au/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">ARDC website</a>
+            including the Australian Dataspaces program, pilot projects, and data governance and Indigenous data
+            guidance (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">CC BY 4.0</a>);
+            Australian Government material from
+            <a href="https://www.dataplace.gov.au/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Dataplace</a> and the
+            <a href="https://www.datacommissioner.gov.au/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Office of the National Data
+                Commissioner</a> (CC BY 4.0); the
+            <a href="https://trust.aaf.edu.au/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Australian Access Federation
+                trust framework</a>; and the
+            <a href="https://www.ldaca.edu.au/" target="_blank"
+                rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Language Data Commons of
+                Australia</a>.
+        </p>
+    </div>
+
+</body>
+
+</html>

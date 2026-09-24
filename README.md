@@ -1,6 +1,6 @@
 # ARDC AI Educators
 
-Everything needed to stand up your own copy of the ARDC's two AI learning assistants
+Everything needed to stand up your own copies of the ARDC's five AI learning assistants
 for the dataspaces domain:
 
 - **Dataspace Educator** - open Q&A grounded in curated sources, with role-aware
@@ -9,6 +9,10 @@ for the dataspaces domain:
 - **Dataspaces 101 Coach** - a guided five-lesson module with Socratic "resistance"
   (it asks before it tells) and a fixed, deterministically scored knowledge check.
   Live at https://dresa.org.au/dataspaces_101/
+- **Getting-Started, Governance and Technical Coaches** - three further guided modules
+  on the same coaching pattern, covering first steps, rulebook-building (Sitra-style),
+  and technical implementation (RAM, connectors, ODRL, DSP, the Testbed).
+  Live under https://dresa.org.au/educators
 
 Both are configuration for [Dify](https://github.com/langgenius/dify) (open-source LLM
 platform) plus a rebuildable knowledge corpus - there is no bespoke ML here, and that

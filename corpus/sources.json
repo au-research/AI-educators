@@ -266,6 +266,18 @@
       "url": "https://trust.aaf.edu.au/case-studies/",
       "method": "full",
       "licence": "AAF (openly published; courtesy notice sent for trust.aaf.edu.au)"
+    },
+    {
+      "id": "ardc-implementers-network",
+      "url": "https://sites.google.com/ardc.edu.au/australian-dataspaces/implementers-network",
+      "method": "full",
+      "licence": "ARDC-authored Google Site (CC-BY-4.0 ARDC content)"
+    },
+    {
+      "id": "idsa-testbed",
+      "url": "https://raw.githubusercontent.com/International-Data-Spaces-Association/IDS-testbed/master/README.md",
+      "method": "raw_md",
+      "licence": "IDSA, Apache-2.0"
     }
   ]
 }
