@@ -1,0 +1,450 @@
+<title>Dataspace Educator Usage</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#F8FAF8; --panel:#FFFFFF; --panel-2:#EFF4F1;
+    --ink:#1C2A31; --muted:#5A6B6E; --line:#D6E0DB;
+    --accent:#0E7C66; --accent-ink:#0A5A4B; --accent-soft:#E1F0EB;
+    --warn:#8A6420; --warn-soft:#F3EBD9;
+    --flag:#A85B3E; --flag-soft:#F4E8E1;
+    --s1:#2a78d6; --s2:#eb6834; --grid:#e1e0d9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#101B1E; --panel:#162428; --panel-2:#1C2D32;
+      --ink:#E4ECEA; --muted:#93A6A5; --line:#2A3D42;
+      --accent:#3FB99E; --accent-ink:#6FD2BB; --accent-soft:#173832;
+      --warn:#D2A855; --warn-soft:#38301C;
+      --flag:#D08A6B; --flag-soft:#3A2A22;
+      --s1:#3987e5; --s2:#d95926; --grid:#2c2c2a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#101B1E; --panel:#162428; --panel-2:#1C2D32;
+    --ink:#E4ECEA; --muted:#93A6A5; --line:#2A3D42;
+    --accent:#3FB99E; --accent-ink:#6FD2BB; --accent-soft:#173832;
+    --warn:#D2A855; --warn-soft:#38301C;
+    --flag:#D08A6B; --flag-soft:#3A2A22;
+    --s1:#3987e5; --s2:#d95926; --grid:#2c2c2a;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:15px;line-height:1.5;margin:0}
+  .wrap{max-width:60rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+  h1{font-family:"Bricolage Grotesque",sans-serif;font-size:1.8rem;font-weight:700;margin:.2rem 0 .2rem;text-wrap:balance}
+  h2{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;font-weight:700;margin:2.2rem 0 .8rem}
+  .eyebrow{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700}
+  .meta{color:var(--muted);font-size:.85rem}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:1.4rem 0}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem}
+  .tile .label{font-size:.75rem;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .tile .value{font-family:"Bricolage Grotesque",sans-serif;font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums;margin-top:.15rem}
+  .tile.hero{border-color:var(--accent);background:var(--accent-soft)}
+  .tile.hero .label{color:var(--accent-ink)}
+  .tile.hero .value{color:var(--accent-ink)}
+  .tile .sub{font-size:.78rem;color:var(--muted)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.8rem 0}
+  .legend{display:flex;gap:16px;font-size:.8rem;color:var(--muted);margin-bottom:6px;flex-wrap:wrap}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .chartbox{position:relative;height:280px}
+  button{font:inherit;font-weight:600;color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:8px;padding:.5rem 1rem;cursor:pointer}
+  button:disabled{opacity:.5;cursor:default}
+  button.secondary{color:var(--flag);background:var(--flag-soft);border-color:var(--flag)}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:.6rem 0}
+  .status{font-size:.85rem;color:var(--muted)}
+  .out{white-space:pre-wrap;font-size:.92rem;background:var(--panel-2);border-radius:8px;padding:.9rem 1rem;margin-top:.6rem;max-width:75ch}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:.6rem 0}
+  table{border-collapse:collapse;width:100%;min-width:620px;font-size:.86rem;background:var(--panel)}
+  th{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--muted);padding:.55rem .8rem;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+  td{padding:.5rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .chip{display:inline-block;font-size:.68rem;font-weight:700;padding:.05rem .5rem;border-radius:999px}
+  .chip.high{background:var(--flag-soft);color:var(--flag)}
+  .chip.medium{background:var(--warn-soft);color:var(--warn)}
+  .chip.low{background:var(--panel-2);color:var(--muted)}
+  .chip.ok{background:var(--accent-soft);color:var(--accent-ink)}
+  .hint{font-size:.82rem;color:var(--muted);max-width:70ch}
+  .tile.bad{border-color:var(--flag)}
+  .tile.bad .value{color:var(--flag)}
+  .srcrow{display:grid;grid-template-columns:minmax(140px,220px) 1fr 3.5rem;gap:10px;align-items:center;padding:.3rem 0;font-size:.86rem}
+  .srcbarwrap{background:var(--panel-2);border-radius:4px;height:10px}
+  .srcbar{height:10px;background:var(--s1);border-radius:4px;min-width:2px}
+  .srcnum{font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+  .srcname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  button.toggle-on{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
+  [hidden]{display:none!important}
+</style>
+
+<script id="dashboard-data" type="application/json">__DATA_JSON__</script>
+<script id="summary-data" type="application/json">__SUMMARY_JSON__</script>
+<script id="golden-data" type="application/json">__GOLDEN_JSON__</script>
+<script id="jev-data" type="application/json">__JEV_JSON__</script>
+
+<div class="wrap">
+  <div class="eyebrow">ARDC · chat.dresa.org.au</div>
+  <h1>Dataspace Educator Usage</h1>
+  <p class="meta">Data extracted <span id="genat" class="mono"></span> from the Educator's own logs · first recorded activity <span id="firstact" class="mono"></span> · refreshed daily</p>
+
+  <div class="tiles">
+    <div class="tile hero"><div class="label">Unique users</div><div class="value" id="t-users"></div><div class="sub">distinct visitors who asked at least one question</div></div>
+    <div class="tile"><div class="label">Questions asked</div><div class="value" id="t-q"></div></div>
+    <div class="tile"><div class="label">Answered</div><div class="value" id="t-a"></div><div class="sub" id="t-rate"></div></div>
+    <div class="tile"><div class="label">Returning users</div><div class="value" id="t-ret"></div><div class="sub">asked questions on 2 or more days</div></div>
+    <div class="tile"><div class="label">Avg response time</div><div class="value" id="t-lat"></div><div class="sub">seconds, model latency</div></div>
+    <div class="tile" id="tile-fail"><div class="label">Failed answers</div><div class="value" id="t-fail"></div><div class="sub" id="t-fail-sub"></div></div>
+    <div class="tile"><div class="label">User feedback</div><div class="value" id="t-fb"></div><div class="sub">thumbs up / down on answers</div></div>
+    <div class="tile" id="tile-golden" hidden><div class="label">Retrieval health</div><div class="value" id="t-golden"></div><div class="sub" id="t-golden-sub"></div></div>
+  </div>
+
+  <div class="card" id="golden-fails" hidden>
+    <div class="eyebrow">Retrieval health check · failing questions</div>
+    <p class="hint" style="margin-top:.3rem">A fixed set of test questions runs weekly through the real chat pipeline; each must retrieve its expected knowledge source. Failures below mean users asking similar questions are getting answers without the right source material.</p>
+    <div id="golden-list" style="font-size:.92rem"></div>
+  </div>
+
+  <div class="card" id="weekly-summary" hidden>
+    <div class="eyebrow">AI summary of recent questions · generated weekly</div>
+    <div id="ws-text" style="white-space:pre-wrap;font-size:.94rem;max-width:72ch;margin-top:.4rem"></div>
+    <div class="meta" id="ws-meta" style="margin-top:.5rem"></div>
+  </div>
+
+  <div class="card" id="jev-card" hidden>
+    <div class="eyebrow">Nightly AI analysis (Jev classifier) · <span id="jev-meta"></span></div>
+    <div id="jev-alerts" style="margin-top:.5rem"></div>
+    <div id="jev-topics" style="margin-top:.6rem"></div>
+    <div id="jev-danger" style="margin-top:.6rem"></div>
+    <div id="jev-subopt" style="margin-top:.6rem"></div>
+  </div>
+
+  <h2>Per-educator activity</h2>
+  <div class="card">
+    <div class="tablewrap"><table id="perapp-table" style="min-width: 480px;">
+      <thead><tr><th>Educator</th><th>Questions</th><th>Users</th><th>Answered</th><th>Avg response (s)</th><th>Last activity</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+
+  <h2>Daily activity</h2>
+  <div class="card">
+    <div class="legend">
+      <span><span class="sw" id="sw1"></span>Questions</span>
+      <span><span class="sw" id="sw2"></span>Unique users that day</span>
+    </div>
+    <div class="chartbox"><canvas id="chart" role="img" aria-label="Daily bar chart of questions asked with a line showing unique users per day. The table below lists the same recent questions data."></canvas></div>
+  </div>
+
+  <h2>New and returning users by week</h2>
+  <div class="card">
+    <div class="legend">
+      <span><span class="sw" id="sw3"></span>New users (first week seen)</span>
+      <span><span class="sw" id="sw4"></span>Returning users</span>
+    </div>
+    <div class="chartbox" style="height:240px"><canvas id="chart2" role="img" aria-label="Stacked weekly bar chart of new versus returning users."></canvas></div>
+  </div>
+
+  <h2>Most-used knowledge sources</h2>
+  <div class="card">
+    <p class="hint" style="margin-top:0">How often each knowledge-base document was retrieved to answer questions — a guide to which content earns its keep.</p>
+    <div id="sources"></div>
+  </div>
+
+  <h2>Ask the AI about this data</h2>
+  <p class="hint">These two buttons run an analysis with Claude using your own claude.ai account (you will be asked to allow it the first time; the analysis runs on the questions shown on this page).</p>
+  <div class="btnrow">
+    <button id="btn-sum">Summarise the questions being asked</button>
+    <button id="btn-rev" class="secondary">Review responses and flag issues</button>
+    <span class="status" id="ai-status"></span>
+  </div>
+  <div id="sum-out" class="out" hidden></div>
+  <div id="rev-wrap" hidden>
+    <div class="tablewrap"><table id="rev-table">
+      <thead><tr><th>Severity</th><th>Question</th><th>Issue with the response</th><th>Date</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+  <p class="hint" id="ai-unavailable" hidden>AI analysis is unavailable in this view (it works when the page is opened signed in at claude.ai).</p>
+
+  <h2>Recent questions <span class="meta" id="qcount"></span></h2>
+  <div class="tablewrap"><table id="qa-table">
+    <thead><tr><th>Date</th><th>Visitor</th><th>Educator</th><th>Question</th><th>Answered</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="btnrow">
+    <button id="btn-unans">Show unanswered only</button>
+    <button id="btn-more">Show all</button>
+  </div>
+  <p class="hint" id="failnote"></p>
+
+  <h2>Viewing this dashboard</h2>
+  <p class="hint">For ARDC and Federation University team members: open the link you were sent in any modern browser — nothing to install, and the figures refresh automatically each morning. The two AI analysis buttons additionally need you to be signed in to a claude.ai account (a free account is fine): the first click asks your permission, the analysis runs under your own account, and results are shown to you only — they aren't stored on the page. If a button shows as unavailable, sign in at claude.ai and reopen the link. Questions about the dashboard or access: rob.clemens@ardc.edu.au.</p>
+
+  <p class="hint">Source: the Educator's message log (PostgreSQL) on the ARDC Nectar instance. Visitor identifiers are anonymised session ids. Questions and answers are shown truncated.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  var D = JSON.parse(document.getElementById("dashboard-data").textContent);
+  var esc = function(s){ var d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; };
+  // Belt-and-braces redaction before anything is sent to AI analysis.
+  // (The server-side extractor already redacts; this guards future data paths.)
+  var redact = function(s){
+    return String(s == null ? "" : s)
+      .replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, "[email redacted]")
+      .replace(/[0-9]{9,}/g, "[number redacted]");
+  };
+
+  document.getElementById("genat").textContent = D.generated_at || "?";
+  document.getElementById("firstact").textContent = D.first_activity || "?";
+  document.getElementById("t-users").textContent = (D.unique_users || 0).toLocaleString();
+  document.getElementById("t-q").textContent = (D.total_questions || 0).toLocaleString();
+  document.getElementById("t-a").textContent = (D.answered || 0).toLocaleString();
+  var rate = D.total_questions ? Math.round(100 * D.answered / D.total_questions) : 0;
+  document.getElementById("t-rate").textContent = rate + "% answer rate";
+  document.getElementById("t-lat").textContent = D.avg_latency_s != null ? Number(D.avg_latency_s).toFixed(1) : "-";
+  document.getElementById("t-ret").textContent = (D.returning_total || 0).toLocaleString();
+  var ft = D.failed_total || 0, fa = D.failed_api_total || 0;
+  document.getElementById("t-fail").textContent = ft.toLocaleString();
+  document.getElementById("t-fail-sub").textContent = fa + " were API errors";
+  if (fa > 0) document.getElementById("tile-fail").className = "tile bad";
+
+  // weekly AI summary (baked in by the scheduled refresh; hidden when absent)
+  try {
+    var S = JSON.parse(document.getElementById("summary-data").textContent || "{}");
+    if (S && S.text) {
+      document.getElementById("ws-text").textContent = S.text;
+      document.getElementById("ws-meta").textContent = "Generated " + (S.generated || "") + " from the most recent questions.";
+      document.getElementById("weekly-summary").hidden = false;
+    }
+  } catch (e) {}
+
+  // nightly Jev analysis card (hidden until jev_analysis.json exists)
+  try {
+    var J = JSON.parse(document.getElementById("jev-data").textContent || "{}");
+    if (J && J.run_at) {
+      document.getElementById("jev-meta").textContent =
+        (J.day || "") + " · " + (J.messages_analysed || 0) + " messages analysed";
+      var $al = document.getElementById("jev-alerts");
+      $al.innerHTML = (J.alerts && J.alerts.length)
+        ? J.alerts.map(function(a){ return "<div><span class=\"chip high\">ALERT</span> " + esc(a) + "</div>"; }).join("")
+        : "<span class=\"chip ok\">no alerts</span>";
+      var tp = J.topics || {}; var tot = 0; Object.keys(tp).forEach(function(k){ tot += tp[k]; });
+      if (tot > 0) {
+        document.getElementById("jev-topics").innerHTML = "<strong>Question topics:</strong> " +
+          Object.keys(tp).filter(function(k){ return tp[k] > 0; })
+            .sort(function(a,b){ return tp[b]-tp[a]; })
+            .map(function(k){ return esc(k.replace(/_/g," ")) + " (" + tp[k] + ")"; }).join(" · ");
+      }
+      if (J.dangerous && J.dangerous.length) {
+        document.getElementById("jev-danger").innerHTML = "<strong>Flagged probes:</strong>" +
+          J.dangerous.map(function(d){
+            return "<div style=\"font-size:.86rem\"><span class=\"chip high\">" + d.p + "</span> [" +
+                   esc(d.app) + "] " + esc(d.q) + "</div>"; }).join("");
+      }
+      if (J.suboptimal && J.suboptimal.length) {
+        document.getElementById("jev-subopt").innerHTML =
+          "<strong>Possibly sub-optimal answers</strong> (pitched wrong for the user):" +
+          J.suboptimal.map(function(s){
+            return "<div style=\"font-size:.86rem\"><span class=\"chip medium\">" + s.p + "</span> [" +
+                   esc(s.app) + "] Q: " + esc(s.q) + "</div>"; }).join("");
+      }
+      document.getElementById("jev-card").hidden = false;
+    }
+  } catch (e) {}
+
+  // per-educator activity table (v6 stats: all five apps)
+  var pa = D.per_app || [];
+  if (pa.length) {
+    document.querySelector("#perapp-table tbody").innerHTML = pa.map(function(a){
+      return "<tr><td>" + esc(a.app) + "</td><td class=\"mono\">" + (a.questions || 0) +
+             "</td><td class=\"mono\">" + (a.users || 0) + "</td><td class=\"mono\">" + (a.answered || 0) +
+             "</td><td class=\"mono\">" + (a.avg_latency_s != null ? a.avg_latency_s : "-") +
+             "</td><td class=\"mono\">" + esc(a.last_activity || "-") + "</td></tr>";
+    }).join("");
+  }
+
+  // user feedback tile (counts come from the main data JSON)
+  var fup = D.feedback_up || 0, fdn = D.feedback_down || 0;
+  document.getElementById("t-fb").textContent = (fup + fdn) ? (fup + " 👍 / " + fdn + " 👎") : "none yet";
+
+  // weekly golden-question retrieval check (baked in when golden_results.json exists)
+  try {
+    var G = JSON.parse(document.getElementById("golden-data").textContent || "{}");
+    if (G && G.total) {
+      var gt = document.getElementById("tile-golden");
+      document.getElementById("t-golden").textContent = G.passed + "/" + G.total;
+      document.getElementById("t-golden-sub").textContent = "golden questions retrieving correctly · " + (G.run_at || "");
+      gt.hidden = false;
+      if (G.passed < G.total) {
+        gt.className = "tile bad";
+        var fails = (G.results || []).filter(function(r){ return !r.hit; });
+        document.getElementById("golden-list").innerHTML = fails.map(function(r){
+          return "<p style='margin:.4rem 0'><b>" + esc(r.q) + "</b><br>expected a source matching: <span class='mono'>" +
+                 esc((r.expected || []).join(", ")) + "</span><br>got: <span class='mono'>" +
+                 esc((r.sources || []).join(", ") || "nothing") + (r.error ? " (error: " + esc(r.error) + ")" : "") + "</span></p>";
+        }).join("");
+        document.getElementById("golden-fails").hidden = false;
+      }
+    }
+  } catch (e) {}
+
+  // reliability note under the questions table
+  var fdays = D.failures || [];
+  if (ft > 0) {
+    var span = fdays.length ? (fdays[0].day + " to " + fdays[fdays.length - 1].day) : "";
+    document.getElementById("failnote").textContent =
+      ft + " question(s) received no answer (" + fa + " caused by AI-provider API errors, occurring " + span +
+      "). Use the unanswered filter above to see them.";
+  }
+
+  // most-used knowledge sources
+  var srcs = D.sources || [];
+  var maxHits = srcs.length ? srcs[0].hits : 1;
+  document.getElementById("sources").innerHTML = srcs.map(function(s){
+    var w = Math.max(2, Math.round(100 * s.hits / maxHits));
+    return "<div class=\"srcrow\"><span class=\"srcname\" title=\"" + esc(s.name) + "\">" + esc(s.name) +
+           "</span><span class=\"srcbarwrap\"><span class=\"srcbar\" style=\"width:" + w + "%\"></span></span>" +
+           "<span class=\"srcnum\">" + s.hits.toLocaleString() + "</span></div>";
+  }).join("") || "<p class=\"hint\">No retrieval data yet.</p>";
+
+  function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  var chart = null;
+  function buildChart(){
+    var s1 = cssVar("--s1"), s2 = cssVar("--s2"), grid = cssVar("--grid"), muted = cssVar("--muted");
+    document.getElementById("sw1").style.background = s1;
+    document.getElementById("sw2").style.background = s2;
+    var days = (D.daily || []).map(function(d){ return d.day.slice(5); });
+    if (chart) chart.destroy();
+    chart = new Chart(document.getElementById("chart"), {
+      data: {
+        labels: days,
+        datasets: [
+          { type: "bar", label: "Questions", data: (D.daily || []).map(function(d){ return d.questions; }),
+            backgroundColor: s1, borderRadius: 4, maxBarThickness: 18 },
+          { type: "line", label: "Unique users", data: (D.daily || []).map(function(d){ return d.users; }),
+            borderColor: s2, backgroundColor: s2, borderWidth: 2, pointRadius: 2.5, pointHoverRadius: 5, tension: 0.25 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { mode: "index", intersect: false } },
+        scales: {
+          x: { ticks: { color: muted, maxRotation: 45, autoSkip: true, maxTicksLimit: 20 }, grid: { display: false } },
+          y: { beginAtZero: true, ticks: { color: muted, precision: 0 }, grid: { color: grid } }
+        }
+      }
+    });
+  }
+  var chart2 = null;
+  function buildChart2(){
+    var s1 = cssVar("--s1"), s2 = cssVar("--s2"), grid = cssVar("--grid"), muted = cssVar("--muted");
+    document.getElementById("sw3").style.background = s1;
+    document.getElementById("sw4").style.background = s2;
+    var wk = D.weekly || [];
+    if (chart2) chart2.destroy();
+    chart2 = new Chart(document.getElementById("chart2"), {
+      type: "bar",
+      data: {
+        labels: wk.map(function(w){ return w.week.slice(5); }),
+        datasets: [
+          { label: "New users", data: wk.map(function(w){ return w.new_users; }),
+            backgroundColor: s1, borderRadius: 4, maxBarThickness: 26, stack: "u" },
+          { label: "Returning users", data: wk.map(function(w){ return w.returning_users; }),
+            backgroundColor: s2, borderRadius: 4, maxBarThickness: 26, stack: "u" }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { mode: "index", intersect: false } },
+        scales: {
+          x: { stacked: true, ticks: { color: muted, maxRotation: 45 }, grid: { display: false } },
+          y: { stacked: true, beginAtZero: true, ticks: { color: muted, precision: 0 }, grid: { color: grid } }
+        }
+      }
+    });
+  }
+  function buildAll(){ buildChart(); buildChart2(); }
+  buildAll();
+  try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", buildAll); } catch (e) {}
+
+  // ---- recent questions table ----
+  var qa = D.recent || [];
+  var shown = 50, onlyUnanswered = false;
+  function isAnswered(r){ return r.a && r.a.trim().length > 0; }
+  function renderQA(){
+    var rows = onlyUnanswered ? qa.filter(function(r){ return !isAnswered(r); }) : qa;
+    document.getElementById("qcount").textContent = onlyUnanswered
+      ? "(" + rows.length + " unanswered of the " + qa.length + " most recent)"
+      : "(" + qa.length + " most recent)";
+    var tb = document.querySelector("#qa-table tbody");
+    tb.innerHTML = rows.slice(0, shown).map(function(r){
+      var ok = isAnswered(r);
+      return "<tr><td class=\"mono\">" + esc(r.d) + "</td><td class=\"mono\">" + esc(r.u) + "</td><td>" +
+             esc(r.app || "Educator") + "</td><td>" + esc(r.q) +
+             "</td><td><span class=\"chip " + (ok ? "ok\">yes" : "high\">no") + "</span></td></tr>";
+    }).join("") || "<tr><td colspan=\"5\">Nothing to show.</td></tr>";
+    document.getElementById("btn-more").hidden = shown >= rows.length;
+  }
+  renderQA();
+  document.getElementById("btn-more").addEventListener("click", function(){ shown = qa.length; renderQA(); });
+  document.getElementById("btn-unans").addEventListener("click", function(){
+    onlyUnanswered = !onlyUnanswered;
+    this.textContent = onlyUnanswered ? "Show all questions" : "Show unanswered only";
+    this.className = onlyUnanswered ? "toggle-on" : "";
+    renderQA();
+  });
+
+  // ---- AI buttons (viewer's own Claude account via the sample capability) ----
+  var btnSum = document.getElementById("btn-sum"), btnRev = document.getElementById("btn-rev");
+  var status = document.getElementById("ai-status");
+  var samplePromise = (window.claude && window.claude.use) ? claude.use("sample") : Promise.resolve(null);
+  samplePromise.then(function(sample){
+    if (!sample) {
+      btnSum.disabled = true; btnRev.disabled = true;
+      document.getElementById("ai-unavailable").hidden = false;
+      return;
+    }
+    btnSum.addEventListener("click", function(){
+      btnSum.disabled = true; status.textContent = "Thinking... (first use asks your permission; can take up to a minute)";
+      var out = document.getElementById("sum-out"); out.hidden = false; out.textContent = "";
+      var qs = qa.map(function(r){ return "- " + redact(r.q).slice(0, 220); }).join("\n");
+      var prompt = "You are analysing usage of the ARDC Dataspace Educator, an AI assistant that answers questions about data spaces (IDS-RAM 4.0, the IDSA Rulebook, DSSC toolbox, dataspace roles and skills). Below are the " + qa.length + " most recent user questions.\n\nProduce, in plain text with simple hyphen bullets and short headings:\n1. THEMES: 5-8 themes people ask about, each with a rough share of questions and one representative example.\n2. GAPS: questions the knowledge base may not cover well.\n3. RECOMMENDATIONS: 3 concrete content or configuration improvements.\nBe concise and specific. Questions:\n" + qs;
+      sample(prompt, { onText: function(t){ out.textContent = t.text; } })
+        .then(function(r){ out.textContent = r.text; status.textContent = "Summary generated just now (not stored - copy it if you want to keep it)."; })
+        .catch(function(e){ status.textContent = e && e.code === "not_granted" ? "Permission declined." : "Analysis failed: " + (e && e.message || e); })
+        .finally(function(){ btnSum.disabled = false; });
+    });
+    btnRev.addEventListener("click", function(){
+      btnRev.disabled = true; status.textContent = "Reviewing the latest responses... (can take a minute or two)";
+      // Empty answers are excluded here: they are counted in the Failed
+      // answers tile and visible via the unanswered filter, with a known
+      // cause (API billing errors), so re-flagging them is noise.
+      var pairs = qa.filter(isAnswered).slice(0, 60).map(function(r){
+        return { id: r.id, date: r.d, question: redact(r.q).slice(0, 220), answer: redact(r.a).slice(0, 450) };
+      });
+      var prompt = "You are quality-reviewing an AI education assistant about data spaces. Every pair below HAS an answer (empty answers are tracked separately - never flag an answer for being missing or short-but-present). Flag ONLY pairs where the response needs review: refusals of reasonable on-topic questions, answers that look factually shaky or vague, answers that miss the question, or answers to off-topic/abusive questions handled badly. Ignore pairs that look fine. Reply as JSON only: {\"flags\":[{\"id\":\"...\",\"date\":\"...\",\"question\":\"...\",\"issue\":\"one short sentence\",\"severity\":\"high|medium|low\"}]}. Pairs: " + JSON.stringify(pairs);
+      sample.json(prompt)
+        .then(function(r){
+          var flags = (r && r.flags) || [];
+          var tb = document.querySelector("#rev-table tbody");
+          document.getElementById("rev-wrap").hidden = false;
+          if (!flags.length) { tb.innerHTML = "<tr><td colspan=\"4\">No responses flagged in the latest " + pairs.length + " pairs.</td></tr>"; }
+          else {
+            var order = { high: 0, medium: 1, low: 2 };
+            flags.sort(function(a, b){ return (order[a.severity] || 3) - (order[b.severity] || 3); });
+            tb.innerHTML = flags.map(function(f){
+              var sev = (f.severity || "low").toLowerCase();
+              return "<tr><td><span class=\"chip " + esc(sev) + "\">" + esc(sev) + "</span></td><td>" + esc(f.question) +
+                     "</td><td>" + esc(f.issue) + "</td><td class=\"mono\">" + esc(f.date || "") + "</td></tr>";
+            }).join("");
+          }
+          status.textContent = flags.length + " response(s) flagged from the latest " + pairs.length + " (generated just now - flags are not stored).";
+        })
+        .catch(function(e){ status.textContent = e && e.code === "not_granted" ? "Permission declined." : "Review failed: " + (e && e.message || e); })
+        .finally(function(){ btnRev.disabled = false; });
+    });
+  });
+})();
+</script>
+

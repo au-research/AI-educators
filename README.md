@@ -28,6 +28,7 @@ is the point: one part-time non-developer operates the live instances.
 | `web/` | The static wrapper pages used on dresa.org.au (adapt URLs and branding) |
 | `question_bank/` | Reserve multiple-choice questions for the 101 module |
 | `docs/SETUP.md` | Step-by-step stand-up guide |
+| `dashboard/` | The usage dashboard and feedback-loop kit: stats extraction, page template, weekly golden checks, optional nightly analysis |
 
 ## What is deliberately NOT here
 
