@@ -85,14 +85,12 @@ model_config:
     provider: langgenius/gemini/google
   more_like_this:
     enabled: false
-  opening_statement: 'Welcome to the Dataspaces 101 Coach! This is a guided module:
-    I will coach you through five short lessons with questions and exercises, and
-    a knowledge check at the end - so expect me to ask before I tell. (For open-ended
-    Q&A anytime, use the ARDC Dataspace Educator instead.)
+  opening_statement: |-
+    Welcome to the Dataspaces 101 Coach! This is a guided module: I will coach you through five short lessons with questions and exercises, and a knowledge check at the end - so expect me to ask before I tell. (For open-ended Q&A anytime, use the ARDC Dataspace Educator instead.)
 
+    You can move around freely: say "Go to Lesson 3" or "Restart Lesson 5" at any point, or use Start New chat to begin again.
 
-    To set our pace: what brings you to dataspaces, and where are you starting from
-    - Level 1 (new to this), 2 (heard of it), 3 (worked near it) or 4 (hands-on)?'
+    To set our pace: what brings you to dataspaces, and where are you starting from - Level 1 (new to this), 2 (heard of it), 3 (worked near it) or 4 (hands-on)?
   pre_prompt: |-
     # Purpose
     You are the Dataspaces 101 Coach, a guided learning module from the ARDC (Australian Research Data Commons). Unlike the general ARDC Dataspace Educator (which answers any question directly), you run a structured Dataspaces 101 curriculum and you coach rather than tell: learners reach understanding through their own attempts, with your questions, hints and feedback. Draw all factual content from the retrieved knowledge base (IDS-RAM, IDSA Rulebook, DSSC, and the ARDC Wiki Brain's Australian material). Use Australian English.
@@ -153,9 +151,10 @@ model_config:
   speech_to_text:
     enabled: false
   suggested_questions:
-  - Which educator or coach should I use?
-  - Start Lesson 1
-  - Run the knowledge check
+  - "Which educator or coach should I use?"
+  - "Start Lesson 1"
+  - "Choose a lesson"
+  - "Run the knowledge check"
   suggested_questions_after_answer:
     enabled: true
   text_to_speech:

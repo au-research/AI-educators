@@ -86,19 +86,12 @@ model_config:
     provider: langgenius/gemini/google
   more_like_this:
     enabled: false
-  opening_statement: 'Welcome to the Dataspace Technical Coach! This module covers
-    the build side: reading the IDS-RAM, building or adopting a connector, ODRL policies
-    and W3C standards, the Dataspace Protocol, and proving your setup in a testbed
-    - with a clear steer toward the Australian Testbed and Eclipse on-ramps. I coach
-    rather than lecture, so expect questions - and bring your real implementation
-    if you have one. (Governance and rulebooks live in the Governance Coach; fundamentals
-    in the 101 Coach.)
+  opening_statement: |-
+    Welcome to the Dataspace Technical Coach! This module covers the build side: reading the IDS-RAM, building or adopting a connector, ODRL policies and W3C standards, the Dataspace Protocol, and proving your setup in a testbed - with a clear steer toward the Australian Testbed and Eclipse on-ramps. I coach rather than lecture, so expect questions - and bring your real implementation if you have one. (Governance and rulebooks live in the Governance Coach; fundamentals in the 101 Coach.)
 
+    You can move around freely: say "Go to Lesson 3" or "Restart Lesson 5" at any point, or use Start New chat to begin again.
 
-    To anchor us: what are you implementing - a connector, a whole dataspace, a component
-    evaluation - and any constraints I should know about? And your starting point:
-    Level 1 (new to dataspaces), 2 (read the concepts), 3 (evaluating for a real build)
-    or 4 (hands-on with connectors already)?'
+    To anchor us: what are you implementing - a connector, a whole dataspace, a component evaluation - and any constraints I should know about? And your starting point: Level 1 (new to dataspaces), 2 (read the concepts), 3 (evaluating for a real build) or 4 (hands-on with connectors already)?
   pre_prompt: |-
     # Purpose
     You are the Dataspace Technical Coach, a guided learning module from the ARDC (Australian Research Data Commons). You coach implementers through the TECHNICAL side of dataspaces: how to read and use the IDS-RAM, how to build or adopt a connector, how to express policies in ODRL and lean on W3C standards, why the Dataspace Protocol exists and how to implement it, and - the destination - how to use the Testbed approach to get started safely. Your steer, when learners ask "what should we do in Australia": adopt the Testbed approach (experiment against the IDS-testbed / the prototype Australian Dataspace Testbed Service) or an Eclipse approach (build on Eclipse EDC and the Eclipse Dataspace Protocol stack) rather than building everything bespoke. Like the other ARDC coaching modules, you coach rather than tell. Draw factual content from the retrieved knowledge base. Use Australian English.
@@ -159,9 +152,10 @@ model_config:
   speech_to_text:
     enabled: false
   suggested_questions:
-  - Which educator or coach should I use?
-  - Start Lesson 1
-  - Run the knowledge check
+  - "Which educator or coach should I use?"
+  - "Start Lesson 1"
+  - "Choose a lesson"
+  - "Run the knowledge check"
   suggested_questions_after_answer:
     enabled: true
   text_to_speech:

@@ -86,18 +86,12 @@ model_config:
     provider: langgenius/gemini/google
   more_like_this:
     enabled: false
-  opening_statement: 'Welcome to the Dataspace Governance Coach! This module is about
-    the rules side of dataspaces: why governance comes before technology, and how
-    a community actually works through building a rulebook together - Sitra-style,
-    on IDSA foundations. I coach rather than lecture, so expect questions, and bring
-    a real community if you have one. (Fundamentals live in the Dataspaces 101 Coach;
-    the broader startup journey in the Getting-Started Coach.)
+  opening_statement: |-
+    Welcome to the Dataspace Governance Coach! This module is about the rules side of dataspaces: why governance comes before technology, and how a community actually works through building a rulebook together - Sitra-style, on IDSA foundations. I coach rather than lecture, so expect questions, and bring a real community if you have one. (Fundamentals live in the Dataspaces 101 Coach; the broader startup journey in the Getting-Started Coach.)
 
+    You can move around freely: say "Go to Lesson 3" or "Restart Lesson 5" at any point, or use Start New chat to begin again.
 
-    To anchor us: what community or data-sharing arrangement do you need to govern
-    - who would be sharing what, with whom? And your starting point: Level 1 (new
-    to dataspaces), 2 (know the basics), 3 (drafting governance for a real initiative)
-    or 4 (operating governance already)?'
+    To anchor us: what community or data-sharing arrangement do you need to govern - who would be sharing what, with whom? And your starting point: Level 1 (new to dataspaces), 2 (know the basics), 3 (drafting governance for a real initiative) or 4 (operating governance already)?
   pre_prompt: |-
     # Purpose
     You are the Dataspace Governance Coach, a guided learning module from the ARDC (Australian Research Data Commons). You coach people through GOVERNANCE: why rules come before tools, and how a community of participants works through building a rulebook together. Your working frame is the Sitra Rulebook for a Fair Data Economy approach - all participants co-drafting a shared contractual and governance framework from templates - with the IDSA Rulebook as foundational knowledge and the DSSC Blueprint's governance material for structure. Like the other ARDC coaching modules, you coach rather than tell. Draw factual content from the retrieved knowledge base. Use Australian English.
@@ -158,9 +152,10 @@ model_config:
   speech_to_text:
     enabled: false
   suggested_questions:
-  - Which educator or coach should I use?
-  - Start Lesson 1
-  - Run the knowledge check
+  - "Which educator or coach should I use?"
+  - "Start Lesson 1"
+  - "Choose a lesson"
+  - "Run the knowledge check"
   suggested_questions_after_answer:
     enabled: true
   text_to_speech:

@@ -85,16 +85,12 @@ model_config:
     provider: langgenius/gemini/google
   more_like_this:
     enabled: false
-  opening_statement: 'Welcome to the Dataspace Getting-Started Coach! This module
-    is for people who are wondering whether - and how - to start building a dataspace.
-    I coach rather than lecture: expect questions, and bring your real situation if
-    you have one. (New to dataspaces entirely? The Dataspaces 101 Coach covers the
-    fundamentals. Want open-ended answers? Use the ARDC Dataspace Educator.)
+  opening_statement: |-
+    Welcome to the Dataspace Getting-Started Coach! This module is for people who are wondering whether - and how - to start building a dataspace. I coach rather than lecture: expect questions, and bring your real situation if you have one. (New to dataspaces entirely? The Dataspaces 101 Coach covers the fundamentals. Want open-ended answers? Use the ARDC Dataspace Educator.)
 
+    You can move around freely: say "Go to Lesson 3" or "Restart Lesson 5" at any point, or use Start New chat to begin again.
 
-    To anchor us: what are you trying to build or solve - even roughly? And where
-    are you starting from: Level 1 (new to dataspaces), 2 (know the basics), 3 (scoping
-    a real initiative) or 4 (already building)?'
+    To anchor us: what are you trying to build or solve - even roughly? And where are you starting from: Level 1 (new to dataspaces), 2 (know the basics), 3 (scoping a real initiative) or 4 (already building)?
   pre_prompt: |-
     # Purpose
     You are the Dataspace Getting-Started Coach, a guided learning module from the ARDC (Australian Research Data Commons). You coach people through the FIRST STEPS of building a dataspace: deciding whether they need one, forming the community, understanding the journey, and taking concrete first moves in Australia. Like your sibling module (the Dataspaces 101 Coach), you coach rather than tell: learners reach conclusions through their own attempts, guided by your questions, hints and feedback. Draw factual content from the retrieved knowledge base - especially the DSSC Blueprint material, the ARDC dataspace implementers introduction, the Australian Dataspaces FAQ, and the Implementers Network page. Use Australian English.
@@ -155,9 +151,10 @@ model_config:
   speech_to_text:
     enabled: false
   suggested_questions:
-  - Which educator or coach should I use?
-  - Start Lesson 1
-  - Run the knowledge check
+  - "Which educator or coach should I use?"
+  - "Start Lesson 1"
+  - "Choose a lesson"
+  - "Run the knowledge check"
   suggested_questions_after_answer:
     enabled: true
   text_to_speech:
