@@ -139,6 +139,31 @@
             flex: 1 1 auto;
             border: none;
         }
+
+        .toolbar-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .refresh-btn {
+            background: #FFFFFF;
+            color: var(--ardc-navy);
+            border: 1px solid var(--ardc-navy);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font: inherit;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .refresh-btn:hover,
+        .refresh-btn:focus-visible {
+            /* Navy, not teal: white on teal fails WCAG AA contrast. */
+            background: var(--ardc-navy);
+            color: #FFFFFF;
+        }
     </style>
 </head>
 
@@ -178,8 +203,11 @@
         <div class="chat-toolbar">
             <span>Want to come back to this conversation later? Chats in this embedded window may not keep
                 their history in every browser &mdash; a full window remembers more reliably.<br><strong>Tip:</strong> type &ldquo;Restart Lesson 5&rdquo; (or any lesson) at any time to jump between lessons.</span>
-            <a class="fullwindow-btn" href="https://chat.dresa.org.au/chat/DsTechCoachV5xP3"
+            <div class="toolbar-actions">
+                <button type="button" class="refresh-btn" id="refresh-chat"><span aria-hidden="true">&#8635;</span> Refresh chat</button>
+                <a class="fullwindow-btn" href="https://chat.dresa.org.au/chat/DsTechCoachV5xP3"
                target="_blank" rel="noopener">Open in full window &#8599;</a>
+            </div>
         </div>
         <iframe id="educator-frame" src="" data-src="https://chat.dresa.org.au/chat/DsTechCoachV5xP3"
             style="width: 100%;" frameborder="0" allow="microphone">
@@ -270,6 +298,35 @@
         </p>
     </div>
 
+    <script>
+        // Each open window keeps its own snapshot of the chat and never
+        // updates itself, so a learner who carried on in another window comes
+        // back to an old view. Two remedies:
+        // 1. the "Refresh chat" button reloads just the chat panel;
+        // 2. returning to this tab after more than two minutes away reloads
+        //    it automatically. Two minutes is longer than an answer takes
+        //    (15-30 seconds), and answers are saved on the server, so nothing
+        //    finished is lost; only an unsent, half-typed message would be.
+        function refreshChat() {
+            var f = document.getElementById('educator-frame');
+            var src = f.getAttribute('data-src');
+            // Blank the panel briefly, then load the chat again from scratch.
+            f.src = 'about:blank';
+            setTimeout(function () { f.src = src; }, 50);
+        }
+        document.getElementById('refresh-chat').addEventListener('click', refreshChat);
+        var hiddenSince = null;
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) { hiddenSince = Date.now(); return; }
+            var f = document.getElementById('educator-frame');
+            // Only refresh a chat that has already loaded (src is set after
+            // the page settles), and only after a real absence.
+            if (hiddenSince && Date.now() - hiddenSince > 120000 && f.getAttribute('src')) {
+                refreshChat();
+            }
+            hiddenSince = null;
+        });
+    </script>
 </body>
 
 </html>

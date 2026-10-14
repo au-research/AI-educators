@@ -23,6 +23,10 @@ msgs AS (
   WHERE (m.from_end_user_id IS NULL
      OR m.from_end_user_id NOT IN (
         SELECT id FROM end_users WHERE session_id IN ('persona-test','golden-test')))
+    -- v7 (14 Oct 2026): also leave out Claude's browser test conversations,
+    -- recognised by a name starting with 'TEST (Claude'.
+    AND m.conversation_id NOT IN (
+        SELECT id FROM conversations WHERE name LIKE 'TEST (Claude%')
 ),
 fs AS (
   SELECT from_end_user_id u, min(created_at) f
