@@ -75,6 +75,22 @@ SELECT json_build_object(
       FROM document_segments seg JOIN documents d ON d.id = seg.document_id
       GROUP BY d.name HAVING sum(seg.hit_count) > 0
       ORDER BY sum(seg.hit_count) DESC LIMIT 12) s),
+  'kb_share', (SELECT coalesce(json_agg(k), '[]'::json) FROM (
+      -- v8 (23 Oct 2026): share of retrieved passages by knowledge base,
+      -- last 30 days, per app. Read from each message's retriever_resources.
+      SELECT app, kb, count(*)::int AS chunks FROM (
+        SELECT m.app_label AS app,
+          CASE WHEN r->>'dataset_name' ILIKE '%wiki brain%' THEN 'ARDC Wiki Brain'
+               WHEN r->>'dataset_name' ILIKE 'IDS-RAM%' OR r->>'dataset_name' ILIKE 'IDS_RAM%' THEN 'IDS-RAM 4.0'
+               WHEN r->>'dataset_name' ILIKE 'IDSA Rulebook%' OR r->>'dataset_name' ILIKE 'DSSC%'
+                    OR r->>'dataset_name' ILIKE 'Sitra%' THEN 'IDSA Rulebook and DSSC'
+               WHEN r->>'dataset_name' ILIKE '%skills matrix%' OR r->>'dataset_name' ILIKE 'Dataspace%' THEN 'ARDC Skills Matrix and Personas'
+               ELSE 'Other' END AS kb
+        FROM (SELECT app_label, message_metadata FROM msgs
+              WHERE created_at > now() - interval '30 days'
+                AND message_metadata LIKE '%retriever_resources%') m,
+             jsonb_array_elements(m.message_metadata::jsonb->'retriever_resources') r
+      ) x GROUP BY app, kb ORDER BY app, chunks DESC) k),
   'failures', (SELECT coalesce(json_agg(f), '[]'::json) FROM (
       SELECT to_char(created_at::date, 'YYYY-MM-DD') AS day, count(*)::int AS count,
              count(*) FILTER (WHERE error IS NOT NULL AND length(error) > 0)::int AS api_errors

@@ -72,6 +72,9 @@
   .srcbar{height:10px;background:var(--s1);border-radius:4px;min-width:2px}
   .srcnum{font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
   .srcname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .kbrow{display:grid;grid-template-columns:minmax(120px,170px) 1fr 5rem;gap:10px;align-items:center;padding:.3rem 0;font-size:.86rem}
+  .kbbar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--panel-2)}
+  .kbseg{height:14px;min-width:1px}
   button.toggle-on{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
   [hidden]{display:none!important}
 </style>
@@ -147,6 +150,13 @@
   <div class="card">
     <p class="hint" style="margin-top:0">How often each knowledge-base document was retrieved to answer questions — a guide to which content earns its keep.</p>
     <div id="sources"></div>
+  </div>
+
+  <h2>Where retrieved passages come from</h2>
+  <div class="card" id="kb-card" hidden>
+    <p class="hint" style="margin-top:0">Share of the passages retrieved for answers in the last 30 days, by knowledge base. Retrieval searches all four bases the same way and keeps the best eight passages per question; the prompt then prefers Wiki Brain material only for questions about Australia.</p>
+    <div class="legend" id="kb-legend"></div>
+    <div id="kb-share"></div>
   </div>
 
   <h2>Ask the AI about this data</h2>
@@ -307,6 +317,41 @@
            "</span><span class=\"srcbarwrap\"><span class=\"srcbar\" style=\"width:" + w + "%\"></span></span>" +
            "<span class=\"srcnum\">" + s.hits.toLocaleString() + "</span></div>";
   }).join("") || "<p class=\"hint\">No retrieval data yet.</p>";
+
+  // where retrieved passages come from (last 30 days), one stacked bar per app
+  (function(){
+    var ORDER = ["ARDC Wiki Brain", "IDS-RAM 4.0", "IDSA Rulebook and DSSC", "ARDC Skills Matrix and Personas", "Other"];
+    var COLOR = {"ARDC Wiki Brain": "var(--accent)", "IDS-RAM 4.0": "var(--s1)", "IDSA Rulebook and DSSC": "var(--s2)",
+                 "ARDC Skills Matrix and Personas": "var(--warn)", "Other": "var(--muted)"};
+    var ks = D.kb_share || [];
+    if (!ks.length) return;
+    var byApp = {}, totals = {};
+    ks.forEach(function(r){
+      byApp[r.app] = byApp[r.app] || {};
+      byApp[r.app][r.kb] = (byApp[r.app][r.kb] || 0) + r.chunks;
+      totals[r.kb] = (totals[r.kb] || 0) + r.chunks;
+    });
+    var sum = function(o){ return Object.keys(o).reduce(function(n, k){ return n + o[k]; }, 0); };
+    var apps = Object.keys(byApp).sort(function(a, b){ return sum(byApp[b]) - sum(byApp[a]); });
+    var rows = [["All five", totals]].concat(apps.map(function(a){ return [a, byApp[a]]; }));
+    var present = ORDER.filter(function(k){ return totals[k]; });
+    document.getElementById("kb-legend").innerHTML = present.map(function(k){
+      return "<span><span class=\"sw\" style=\"background:" + COLOR[k] + "\"></span>" + esc(k) + "</span>";
+    }).join("");
+    document.getElementById("kb-share").innerHTML = rows.map(function(row){
+      var name = row[0], o = row[1], total = sum(o);
+      var segs = present.map(function(k){
+        var pct = total ? Math.round(100 * (o[k] || 0) / total) : 0;
+        return "<span class=\"kbseg\" style=\"width:" + pct + "%;background:" + COLOR[k] + "\" title=\"" +
+               esc(k) + ": " + (o[k] || 0).toLocaleString() + " (" + pct + "%)\"></span>";
+      }).join("");
+      var lead = present.map(function(k){ return [k, total ? Math.round(100 * (o[k] || 0) / total) : 0]; });
+      return "<div class=\"kbrow\"><span class=\"srcname\" title=\"" + esc(name) + "\">" + esc(name) + "</span>" +
+             "<span class=\"kbbar\" title=\"" + esc(lead.map(function(p){ return p[0] + " " + p[1] + "%"; }).join(", ")) + "\">" + segs + "</span>" +
+             "<span class=\"srcnum\">" + total.toLocaleString() + "</span></div>";
+    }).join("") + "<p class=\"hint\" style=\"margin-bottom:0\">Right-hand column: passages retrieved. Hover a bar for the split.</p>";
+    document.getElementById("kb-card").hidden = false;
+  })();
 
   function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
   var chart = null;
