@@ -50,6 +50,34 @@
             display: block;
         }
 
+        /* DRESA-27 (Oct 2026): logo on the left, a way back to DReSA on the right */
+        .header-bar .content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .back-link {
+            font-weight: 600;
+            color: var(--ardc-navy);
+            text-decoration: none;
+            padding: 8px 14px;
+            border: 2px solid var(--ardc-teal);
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .back-link:hover, .back-link:focus {
+            background: var(--ardc-teal);
+            color: #FFFFFF;
+            outline: 2px solid var(--ardc-navy);
+            outline-offset: 2px;
+        }
+        @media (max-width: 480px) {
+            .header-bar .content-wrapper { box-sizing: border-box; padding: 0 12px; }
+            .logo-img { height: 44px; }
+            .back-link { padding: 6px 8px; font-size: 0.85rem; white-space: normal; text-align: center; max-width: 52%; }
+        }
+
         .hero-section {
             background: var(--ardc-navy);
             width: 100%;
@@ -172,6 +200,7 @@
     <div class="header-bar">
         <div class="content-wrapper">
             <img class="logo-img" alt="Australian Research Data Commons Logo" src="ardc-logo.jpg">
+            <a class="back-link" href="https://dresa.org.au/educators">&larr; Back to DReSA Educators</a>
         </div>
     </div>
 
