@@ -50,6 +50,32 @@
             display: block;
         }
 
+        /* DRESA-63 (Oct 2026): one-line strip pointing to the Dataspaces 101 recordings */
+        .video-strip {
+            width: 100%;
+            background-color: #E6F6FA;
+            border-bottom: 1px solid var(--ardc-teal);
+            font-size: 0.95rem;
+        }
+        .video-strip .content-wrapper {
+            padding: 8px 20px;
+            text-align: center;
+        }
+        .video-strip a {
+            color: var(--ardc-navy);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .video-strip a:hover, .video-strip a:focus {
+            color: #FFFFFF;
+            background: var(--ardc-navy);
+            outline: 2px solid var(--ardc-navy);
+            text-decoration: none;
+        }
+        @media (max-width: 480px) {
+            .video-strip .content-wrapper { padding: 8px 12px; font-size: 0.9rem; }
+        }
+
         /* DRESA-27 (Oct 2026): logo on the left, a way back to DReSA on the right */
         .header-bar .content-wrapper {
             display: flex;
@@ -201,6 +227,14 @@
         <div class="content-wrapper">
             <img class="logo-img" alt="Australian Research Data Commons Logo" src="ardc-logo.jpg">
             <a class="back-link" href="https://dresa.org.au/educators">&larr; Back to DReSA Educators</a>
+        </div>
+    </div>
+
+    <div class="video-strip">
+        <div class="content-wrapper">
+            New to dataspaces? Watch the Dataspaces 101 recordings:
+            <a href="https://dresa.org.au/media/dataspaces-101/dataspaces-101-session-1.html">Session 1 (51 min)</a> &middot;
+            <a href="https://dresa.org.au/media/dataspaces-101/dataspaces-101-session-2.html">Session 2 (1 h 49 min)</a>
         </div>
     </div>
 

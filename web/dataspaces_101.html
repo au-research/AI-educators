@@ -50,6 +50,32 @@
             display: block;
         }
 
+        /* DRESA-63 (Oct 2026): one-line strip pointing to the Dataspaces 101 recordings */
+        .video-strip {
+            width: 100%;
+            background-color: #E6F6FA;
+            border-bottom: 1px solid var(--ardc-teal);
+            font-size: 0.95rem;
+        }
+        .video-strip .content-wrapper {
+            padding: 8px 20px;
+            text-align: center;
+        }
+        .video-strip a {
+            color: var(--ardc-navy);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .video-strip a:hover, .video-strip a:focus {
+            color: #FFFFFF;
+            background: var(--ardc-navy);
+            outline: 2px solid var(--ardc-navy);
+            text-decoration: none;
+        }
+        @media (max-width: 480px) {
+            .video-strip .content-wrapper { padding: 8px 12px; font-size: 0.9rem; }
+        }
+
         /* DRESA-27 (Oct 2026): logo on the left, a way back to DReSA on the right */
         .header-bar .content-wrapper {
             display: flex;
@@ -204,6 +230,14 @@
         </div>
     </div>
 
+    <div class="video-strip">
+        <div class="content-wrapper">
+            New to dataspaces? Watch the Dataspaces 101 recordings:
+            <a href="https://dresa.org.au/media/dataspaces-101/dataspaces-101-session-1.html">Session 1 (51 min)</a> &middot;
+            <a href="https://dresa.org.au/media/dataspaces-101/dataspaces-101-session-2.html">Session 2 (1 h 49 min)</a>
+        </div>
+    </div>
+
     <div class="hero-section">
         <div class="content-wrapper">
             <h1>Dataspaces 101 Coach</h1>
@@ -219,8 +253,8 @@
                 (<a href="https://docs.google.com/presentation/d/1q6j3oiQqbmk4EIhumQmaIKUv9xEhzRd1wnOPl9yAV38/edit" target="_blank" rel="noopener">Session 1</a>,
                 <a href="https://docs.google.com/presentation/d/1pK6b4FbhTIP2lioBAarK07nmzR1jjdud7fR2vhY7jS8/edit" target="_blank" rel="noopener">Session 2</a>)
                 and their companion videos
-                (<a href="https://drive.google.com/file/d/1owUznNsiytFpnSlU3XedLRRgWusy5DY1/view" target="_blank" rel="noopener">Video 1</a>,
-                <a href="https://drive.google.com/file/d/1xWgIM844zyoXFaaG8H7_iSK4J_WaMo-y/view" target="_blank" rel="noopener">Video 2</a>).
+                (<a href="https://dresa.org.au/media/dataspaces-101/dataspaces-101-session-1.html" target="_blank" rel="noopener">Video 1</a>,
+                <a href="https://dresa.org.au/media/dataspaces-101/dataspaces-101-session-2.html" target="_blank" rel="noopener">Video 2</a>).
             </p>
         </div>
     </div>

@@ -1,0 +1,4528 @@
+WEBVTT
+
+NOTE
+Captions were generated automatically (faster-whisper small.en) and key terms corrected; they may contain errors.
+
+00:00:00.500 --> 00:00:04.580
+for session two of Dataspaces 101.
+
+00:00:05.540 --> 00:00:10.540
+And I do always like to acknowledge
+
+00:00:11.300 --> 00:00:14.220
+the first Australians on whose traditional lines we meet.
+
+00:00:14.220 --> 00:00:17.700
+Here it's the Yuggera and Turrbal people.
+
+00:00:21.540 --> 00:00:26.020
+But so what we're doing today is,
+
+00:00:26.020 --> 00:00:27.980
+first we're gonna reflect a little bit on
+
+00:00:27.980 --> 00:00:30.140
+what we covered in the last session.
+
+00:00:30.140 --> 00:00:32.260
+So just kind of reinforce a few ideas.
+
+00:00:33.780 --> 00:00:36.060
+So thank you for filling out the surveys.
+
+00:00:38.020 --> 00:00:40.140
+Those flagged just a couple of things
+
+00:00:40.140 --> 00:00:41.700
+that probably could be clarified.
+
+00:00:41.700 --> 00:00:43.100
+So we'll go through those.
+
+00:00:45.220 --> 00:00:48.300
+We'll touch more in a little bit more detail
+
+00:00:48.300 --> 00:00:49.260
+on a couple of things.
+
+00:00:49.260 --> 00:00:52.580
+One is how you get started with one of these things.
+
+00:00:52.580 --> 00:00:55.860
+And again, there's tons of frameworks to choose from,
+
+00:00:55.860 --> 00:00:59.180
+which only makes it more confusing.
+
+00:00:59.180 --> 00:01:01.100
+I would suggest picking one.
+
+00:01:03.300 --> 00:01:05.620
+And there's also something called a Dataspace Protocol,
+
+00:01:05.620 --> 00:01:09.060
+which is the thing that makes all of this interoperable.
+
+00:01:09.060 --> 00:01:11.180
+So we'll touch a little bit on that today.
+
+00:01:12.220 --> 00:01:14.660
+And I also wanna touch on an approach
+
+00:01:14.660 --> 00:01:16.940
+that's worked in Spain really well.
+
+00:01:16.940 --> 00:01:19.100
+I think Richard and Helen are aware of that one,
+
+00:01:19.100 --> 00:01:22.220
+but maybe the rest of you haven't heard about that.
+
+00:01:22.220 --> 00:01:27.220
+And we'll have a couple of group activities,
+
+00:01:27.580 --> 00:01:34.250
+but nothing too, nothing too onerous.
+
+00:01:34.250 --> 00:01:39.250
+So again, just a reminder that in the coming months,
+
+00:01:40.770 --> 00:01:42.610
+you're gonna be the teachers
+
+00:01:42.610 --> 00:01:45.610
+of what the heck Dataspaces are
+
+00:01:45.610 --> 00:01:50.610
+and for your like-minded personas.
+
+00:01:50.610 --> 00:01:53.130
+I mean, you're gonna be experts on Dataspaces,
+
+00:01:53.130 --> 00:01:55.530
+one of a handful of them.
+
+00:01:56.170 --> 00:02:00.170
+So we just wanna drive home these points that, again,
+
+00:02:00.170 --> 00:02:02.530
+we're missed in the first pilots
+
+00:02:02.530 --> 00:02:05.130
+that rules before tools is important.
+
+00:02:05.130 --> 00:02:07.210
+So getting the governance pinned down,
+
+00:02:07.210 --> 00:02:08.970
+it really is the key bit.
+
+00:02:10.610 --> 00:02:14.890
+That there are two planes in the architecture,
+
+00:02:14.890 --> 00:02:16.210
+the technical architecture,
+
+00:02:16.210 --> 00:02:18.770
+the data plane and the control plane.
+
+00:02:18.770 --> 00:02:20.570
+Control plane has lots of standards
+
+00:02:20.570 --> 00:02:22.410
+that you have to abide by.
+
+00:02:23.410 --> 00:02:25.450
+Lots of flexibility within those standards,
+
+00:02:25.450 --> 00:02:27.570
+but lots of standards, the data plane.
+
+00:02:27.570 --> 00:02:30.170
+You can do almost anything in the data plane.
+
+00:02:31.170 --> 00:02:33.810
+So just reiterating those points.
+
+00:02:33.810 --> 00:02:36.370
+And trust is what you can prove.
+
+00:02:36.370 --> 00:02:39.050
+And it's not just who you are in one institution
+
+00:02:39.050 --> 00:02:39.890
+you belong to,
+
+00:02:39.890 --> 00:02:44.890
+but there's all kinds of other sort of attributes
+
+00:02:45.850 --> 00:02:48.890
+that also need to be proven.
+
+00:02:51.840 --> 00:02:58.100
+So what's nice about this group is,
+
+00:02:58.980 --> 00:03:00.700
+I don't know, you're switched on,
+
+00:03:00.700 --> 00:03:03.100
+you're interested in this.
+
+00:03:03.100 --> 00:03:08.100
+And so you're a better group than many
+
+00:03:08.140 --> 00:03:12.380
+in terms of you figured this out a lot already.
+
+00:03:13.860 --> 00:03:16.500
+So one of you noted that Dataspaces
+
+00:03:16.500 --> 00:03:19.420
+is not a solution looking for a problem.
+
+00:03:19.420 --> 00:03:20.940
+That's absolutely correct.
+
+00:03:21.900 --> 00:03:26.380
+You really need to let the problem emerge
+
+00:03:26.380 --> 00:03:30.060
+from the community that you're working with first.
+
+00:03:30.060 --> 00:03:33.660
+And the solution can be very variable
+
+00:03:33.660 --> 00:03:36.460
+within the Dataspaces framework.
+
+00:03:36.460 --> 00:03:38.980
+So problem comes first.
+
+00:03:41.300 --> 00:03:42.660
+Without a compelling reason,
+
+00:03:42.660 --> 00:03:45.900
+participants won't invest or risk sharing their data.
+
+00:03:45.900 --> 00:03:50.900
+And almost everyone was put that value product
+
+00:03:50.940 --> 00:03:53.780
+proposition that at first,
+
+00:03:53.780 --> 00:03:58.320
+so you need to understand what a Dataspace
+
+00:03:58.320 --> 00:04:00.640
+is gonna deliver for all of the participants
+
+00:04:00.640 --> 00:04:02.840
+who are interested in a Dataspace first.
+
+00:04:02.840 --> 00:04:06.240
+So just about everybody got that point, which is awesome.
+
+00:04:06.240 --> 00:04:08.720
+And the business case is the thing that follows that.
+
+00:04:08.720 --> 00:04:10.880
+So exactly how it's gonna deliver value
+
+00:04:12.000 --> 00:04:13.920
+for all of those participants.
+
+00:04:13.920 --> 00:04:14.800
+So that's awesome.
+
+00:04:16.160 --> 00:04:20.600
+You guys are already speaking more,
+
+00:04:20.600 --> 00:04:25.560
+speaking better about Dataspaces than most Australians,
+
+00:04:25.560 --> 00:04:26.400
+which is good.
+
+00:04:28.280 --> 00:04:30.320
+And this is how you scored yourselves
+
+00:04:30.320 --> 00:04:33.720
+in terms of how ready you are to be a teacher.
+
+00:04:33.720 --> 00:04:37.960
+And again, it took most of us a year to get to this point.
+
+00:04:37.960 --> 00:04:41.160
+So to feel like we might be able to do it
+
+00:04:41.160 --> 00:04:43.720
+at a level five,
+
+00:04:43.720 --> 00:04:46.040
+but none of you don't know what a Dataspace is.
+
+00:04:46.040 --> 00:04:47.600
+All the definitions that came through
+
+00:04:47.600 --> 00:04:54.060
+in the forums were reasonable.
+
+00:04:54.060 --> 00:04:56.380
+So a couple of the other things
+
+00:04:56.380 --> 00:04:57.540
+that I just wanted to highlight
+
+00:04:57.540 --> 00:04:59.620
+that came through in the forums.
+
+00:04:59.620 --> 00:05:02.340
+One was control breeds the trust
+
+00:05:02.340 --> 00:05:04.620
+to make the whole ecosystem possible
+
+00:05:04.620 --> 00:05:08.180
+without it a Dataspace is just an empty network.
+
+00:05:08.180 --> 00:05:09.460
+So that's absolutely true.
+
+00:05:09.460 --> 00:05:12.300
+The reason the trust exists is because
+
+00:05:12.300 --> 00:05:14.820
+the amount of control that the participants
+
+00:05:14.820 --> 00:05:16.660
+have over their data.
+
+00:05:16.660 --> 00:05:20.420
+And that can, the amount of control
+
+00:05:20.420 --> 00:05:23.700
+can vary from Dataspace to Dataspace,
+
+00:05:23.700 --> 00:05:25.140
+but it's that control.
+
+00:05:25.140 --> 00:05:28.700
+Is it enough for me to start sharing this sensitive data?
+
+00:05:29.900 --> 00:05:33.220
+And incidentally, not all sharing of data
+
+00:05:33.220 --> 00:05:37.020
+has to be highly sensitive, right?
+
+00:05:37.020 --> 00:05:38.780
+So there are Dataspaces in Europe
+
+00:05:38.780 --> 00:05:42.300
+that have been worked with
+
+00:05:42.300 --> 00:05:44.820
+that are almost entirely open data.
+
+00:05:45.780 --> 00:05:48.420
+And it just, the process still facilitates
+
+00:05:48.420 --> 00:05:51.020
+value for those people.
+
+00:05:53.320 --> 00:05:57.040
+Again, all of you had a decent definition
+
+00:05:57.040 --> 00:05:59.440
+of a Dataspace, but I think this one was
+
+00:05:59.440 --> 00:06:03.720
+almost better than my sentence definition,
+
+00:06:03.720 --> 00:06:06.320
+which is a trusted environment where organizations
+
+00:06:06.320 --> 00:06:09.320
+securely share access and use data
+
+00:06:09.320 --> 00:06:12.040
+under agreed rules, standards, and governance
+
+00:06:12.040 --> 00:06:15.120
+while retaining control of their own data.
+
+00:06:15.120 --> 00:06:17.720
+So pretty much everybody was on board
+
+00:06:17.720 --> 00:06:19.360
+with some version of that,
+
+00:06:19.360 --> 00:06:21.400
+but that was nicely articulated.
+
+00:06:22.880 --> 00:06:25.920
+And one of you just had all the bits
+
+00:06:25.920 --> 00:06:27.600
+like in your survey response,
+
+00:06:27.600 --> 00:06:31.840
+like really on top of all of the components
+
+00:06:31.840 --> 00:06:34.720
+that need to be in place before a Dataspace
+
+00:06:34.720 --> 00:06:37.520
+becomes something that you would put into production.
+
+00:06:37.520 --> 00:06:38.400
+So that was good.
+
+00:06:43.100 --> 00:06:45.420
+And again, coming back to this trust idea,
+
+00:06:45.420 --> 00:06:46.940
+isn't it most important?
+
+00:06:46.940 --> 00:06:49.980
+This is something that came straight out of the survey
+
+00:06:49.980 --> 00:06:52.220
+that participants trust the infrastructure
+
+00:06:52.220 --> 00:06:54.260
+rather than each other.
+
+00:06:54.340 --> 00:06:56.180
+A Dataspace could work,
+
+00:06:56.180 --> 00:06:58.380
+even where participants don't trust each other
+
+00:06:58.380 --> 00:07:01.980
+as long as they trust the system to protect them.
+
+00:07:01.980 --> 00:07:04.540
+And that is absolutely correct.
+
+00:07:04.540 --> 00:07:11.060
+And yeah, Victoria doesn't all of a sudden
+
+00:07:11.060 --> 00:07:14.200
+have to have a love affair with New South Wales, right?
+
+00:07:15.300 --> 00:07:17.900
+And we all know that's probably never gonna happen.
+
+00:07:19.340 --> 00:07:22.940
+But have you got the balance right
+
+00:07:22.940 --> 00:07:25.060
+of the amount of control
+
+00:07:25.060 --> 00:07:25.900
+that they're gonna have?
+
+00:07:25.900 --> 00:07:27.540
+And that amount of control can vary
+
+00:07:27.540 --> 00:07:29.540
+from Dataspace to Dataspace.
+
+00:07:29.540 --> 00:07:33.140
+But is the amount of control enough
+
+00:07:33.140 --> 00:07:34.840
+for everybody to be on board
+
+00:07:34.840 --> 00:07:40.150
+and start sharing data at scale?
+
+00:07:40.150 --> 00:07:44.070
+So just real quickly,
+
+00:07:45.210 --> 00:07:49.510
+if everybody has seen these RMIT videos,
+
+00:07:49.510 --> 00:07:50.350
+let me know.
+
+00:07:52.830 --> 00:07:55.150
+And actually I might have to re-share my screen
+
+00:07:55.150 --> 00:07:57.250
+in case I didn't turn on the sound thing.
+
+00:07:57.250 --> 00:08:00.630
+But there are a few videos from RMIT
+
+00:08:00.630 --> 00:08:07.230
+that demonstrate the testbed
+
+00:08:07.230 --> 00:08:08.690
+and a Dataspace functionality.
+
+00:08:08.690 --> 00:08:13.690
+So has everyone already seen these videos from RMIT?
+
+00:08:16.930 --> 00:08:18.050
+They're fairly short.
+
+00:08:19.550 --> 00:08:21.090
+And if not, we might go through them
+
+00:08:21.090 --> 00:08:23.170
+just because they're useful.
+
+00:08:23.170 --> 00:08:24.970
+No, I haven't seen them.
+
+00:08:24.970 --> 00:08:28.950
+Maybe I'm the only one.
+
+00:08:28.950 --> 00:08:29.990
+Anyone else?
+
+00:08:30.030 --> 00:08:31.270
+I haven't seen them either.
+
+00:08:31.270 --> 00:08:32.110
+I'm happy to.
+
+00:08:33.310 --> 00:08:35.430
+Okay, so we'll just go ahead and play them
+
+00:08:35.430 --> 00:08:39.190
+because I think they're useful demos.
+
+00:08:39.190 --> 00:08:40.270
+They're fairly short
+
+00:08:40.270 --> 00:08:44.990
+and they give you an understanding of Dataspaces.
+
+00:08:44.990 --> 00:08:47.270
+And chirp up if the sound's not coming through
+
+00:08:47.270 --> 00:08:49.350
+and I'll just re-share the screen.
+
+00:08:55.660 --> 00:08:56.500
+Okay.
+
+00:08:56.500 --> 00:09:00.060
+Hi, I'm Dale from the RMIT Advanced Cloud Ecosystem
+
+00:09:00.060 --> 00:09:01.940
+or RACE for short.
+
+00:09:01.940 --> 00:09:03.900
+In this demo, I'm going to show you
+
+00:09:03.900 --> 00:09:06.300
+how our Dataspace's testbed service
+
+00:09:06.300 --> 00:09:09.680
+helps you quickly find and consume published datasets
+
+00:09:09.680 --> 00:09:13.740
+and how it automatically enforces a limited use data policy
+
+00:09:13.740 --> 00:09:16.080
+on a dataset that's already been published.
+
+00:09:17.040 --> 00:09:20.660
+So in front of me, I've got our Dataspace dashboard open.
+
+00:09:20.660 --> 00:09:23.620
+This is connected to our consumer connector,
+
+00:09:23.620 --> 00:09:28.620
+which in this case is hosted on the Nectar research platform.
+
+00:09:28.820 --> 00:09:30.140
+What I'm going to do now
+
+00:09:30.140 --> 00:09:32.180
+is show you how I can search for,
+
+00:09:32.180 --> 00:09:34.980
+request, create an agreement for,
+
+00:09:34.980 --> 00:09:38.380
+and then actually consume the traffic infringements dataset
+
+00:09:38.380 --> 00:09:40.020
+that we previously published
+
+00:09:40.020 --> 00:09:42.200
+to our central metadata broker.
+
+00:09:43.120 --> 00:09:45.340
+You can see on this dashboard that at the moment,
+
+00:09:45.340 --> 00:09:47.340
+we don't have any active data requests
+
+00:09:47.340 --> 00:09:49.940
+and there's just one historical agreement.
+
+00:09:49.940 --> 00:09:52.340
+So we're basically starting from a clean slate.
+
+00:09:53.380 --> 00:09:56.220
+I'll start by heading over to the catalog browser.
+
+00:09:56.220 --> 00:09:57.420
+This is where I can search
+
+00:09:57.420 --> 00:09:59.820
+across any connected metadata brokers
+
+00:09:59.820 --> 00:10:02.220
+for available data offers.
+
+00:10:02.220 --> 00:10:04.980
+In the search bar, I'll type in a keyword
+
+00:10:04.980 --> 00:10:07.720
+related to the dataset I'm interested in
+
+00:10:07.720 --> 00:10:09.900
+and after a break moments,
+
+00:10:09.900 --> 00:10:11.860
+you can see the matching published offers
+
+00:10:11.860 --> 00:10:14.020
+appear here in the list.
+
+00:10:14.020 --> 00:10:17.700
+From here, I'll select the traffic infringement data offer
+
+00:10:17.700 --> 00:10:20.360
+that I want and when I click into this,
+
+00:10:20.360 --> 00:10:23.180
+I get more detail about the offer itself,
+
+00:10:23.180 --> 00:10:24.940
+the associated contracts
+
+00:10:24.940 --> 00:10:29.310
+and any data usage policies that apply.
+
+00:10:29.310 --> 00:10:31.550
+For this traffic infringements dataset,
+
+00:10:31.550 --> 00:10:34.390
+you can see the two uses only policy
+
+00:10:34.390 --> 00:10:37.310
+that we set up earlier in our provider demo.
+
+00:10:37.310 --> 00:10:38.410
+That's actually the restriction
+
+00:10:38.410 --> 00:10:40.590
+we're gonna test in this example.
+
+00:10:40.590 --> 00:10:43.230
+So to request access to this resource,
+
+00:10:43.230 --> 00:10:46.270
+all I need to do is click the request resource button
+
+00:10:46.270 --> 00:10:47.470
+at the bottom.
+
+00:10:47.470 --> 00:10:49.870
+Behind the scenes, this will actually send a message
+
+00:10:49.870 --> 00:10:51.890
+to our AWS provider connector,
+
+00:10:51.890 --> 00:10:53.830
+indicating that we agree to the terms
+
+00:10:53.830 --> 00:10:56.770
+and the two uses only policy.
+
+00:10:56.770 --> 00:10:58.350
+Once that process completes,
+
+00:10:58.350 --> 00:11:00.750
+you'll notice that our consumer dashboard
+
+00:11:00.750 --> 00:11:02.670
+now shows a new agreement
+
+00:11:02.670 --> 00:11:05.550
+and a new data request linked to this dataset.
+
+00:11:05.550 --> 00:11:08.690
+So the access negotiation has gone through successfully.
+
+00:11:09.550 --> 00:11:11.790
+To actually access the data,
+
+00:11:11.790 --> 00:11:14.070
+I'll go to the data request screen
+
+00:11:14.070 --> 00:11:16.730
+and then click the view button next to the request
+
+00:11:16.730 --> 00:11:18.670
+for this traffic infringement dataset.
+
+00:11:20.350 --> 00:11:24.350
+On this screen, I can see the artifacts attached to the offer.
+
+00:11:24.350 --> 00:11:25.790
+To download the data,
+
+00:11:25.790 --> 00:11:27.470
+I just need to click the download button
+
+00:11:27.470 --> 00:11:29.550
+next to the artifact I want.
+
+00:11:29.550 --> 00:11:32.670
+If this offer contained multiple assets, for example,
+
+00:11:32.670 --> 00:11:35.070
+then I would see separate download options
+
+00:11:35.070 --> 00:11:36.230
+for each artifact.
+
+00:11:37.070 --> 00:11:38.450
+When I click download,
+
+00:11:38.450 --> 00:11:42.090
+the dataset is downloaded directly to my local machine.
+
+00:11:42.090 --> 00:11:42.950
+In this example,
+
+00:11:42.950 --> 00:11:44.150
+we're not enforcing the use
+
+00:11:44.150 --> 00:11:45.710
+of a trusted research environment,
+
+00:11:45.710 --> 00:11:49.030
+so download locally is just fine.
+
+00:11:50.110 --> 00:11:52.110
+Now to show that our connector
+
+00:11:52.110 --> 00:11:55.870
+is enforcing the end times usage policy,
+
+00:11:55.870 --> 00:11:59.590
+I'm gonna try downloading the same dataset two more times.
+
+00:11:59.590 --> 00:12:03.150
+You can see that the second download works just fine
+
+00:12:03.150 --> 00:12:04.590
+like the first one.
+
+00:12:04.590 --> 00:12:06.670
+And now as I attempted a third time,
+
+00:12:06.670 --> 00:12:08.150
+the service blocks it
+
+00:12:08.150 --> 00:12:10.550
+and lets me know that a policy restriction
+
+00:12:10.550 --> 00:12:13.650
+prevents any further data consumption.
+
+00:12:13.650 --> 00:12:16.590
+So that's how the Dataspaces Testbed service
+
+00:12:16.590 --> 00:12:20.430
+not only makes it easier to discover and consume datasets,
+
+00:12:20.430 --> 00:12:23.430
+but also reliably enforces data usage policies
+
+00:12:23.430 --> 00:12:25.310
+like two uses only, for example,
+
+00:12:25.310 --> 00:12:35.430
+through the connector.
+
+00:12:35.430 --> 00:12:38.950
+Hi, I'm Dale from the RMIT Advanced...
+
+00:12:38.950 --> 00:12:39.950
+Right.
+
+00:12:39.950 --> 00:12:42.870
+So there's two other videos.
+
+00:12:42.870 --> 00:12:45.990
+I could play those if people are really keen.
+
+00:12:47.110 --> 00:12:49.830
+There's also a link in the chat to all three of them.
+
+00:12:50.990 --> 00:12:52.750
+I guess the one thing I wanna highlight
+
+00:12:52.750 --> 00:12:53.870
+before we make a decision
+
+00:12:53.870 --> 00:12:56.070
+on whether you wanna play the next two
+
+00:12:56.070 --> 00:13:00.150
+is this is just one demo of one implementation.
+
+00:13:00.150 --> 00:13:02.590
+It can be done in all kinds of ways.
+
+00:13:02.630 --> 00:13:05.550
+I've seen implementations that are all code-based
+
+00:13:05.550 --> 00:13:08.030
+that you don't have a dashboard between.
+
+00:13:08.030 --> 00:13:10.390
+So the person who's operating connectors
+
+00:13:10.390 --> 00:13:11.610
+don't have a dashboard.
+
+00:13:13.030 --> 00:13:16.310
+There are instances where these things
+
+00:13:16.310 --> 00:13:18.750
+are all pretty much automated.
+
+00:13:18.750 --> 00:13:23.750
+So you first determine who has all of the required tokens
+
+00:13:27.870 --> 00:13:32.370
+to enter the system and request that particular dataset.
+
+00:13:32.830 --> 00:13:36.710
+And if they have all of the attributes that they need,
+
+00:13:36.710 --> 00:13:40.150
+this back and forth process happens automatically.
+
+00:13:41.150 --> 00:13:42.590
+So there's all kinds of ways
+
+00:13:42.590 --> 00:13:43.910
+that these things are implemented.
+
+00:13:43.910 --> 00:13:48.160
+This is just one example.
+
+00:13:48.160 --> 00:13:51.680
+So before I play two more videos of about the same length,
+
+00:13:51.680 --> 00:13:53.320
+do you wanna watch more videos
+
+00:13:53.320 --> 00:13:56.320
+or do you wanna just get stuck into some more slides?
+
+00:14:04.940 --> 00:14:07.340
+I'm gonna get stuck into some more slides.
+
+00:14:07.340 --> 00:14:08.180
+Yep.
+
+00:14:09.180 --> 00:14:12.900
+Okay, so do check out the other ones though on the link.
+
+00:14:12.900 --> 00:14:16.340
+It just gives you a sense of what other functionalities
+
+00:14:16.340 --> 00:14:17.540
+are part of the dataspace.
+
+00:14:17.540 --> 00:14:19.340
+That's why we like the demo.
+
+00:14:20.660 --> 00:14:23.700
+And oh, it's gonna wanna play again.
+
+00:14:27.380 --> 00:14:31.700
+Okay, so now I just wanna clear up a couple of things
+
+00:14:31.700 --> 00:14:34.300
+that also came out in the surveys.
+
+00:14:34.300 --> 00:14:39.380
+So just a couple of people.
+
+00:14:39.380 --> 00:14:42.260
+People suggested that there was a central platform
+
+00:14:42.260 --> 00:14:44.160
+that you're logging into.
+
+00:14:44.160 --> 00:14:48.600
+So that's almost never the model for dataspaces.
+
+00:14:50.980 --> 00:14:53.820
+And a couple of people mentioned
+
+00:14:53.820 --> 00:14:57.020
+that that's where you start.
+
+00:14:57.020 --> 00:15:00.920
+You start with a central platform for data
+
+00:15:00.920 --> 00:15:04.100
+and they were thinking about the technology first.
+
+00:15:04.100 --> 00:15:08.180
+And I think that's right if you're a tech person,
+
+00:15:08.180 --> 00:15:09.580
+like that's where your mind goes.
+
+00:15:09.580 --> 00:15:10.740
+That's totally understandable.
+
+00:15:10.740 --> 00:15:14.180
+We just wanna reinforce the idea that the sequence
+
+00:15:14.180 --> 00:15:17.380
+of things to think about is very much the problem,
+
+00:15:17.380 --> 00:15:19.500
+the business case and the rulebook.
+
+00:15:19.500 --> 00:15:22.260
+Only then do you know what in the heck you're building.
+
+00:15:22.260 --> 00:15:25.260
+So as I was saying, there's many, many different ways
+
+00:15:25.260 --> 00:15:27.500
+to implement a dataspace technically
+
+00:15:28.900 --> 00:15:32.420
+while being confined by some standards.
+
+00:15:32.420 --> 00:15:37.420
+But yeah, it's important to just reiterate
+
+00:15:38.380 --> 00:15:40.500
+that yet again, that it's really important
+
+00:15:40.500 --> 00:15:41.720
+to start with a problem.
+
+00:15:42.720 --> 00:15:45.340
+And aggregators can play a role in a dataspace.
+
+00:15:45.340 --> 00:15:46.740
+So it doesn't mean you have to exclude
+
+00:15:46.740 --> 00:15:49.020
+all data aggregators from dataspaces,
+
+00:15:49.020 --> 00:15:53.620
+but yeah, generally it's a federated system
+
+00:15:53.620 --> 00:15:58.620
+among operational databases around the place.
+
+00:16:02.240 --> 00:16:05.560
+And I'm flogging this a lot,
+
+00:16:05.560 --> 00:16:08.380
+but it's just because it's come up so many times
+
+00:16:08.380 --> 00:16:10.440
+as a misunderstanding this difference
+
+00:16:10.480 --> 00:16:13.000
+between the control plane and the data plane,
+
+00:16:13.000 --> 00:16:14.320
+that the control plane,
+
+00:16:15.240 --> 00:16:19.400
+it's where you're articulating how the rules
+
+00:16:19.400 --> 00:16:24.400
+of exchange happen, how the usage is managed,
+
+00:16:26.200 --> 00:16:30.560
+how you check that everybody has their correct attributes
+
+00:16:30.560 --> 00:16:31.760
+to access the data.
+
+00:16:32.720 --> 00:16:34.440
+A lot of standards involved in that
+
+00:16:34.440 --> 00:16:37.360
+and we'll get into that a little bit more later.
+
+00:16:37.360 --> 00:16:40.640
+Whereas the data plane can be absolutely
+
+00:16:40.640 --> 00:16:43.280
+almost anything you can imagine,
+
+00:16:43.280 --> 00:16:45.260
+but almost anything you imagine
+
+00:16:45.260 --> 00:16:48.960
+is not necessarily implemented in an open source solution.
+
+00:16:48.960 --> 00:16:50.600
+So you might have to build it yourself.
+
+00:16:50.600 --> 00:16:53.480
+So if you're imagining something really cool,
+
+00:16:53.480 --> 00:16:54.880
+you might have to build it.
+
+00:16:56.240 --> 00:16:58.980
+It might not be an off the box solution
+
+00:16:58.980 --> 00:17:04.600
+that you can get from Eclipse.
+
+00:17:04.600 --> 00:17:07.000
+So there was also some question around
+
+00:17:11.000 --> 00:17:13.640
+what's the difference between a rulebook and a connector?
+
+00:17:13.640 --> 00:17:16.240
+Like when is the connector making decisions
+
+00:17:16.240 --> 00:17:18.640
+or that kind of thinking?
+
+00:17:19.520 --> 00:17:20.360
+And it really is,
+
+00:17:20.360 --> 00:17:24.380
+the rulebook is all about the community deciding the rules,
+
+00:17:24.380 --> 00:17:29.380
+who can join, who's allowed to access the data,
+
+00:17:29.440 --> 00:17:32.760
+who is verifying the various trust tokens
+
+00:17:32.760 --> 00:17:34.260
+that need to be verified.
+
+00:17:35.680 --> 00:17:40.480
+Have we got legal sign off and policy sign off?
+
+00:17:40.480 --> 00:17:42.880
+How are we funding all of this?
+
+00:17:42.880 --> 00:17:44.320
+How are these disputes,
+
+00:17:44.320 --> 00:17:47.300
+any disputes to a core data exchange?
+
+00:17:47.300 --> 00:17:48.920
+How are those going to be handled?
+
+00:17:50.540 --> 00:17:55.460
+So all of that kind of thing is what the rulebook decides.
+
+00:17:55.460 --> 00:17:59.600
+And then the technical architecture is there
+
+00:17:59.600 --> 00:18:02.680
+to be able to work with whatever is decided
+
+00:18:04.160 --> 00:18:07.880
+to build a connector that enforces all of that.
+
+00:18:07.880 --> 00:18:10.480
+And we'll talk a little bit more about how that's done
+
+00:18:10.480 --> 00:18:11.780
+at the connector level.
+
+00:18:13.860 --> 00:18:18.860
+But it's a bit of work to get everything machine
+
+00:18:20.320 --> 00:18:23.000
+actionable and readable, right?
+
+00:18:23.000 --> 00:18:25.100
+From a policy standpoint,
+
+00:18:25.100 --> 00:18:26.100
+but once it's done,
+
+00:18:26.100 --> 00:18:29.520
+it really does facilitate doing this rapidly at scale
+
+00:18:29.520 --> 00:18:33.280
+and the data does start to flow.
+
+00:18:33.280 --> 00:18:37.200
+And so the bridge between the rulebook and the connector
+
+00:18:37.200 --> 00:18:41.560
+is so you have this Open Digital Rights Language (ODRL), right?
+
+00:18:41.560 --> 00:18:46.560
+This ODRL and it's just a common framework
+
+00:18:48.720 --> 00:18:53.720
+that W3C has come up with or how we specify licenses
+
+00:18:56.040 --> 00:18:57.820
+and use and all kinds of things, right?
+
+00:18:57.820 --> 00:19:02.040
+So it's just a standard for the way we give data
+
+00:19:02.040 --> 00:19:03.280
+around a policy.
+
+00:19:04.280 --> 00:19:08.280
+But what the connector does is it recognizes that
+
+00:19:11.360 --> 00:19:14.560
+ODRL language and runs a function
+
+00:19:14.560 --> 00:19:16.880
+and different connectors will run that function
+
+00:19:16.880 --> 00:19:17.720
+in different ways,
+
+00:19:17.720 --> 00:19:22.720
+but that function is actually implementing the policy piece.
+
+00:19:23.600 --> 00:19:28.200
+And writing that bit of that function is not an easy thing.
+
+00:19:28.200 --> 00:19:31.360
+And that's why it's nice that there's 18 to 23
+
+00:19:31.520 --> 00:19:36.080
+of these policy classes already available off the shelf.
+
+00:19:36.080 --> 00:19:38.160
+So because building one is not easy
+
+00:19:38.160 --> 00:19:40.320
+and building one that works well and is secure
+
+00:19:40.320 --> 00:19:42.220
+and all the rest of it is not easy.
+
+00:19:42.220 --> 00:19:47.790
+And we'll come back to that a little bit later as well.
+
+00:19:47.790 --> 00:19:54.100
+So one of the key things that I wanted to highlight today
+
+00:19:55.100 --> 00:20:00.100
+that is the secret sauce to make dataspaces interoperable.
+
+00:20:00.260 --> 00:20:04.260
+So when dataspaces were first started over 10 years ago,
+
+00:20:04.260 --> 00:20:07.970
+all these cool dataspaces were built,
+
+00:20:07.970 --> 00:20:12.970
+but when they went to try and push and pull data
+
+00:20:12.970 --> 00:20:15.330
+between dataspaces, it didn't work.
+
+00:20:16.330 --> 00:20:21.330
+And so they came up with, I think about five years ago,
+
+00:20:21.730 --> 00:20:24.970
+started coming up with this dataspace protocol,
+
+00:20:24.970 --> 00:20:28.970
+which is a way to ensure that all the schemas
+
+00:20:29.210 --> 00:20:34.210
+and all the machine language that drives these things
+
+00:20:35.170 --> 00:20:39.730
+is recognized by other machines, essentially, right?
+
+00:20:39.730 --> 00:20:44.730
+So if a connector is not set up to recognize the version
+
+00:20:47.410 --> 00:20:50.890
+of the DSP that is being run from another connector,
+
+00:20:50.890 --> 00:20:53.090
+they can't talk to each other, right?
+
+00:20:53.090 --> 00:20:58.090
+So the DSP, so your connector can grow
+
+00:20:58.970 --> 00:21:03.290
+on the number of versions of the DSP that it operates on.
+
+00:21:03.290 --> 00:21:04.250
+So when you first set it,
+
+00:21:04.250 --> 00:21:07.130
+it will just set the most recent version of the DSP,
+
+00:21:07.130 --> 00:21:11.530
+but you might need to update as updates come,
+
+00:21:11.530 --> 00:21:16.620
+this dataspace protocol.
+
+00:21:16.620 --> 00:21:19.100
+And it's easy to miss because when it's working,
+
+00:21:19.100 --> 00:21:21.500
+like it's not something that people talk about.
+
+00:21:21.500 --> 00:21:25.300
+It's very much like data standards for ordinary databases.
+
+00:21:25.300 --> 00:21:28.180
+It's not something that people spend a lot of time in,
+
+00:21:28.340 --> 00:21:32.380
+but it is the magic sauce that allows two connectors
+
+00:21:32.380 --> 00:21:33.660
+from different dataspaces
+
+00:21:33.660 --> 00:21:37.520
+to understand what each other are saying.
+
+00:21:37.520 --> 00:21:41.920
+And so one of the first parts of a dataspace protocol
+
+00:21:41.920 --> 00:21:46.920
+is being able to make your data easy to discover
+
+00:21:48.960 --> 00:21:51.520
+and understand what's available, right?
+
+00:21:51.520 --> 00:21:55.680
+So DCAT is a standard, again,
+
+00:21:55.680 --> 00:22:00.120
+by the World Wide Web Consortium, W3C,
+
+00:22:01.360 --> 00:22:05.720
+that when you put your data in that standard,
+
+00:22:07.280 --> 00:22:08.680
+tons more people can read it.
+
+00:22:08.680 --> 00:22:12.200
+So that's what the W3C is all about,
+
+00:22:12.200 --> 00:22:15.280
+is it's making standards that are interoperable
+
+00:22:15.280 --> 00:22:16.480
+across the web, right?
+
+00:22:17.400 --> 00:22:22.400
+And so it allows any catalog to,
+
+00:22:23.160 --> 00:22:25.240
+or anybody to visit a catalog
+
+00:22:25.240 --> 00:22:27.000
+who's allowed to visit the catalog,
+
+00:22:27.000 --> 00:22:29.760
+keep in mind some catalogs have access control.
+
+00:22:30.680 --> 00:22:33.480
+So they might only let a few people access their catalog,
+
+00:22:34.400 --> 00:22:38.440
+but the idea is that you're making this easy to find
+
+00:22:38.440 --> 00:22:41.880
+and look at from all parties.
+
+00:22:41.880 --> 00:22:44.760
+So that standard's important
+
+00:22:44.760 --> 00:22:48.520
+and the provider will publish their data in that format
+
+00:22:49.440 --> 00:22:54.200
+and include the policy that governs use
+
+00:22:54.200 --> 00:23:00.480
+within that DCAT catalog.
+
+00:23:00.520 --> 00:23:02.320
+And again, catalogs can be federated
+
+00:23:02.320 --> 00:23:03.680
+or they can be centralized.
+
+00:23:03.680 --> 00:23:06.920
+There's all kinds of different ways that you can do this,
+
+00:23:06.920 --> 00:23:10.760
+but you do ideally need to follow this standard
+
+00:23:10.760 --> 00:23:14.760
+for how you present your metadata
+
+00:23:14.760 --> 00:23:19.720
+from your database that you're sharing.
+
+00:23:19.720 --> 00:23:23.840
+And so the data consumer then is gonna be able
+
+00:23:23.840 --> 00:23:27.920
+to request data from that catalog.
+
+00:23:27.920 --> 00:23:32.080
+So that's where the jumping off point happens.
+
+00:23:32.080 --> 00:23:35.080
+It's not a centralized database, right?
+
+00:23:35.080 --> 00:23:36.360
+You're going to a catalog
+
+00:23:36.360 --> 00:23:38.440
+and then you're probably gonna have to provide
+
+00:23:38.440 --> 00:23:41.440
+a whole bunch of tokens to prove that you are
+
+00:23:41.440 --> 00:23:42.840
+who you say you are
+
+00:23:42.840 --> 00:23:45.600
+and you have all the right attributes
+
+00:23:45.600 --> 00:23:48.120
+to be able to even request data in the first place.
+
+00:23:48.120 --> 00:23:49.640
+So a lot of people put this
+
+00:23:49.640 --> 00:23:52.320
+at the front end of the dataspace
+
+00:23:52.320 --> 00:23:57.320
+to sort of allow for automation of this next step.
+
+00:23:58.800 --> 00:24:01.240
+And this next step, again, it can be kind of manual,
+
+00:24:01.240 --> 00:24:04.640
+which is what the RMIT testbed is showing
+
+00:24:04.640 --> 00:24:06.160
+or it can be all automated,
+
+00:24:07.000 --> 00:24:10.480
+but the machines need to know
+
+00:24:10.480 --> 00:24:13.160
+how we're going to agree on a contract.
+
+00:24:16.680 --> 00:24:18.680
+And this is the usage contract.
+
+00:24:18.680 --> 00:24:21.640
+So how are we going to agree on,
+
+00:24:21.640 --> 00:24:24.920
+first, I'm gonna request data.
+
+00:24:24.920 --> 00:24:27.440
+I'm gonna offer, make an offer to that person
+
+00:24:27.440 --> 00:24:28.400
+who made the request
+
+00:24:28.400 --> 00:24:32.320
+and it's gonna include all of our conditions.
+
+00:24:32.320 --> 00:24:36.440
+Then that person is going to accept it either manually
+
+00:24:36.440 --> 00:24:38.040
+or this is gonna happen automatically,
+
+00:24:38.040 --> 00:24:40.680
+again, depending on how you've treated the front end.
+
+00:24:42.000 --> 00:24:43.760
+Then it's agreed and it's verified.
+
+00:24:43.760 --> 00:24:46.480
+So there's all this tic-tac back and forth that says,
+
+00:24:46.480 --> 00:24:48.960
+yeah, okay, we've agreed to these terms.
+
+00:24:48.960 --> 00:24:53.960
+Often those agreements are pushed into logs
+
+00:24:54.560 --> 00:24:58.600
+that are then reviewed by independent people,
+
+00:24:58.600 --> 00:25:01.840
+maybe auditors or others who are administering the dataspace
+
+00:25:01.840 --> 00:25:04.360
+to make sure that everything is happening
+
+00:25:04.360 --> 00:25:06.480
+according to plan.
+
+00:25:06.480 --> 00:25:08.480
+And if there are any disagreements,
+
+00:25:08.480 --> 00:25:10.800
+it's those logs that people fall back on.
+
+00:25:11.880 --> 00:25:18.230
+So it's only because there's a standard way of doing this
+
+00:25:18.230 --> 00:25:21.950
+that when one machine knocks on another machine's door,
+
+00:25:21.950 --> 00:25:24.270
+they know how to talk to each other.
+
+00:25:24.270 --> 00:25:26.830
+So there's a lot of vocabularies
+
+00:25:26.830 --> 00:25:28.670
+associated with all of this.
+
+00:25:28.670 --> 00:25:31.590
+Like there's a lot of very precise things
+
+00:25:31.590 --> 00:25:34.230
+that need to be in place in order for one machine
+
+00:25:34.230 --> 00:25:37.190
+to know how to do this contract negotiation piece.
+
+00:25:38.710 --> 00:25:43.710
+And it's capturing both sides are agreeing to the terms.
+
+00:25:44.950 --> 00:25:47.350
+And that's what the logs are capturing as well.
+
+00:25:48.710 --> 00:25:52.470
+And importantly,
+
+00:25:52.470 --> 00:25:55.510
+the enforcement of all of this
+
+00:25:55.510 --> 00:25:59.350
+is up to the implementation of the dataspace.
+
+00:25:59.350 --> 00:26:02.390
+So, and that's a function of how much control
+
+00:26:02.390 --> 00:26:04.390
+do you want in your dataspace?
+
+00:26:04.390 --> 00:26:07.590
+So if you want the data to be highly controlled,
+
+00:26:07.590 --> 00:26:10.350
+you want a federated learning solution, right?
+
+00:26:10.350 --> 00:26:12.630
+So you're actually just gonna be pushing algorithms
+
+00:26:12.630 --> 00:26:14.750
+through this instead of data.
+
+00:26:14.750 --> 00:26:16.190
+And the data is just gonna stay
+
+00:26:16.190 --> 00:26:18.990
+with each of the providers, right?
+
+00:26:18.990 --> 00:26:21.390
+There's all kinds of ways to implement
+
+00:26:21.390 --> 00:26:23.790
+the usage controls that people want.
+
+00:26:23.790 --> 00:26:25.670
+It could be a trusted research environment,
+
+00:26:25.670 --> 00:26:28.510
+a secure container, it could be like all these things
+
+00:26:28.510 --> 00:26:29.870
+in the data plane, right?
+
+00:26:29.870 --> 00:26:31.390
+Or it could just be an API connection
+
+00:26:31.390 --> 00:26:34.110
+where you're gonna push or pull the data.
+
+00:26:34.110 --> 00:26:36.750
+So the enforcement of all of this
+
+00:26:36.750 --> 00:26:40.870
+is up to the implementation of the individual dataspace
+
+00:26:40.870 --> 00:26:43.350
+that is not standardized.
+
+00:26:43.350 --> 00:26:45.230
+You just have to implement the standards
+
+00:26:45.230 --> 00:26:53.780
+so the machines know how to talk to each other.
+
+00:26:53.780 --> 00:26:56.900
+And then the third part of the dataspace protocol
+
+00:26:56.900 --> 00:27:00.300
+is just essentially a red light, green light, right?
+
+00:27:00.300 --> 00:27:03.700
+So the dataspace connector is the security guard
+
+00:27:03.700 --> 00:27:08.300
+who's sitting at the gateway to your repository.
+
+00:27:10.740 --> 00:27:15.740
+It's going to have to have a machine operable language
+
+00:27:16.540 --> 00:27:21.460
+to understand the request has been put in,
+
+00:27:21.460 --> 00:27:24.700
+it's been accepted, green light,
+
+00:27:24.700 --> 00:27:27.500
+we've started to send this data across
+
+00:27:27.500 --> 00:27:29.620
+and we've completed it.
+
+00:27:29.620 --> 00:27:32.220
+And then all of that gets logged.
+
+00:27:32.220 --> 00:27:33.700
+So the dataspace protocol
+
+00:27:33.700 --> 00:27:36.460
+is about those kinds of three things.
+
+00:27:36.460 --> 00:27:39.820
+But again, how you set up the actual implementation
+
+00:27:39.820 --> 00:27:43.620
+of usage control, which is really where users
+
+00:27:45.460 --> 00:27:47.220
+have a whole lot of variation
+
+00:27:47.220 --> 00:27:48.620
+and how much control they need.
+
+00:27:48.620 --> 00:27:52.580
+So how much tech do you need to provide users
+
+00:27:52.580 --> 00:27:57.340
+with their required amount of assurance?
+
+00:27:57.340 --> 00:28:00.580
+So in that RMIT testbed demonstration,
+
+00:28:00.580 --> 00:28:02.140
+you could download the data.
+
+00:28:02.140 --> 00:28:04.260
+Well, what's keeping you from doing something silly
+
+00:28:04.260 --> 00:28:05.660
+with it after you download it?
+
+00:28:07.020 --> 00:28:08.660
+Nothing officially, right?
+
+00:28:08.660 --> 00:28:11.860
+So, I mean, you've got agreements, you've got onboarding,
+
+00:28:11.860 --> 00:28:14.980
+you've got all these sort of legal agreements
+
+00:28:14.980 --> 00:28:16.540
+that have come into play,
+
+00:28:16.540 --> 00:28:19.220
+but you're not actually able to control the data
+
+00:28:19.220 --> 00:28:20.300
+once it's downloaded.
+
+00:28:20.300 --> 00:28:23.700
+You might be able to have an encryption thing going on.
+
+00:28:23.700 --> 00:28:26.900
+But the point is there's a lot of variation
+
+00:28:26.900 --> 00:28:29.180
+in how much usage control you implement.
+
+00:28:30.140 --> 00:28:35.140
+But the standards are things you have to implement.
+
+00:28:36.820 --> 00:28:40.140
+And again, the nice thing is there's Eclipse
+
+00:28:40.140 --> 00:28:41.460
+and there's IDSA.
+
+00:28:41.460 --> 00:28:45.380
+And I think even IDSA is moving to the Eclipse connector,
+
+00:28:45.380 --> 00:28:47.180
+but the Eclipse connector has a lot of this
+
+00:28:47.180 --> 00:28:50.620
+already sorted out for you, which is great.
+
+00:28:50.620 --> 00:28:52.540
+It's just if you have a new policy class
+
+00:28:52.540 --> 00:28:53.540
+that you need to implement,
+
+00:28:53.540 --> 00:28:56.580
+or you have a new kind of thing that you have to work with.
+
+00:29:00.740 --> 00:29:05.740
+So now I wanted to just kind of briefly touch on
+
+00:29:05.820 --> 00:29:10.820
+how ODRL is sort of used within a dataspace connector,
+
+00:29:12.820 --> 00:29:16.480
+just to give you a sense of it.
+
+00:29:16.480 --> 00:29:20.280
+So let's say you have the syntax of three components
+
+00:29:20.280 --> 00:29:23.200
+in your code, right?
+
+00:29:23.200 --> 00:29:28.200
+And on the left side is called an operand.
+
+00:29:29.000 --> 00:29:31.720
+And in this case, we're gonna imagine
+
+00:29:31.720 --> 00:29:36.400
+that this is the foot and mouth disease use case,
+
+00:29:36.400 --> 00:29:38.560
+biosecurity use case, right?
+
+00:29:38.560 --> 00:29:43.560
+So this is saying that on the left side,
+
+00:29:44.000 --> 00:29:47.800
+on the left side, we need some kind of accreditation
+
+00:29:47.800 --> 00:29:50.400
+for the role that the person who's accessing
+
+00:29:50.400 --> 00:29:53.040
+wants the data has.
+
+00:29:53.040 --> 00:29:58.040
+And that role has to be equal to veterinary officer, right?
+
+00:29:58.120 --> 00:30:01.000
+So that's what's written in the ODRL,
+
+00:30:01.000 --> 00:30:04.320
+but nothing happens just because it's written there, right?
+
+00:30:04.320 --> 00:30:09.320
+The left hand operation triggers the engine
+
+00:30:09.840 --> 00:30:11.640
+that is gonna run a function
+
+00:30:11.800 --> 00:30:15.040
+that's going to interpret this correctly
+
+00:30:15.040 --> 00:30:18.720
+and look to see that, ah yes, in fact,
+
+00:30:19.800 --> 00:30:23.680
+that accreditation did come from the trust anchor
+
+00:30:23.680 --> 00:30:25.320
+and we've got a token that proves
+
+00:30:25.320 --> 00:30:28.240
+that this person is in fact a veterinarian
+
+00:30:28.240 --> 00:30:31.640
+and therefore we can push the new code.
+
+00:30:31.640 --> 00:30:33.840
+And when you're modifying these things,
+
+00:30:33.840 --> 00:30:36.640
+it's easy to modify, okay, and we also need
+
+00:30:36.640 --> 00:30:41.640
+a different line of ODRL, right?
+
+00:30:46.160 --> 00:30:49.400
+So you can change how you specify these things,
+
+00:30:49.400 --> 00:30:50.480
+but then you need to make sure
+
+00:30:50.480 --> 00:30:52.600
+that the function written underneath
+
+00:30:52.600 --> 00:30:55.120
+actually drives what you want to have happen.
+
+00:30:55.120 --> 00:31:02.080
+So that's one reason connectors get tested
+
+00:31:04.000 --> 00:31:05.840
+as much as they do and they get certified
+
+00:31:05.880 --> 00:31:10.080
+at different levels because it's easy to build a connector.
+
+00:31:10.080 --> 00:31:12.880
+It's not easy to build one that works in all cases
+
+00:31:12.880 --> 00:31:14.680
+and is highly secure.
+
+00:31:14.680 --> 00:31:17.280
+So this piece takes a lot of work.
+
+00:31:17.280 --> 00:31:20.680
+What's nice, again, is there are a lot of these things
+
+00:31:20.680 --> 00:31:22.320
+that are already pre-baked for us
+
+00:31:22.320 --> 00:31:30.330
+that we can pull off the shelf.
+
+00:31:30.330 --> 00:31:34.390
+And somebody had a question about federated learning.
+
+00:31:34.390 --> 00:31:37.230
+Federated learning can be implemented
+
+00:31:37.230 --> 00:31:41.470
+and it's increasingly being implemented within dataspaces,
+
+00:31:41.470 --> 00:31:46.470
+but this is where you set up a way of working
+
+00:31:48.550 --> 00:31:53.550
+which sends the algorithm to different data sets
+
+00:31:54.550 --> 00:31:56.710
+and pulls back the information it needs
+
+00:31:56.710 --> 00:32:01.330
+to give you an answer without ever bringing back the raw data.
+
+00:32:02.650 --> 00:32:05.270
+And if you're more curious about this,
+
+00:32:05.270 --> 00:32:08.590
+I would encourage you to touch base with QCIF.
+
+00:32:08.590 --> 00:32:11.170
+They are doing a lot of work in this space.
+
+00:32:12.630 --> 00:32:14.310
+There's also a number of other people
+
+00:32:14.310 --> 00:32:15.830
+that are doing a lot of work in this space.
+
+00:32:15.830 --> 00:32:20.510
+It's a growing use case in dataspaces.
+
+00:32:20.510 --> 00:32:23.030
+You're seeing more and more people pushing algorithms
+
+00:32:23.030 --> 00:32:25.910
+to data rather than pushing data
+
+00:32:25.910 --> 00:32:29.350
+to a central place where the analysis is gonna happen
+
+00:32:29.350 --> 00:32:32.390
+or pushing it to just one other provider.
+
+00:32:32.390 --> 00:32:36.910
+So this is a growing area of interest.
+
+00:32:36.910 --> 00:32:40.750
+It definitely provides probably the strongest control
+
+00:32:40.750 --> 00:32:43.390
+over access to your data
+
+00:32:43.390 --> 00:32:45.170
+because you're not giving up any of your data.
+
+00:32:45.170 --> 00:32:49.390
+You're just agreeing that a mean on these five fields
+
+00:32:49.390 --> 00:32:53.750
+is something you're happy for somebody to calculate
+
+00:32:53.750 --> 00:32:55.910
+and then export out of your system.
+
+00:32:59.270 --> 00:33:00.350
+But again, it's rare.
+
+00:33:00.350 --> 00:33:03.390
+There's not a lot of off the shelf solutions.
+
+00:33:03.390 --> 00:33:05.310
+QCIF is probably the closest one
+
+00:33:05.310 --> 00:33:07.110
+to having off the shelf solutions
+
+00:33:07.110 --> 00:33:10.310
+that I know of in Australia.
+
+00:33:10.310 --> 00:33:17.010
+There's probably others though.
+
+00:33:17.010 --> 00:33:22.980
+So federated learning is essentially,
+
+00:33:24.980 --> 00:33:27.120
+it's compute to data, right?
+
+00:33:29.580 --> 00:33:32.760
+But again, it can run on the same machinery as a dataspace.
+
+00:33:32.760 --> 00:33:34.980
+So there's several proven examples of that.
+
+00:33:34.980 --> 00:33:36.640
+And I've already discussed it's not something
+
+00:33:36.640 --> 00:33:40.160
+that is in the Eclipse connector set.
+
+00:33:40.160 --> 00:33:46.880
+So it's something you'd have to build.
+
+00:33:46.880 --> 00:33:53.280
+So another sort of question that came up was,
+
+00:33:53.280 --> 00:33:55.280
+couldn't you add a new set of policies
+
+00:33:55.280 --> 00:33:58.220
+to an existing dataspace to let a new group
+
+00:33:58.220 --> 00:34:02.420
+do something new rather than building one from scratch?
+
+00:34:02.420 --> 00:34:06.440
+And so this is played out in Europe in different ways.
+
+00:34:06.440 --> 00:34:10.560
+So some European areas do have dataspaces
+
+00:34:10.560 --> 00:34:13.560
+with multiple rulebook in place
+
+00:34:14.880 --> 00:34:16.320
+across the different actors.
+
+00:34:16.320 --> 00:34:19.760
+So if you have a really popular data set
+
+00:34:19.760 --> 00:34:21.800
+that all kinds of different people want to use,
+
+00:34:21.800 --> 00:34:26.300
+health wants to use it and the environment wants to use it
+
+00:34:26.300 --> 00:34:30.480
+and finance wants to use it, whatever it is,
+
+00:34:32.380 --> 00:34:36.040
+you might have different rulebook associated
+
+00:34:36.040 --> 00:34:37.880
+with each one of those use cases,
+
+00:34:37.880 --> 00:34:39.200
+at least to start with.
+
+00:34:40.080 --> 00:34:45.080
+But over time and where Europe is trying
+
+00:34:45.200 --> 00:34:48.380
+to shift the needle is if you're operating
+
+00:34:48.380 --> 00:34:53.380
+within a dataspace, everybody has one overarching rulebook.
+
+00:34:54.780 --> 00:34:59.120
+And then there's an opportunity to have modular components
+
+00:34:59.120 --> 00:35:04.120
+within that, that specific domains can default to.
+
+00:35:06.120 --> 00:35:10.520
+So there's a shift towards rather than having
+
+00:35:11.520 --> 00:35:15.320
+one data provider with a whole bunch of rulebook
+
+00:35:15.320 --> 00:35:19.580
+in operation to have an overarching rulebook
+
+00:35:19.580 --> 00:35:22.580
+and to maybe have modular components within that.
+
+00:35:23.920 --> 00:35:26.280
+And I would encourage you to check out
+
+00:35:26.280 --> 00:35:31.280
+that YouTube video that's in that space there,
+
+00:35:31.280 --> 00:35:36.280
+the mobility dataspace is one of the bigger ones in Europe.
+
+00:35:36.540 --> 00:35:40.300
+It has 165 organizations taking part.
+
+00:35:40.520 --> 00:35:43.240
+In that dataspace.
+
+00:35:43.240 --> 00:35:50.090
+And that includes Mercedes and Volkswagen and BMW
+
+00:35:50.490 --> 00:35:54.870
+and insurance companies and meteorological data
+
+00:35:54.870 --> 00:35:58.290
+so they can give car owners storm warnings
+
+00:35:58.290 --> 00:36:00.870
+that includes road conditions.
+
+00:36:00.870 --> 00:36:04.370
+Some jurisdictions have a little map that shows
+
+00:36:04.370 --> 00:36:08.130
+where free parking spots are available in town.
+
+00:36:08.130 --> 00:36:10.530
+Like all of these use cases have emerged
+
+00:36:10.530 --> 00:36:14.970
+because the mobility dataspace has just grown
+
+00:36:14.970 --> 00:36:16.290
+and grown and grown.
+
+00:36:16.290 --> 00:36:18.170
+You know, the insurance companies are involved
+
+00:36:18.170 --> 00:36:19.650
+in the mobility dataspace.
+
+00:36:19.650 --> 00:36:24.650
+Like it's become quite a much bigger
+
+00:36:24.890 --> 00:36:27.730
+than I think initially envisioned
+
+00:36:28.770 --> 00:36:33.770
+because people are becoming increasingly comfortable
+
+00:36:35.010 --> 00:36:36.370
+with sharing data.
+
+00:36:36.370 --> 00:36:37.970
+So it's a really nice use case.
+
+00:36:37.970 --> 00:36:39.570
+I'd encourage you to check out the video
+
+00:36:39.610 --> 00:36:40.450
+if you get a chance.
+
+00:36:40.450 --> 00:36:45.450
+It's, yeah, they're doing some cool work.
+
+00:36:48.600 --> 00:36:51.320
+So now we wanted to cover a little bit
+
+00:36:51.320 --> 00:36:53.440
+of how you start a dataspace.
+
+00:36:54.920 --> 00:37:00.960
+And again, there's a lot of paths.
+
+00:37:00.960 --> 00:37:02.680
+There's even one from Gaia-X.
+
+00:37:02.680 --> 00:37:05.000
+So there's a lot of frameworks in place
+
+00:37:05.000 --> 00:37:07.940
+that allow you to walk your stakeholders
+
+00:37:07.940 --> 00:37:12.940
+through a process that gets them to the dataspace.
+
+00:37:14.720 --> 00:37:17.320
+And they don't all align perfectly
+
+00:37:17.320 --> 00:37:20.400
+and that can be confusing for people,
+
+00:37:20.400 --> 00:37:24.520
+but they all do kind of cover these basics.
+
+00:37:24.520 --> 00:37:28.160
+So we're first gonna convene and agree that,
+
+00:37:28.160 --> 00:37:31.960
+okay, there's interest in looking into this more deeply.
+
+00:37:31.960 --> 00:37:34.160
+Then we're actually gonna make sure
+
+00:37:34.160 --> 00:37:37.120
+that all the participants in this dataspace
+
+00:37:37.120 --> 00:37:41.800
+can see value in what we're gonna be taking on
+
+00:37:41.800 --> 00:37:44.240
+because it's an expensive thing to take on.
+
+00:37:44.240 --> 00:37:48.480
+So you build the business case with all of the participants.
+
+00:37:49.440 --> 00:37:51.240
+Then you make the decision, yeah, okay,
+
+00:37:51.240 --> 00:37:53.480
+we're gonna pull the trigger on this
+
+00:37:53.480 --> 00:37:56.520
+because it's a big upfront cost, right?
+
+00:37:56.520 --> 00:38:01.440
+It's not a small thing to get involved in a dataspace.
+
+00:38:02.320 --> 00:38:07.320
+And along that, there might be, okay,
+
+00:38:08.000 --> 00:38:10.240
+well, we just wanna try a use case to start
+
+00:38:10.240 --> 00:38:12.200
+or we just might wanna get started.
+
+00:38:12.200 --> 00:38:16.600
+So it doesn't always require you pulling the trigger
+
+00:38:16.600 --> 00:38:19.300
+on the investment decision completely,
+
+00:38:19.300 --> 00:38:22.240
+but it certainly works a lot better when it does happen,
+
+00:38:22.240 --> 00:38:23.080
+right?
+
+00:38:25.080 --> 00:38:27.720
+And then you work through the governance in the rulebook.
+
+00:38:27.720 --> 00:38:31.280
+So that's when you fall back on things like Sitra.
+
+00:38:31.280 --> 00:38:33.680
+So the Sitra rulebook is a very nice template
+
+00:38:33.680 --> 00:38:35.840
+that you can work through.
+
+00:38:35.840 --> 00:38:39.680
+And then you look at how you onboard
+
+00:38:39.720 --> 00:38:43.640
+other participants and how you're gonna manage operations.
+
+00:38:43.640 --> 00:38:47.200
+And finally you prove the value
+
+00:38:47.200 --> 00:38:50.040
+and then you start to scale it.
+
+00:38:50.920 --> 00:38:57.320
+So that's generally the shape of,
+
+00:38:57.320 --> 00:38:58.640
+and imagine how many meetings
+
+00:38:58.640 --> 00:39:01.140
+it's gonna take to get through this, right?
+
+00:39:01.140 --> 00:39:05.400
+So the first three are more than three meetings.
+
+00:39:05.400 --> 00:39:07.600
+Number four is, oh my goodness,
+
+00:39:07.600 --> 00:39:10.800
+it depends on the environment that you're working on,
+
+00:39:10.800 --> 00:39:14.240
+but that's gonna include policy people and legal people
+
+00:39:14.240 --> 00:39:16.000
+in many instances.
+
+00:39:16.000 --> 00:39:18.680
+It is not a short process working
+
+00:39:18.680 --> 00:39:25.620
+through that governance rulebook.
+
+00:39:25.620 --> 00:39:30.590
+And when you're looking to,
+
+00:39:30.590 --> 00:39:33.790
+so there's some cool criteria that are being discussed.
+
+00:39:33.790 --> 00:39:35.530
+Thomas is putting them together.
+
+00:39:38.520 --> 00:39:42.740
+This doesn't have to proceed those meetings
+
+00:39:42.740 --> 00:39:45.680
+of who you get together in the room.
+
+00:39:45.680 --> 00:39:47.680
+But essentially if you don't get a yes
+
+00:39:47.720 --> 00:39:49.080
+to all three of these,
+
+00:39:50.320 --> 00:39:52.640
+you have interest, a business case,
+
+00:39:52.640 --> 00:39:54.400
+and you've got justified,
+
+00:39:55.560 --> 00:39:59.760
+everybody's feels like the investment is worthy of making.
+
+00:40:02.080 --> 00:40:03.760
+Then you probably don't wanna proceed
+
+00:40:03.760 --> 00:40:05.780
+with that particular use case, right?
+
+00:40:08.700 --> 00:40:16.180
+So we'll come back to that thinking in a minute.
+
+00:40:16.180 --> 00:40:22.250
+And so how do you make this idea appealing
+
+00:40:22.250 --> 00:40:24.490
+from as quickly as possible?
+
+00:40:25.570 --> 00:40:29.930
+So in almost all of the frameworks that you see,
+
+00:40:29.930 --> 00:40:34.370
+you really want people to focus on the problem
+
+00:40:34.370 --> 00:40:38.290
+and each one of them spelling out
+
+00:40:38.290 --> 00:40:40.790
+what the problem is for them,
+
+00:40:40.790 --> 00:40:42.810
+not for the sector, not for,
+
+00:40:42.810 --> 00:40:46.450
+but to have it captured and written down
+
+00:40:46.450 --> 00:40:50.810
+that this is my problem as a data consumer.
+
+00:40:50.810 --> 00:40:53.090
+This is my problem as a data provider.
+
+00:40:53.090 --> 00:40:56.090
+Oftentimes you'll get a lot of overlap in those things,
+
+00:40:56.090 --> 00:41:01.090
+but you wanna hear everyone and you wanna capture it all.
+
+00:41:02.970 --> 00:41:07.530
+And then the sovereignty itself
+
+00:41:07.530 --> 00:41:11.130
+is a big selling point of a dataspace.
+
+00:41:12.090 --> 00:41:13.650
+You're not agreeing to,
+
+00:41:13.650 --> 00:41:16.230
+we're all gonna share all our data all the time.
+
+00:41:17.050 --> 00:41:21.010
+I might only share my data in an emergency response.
+
+00:41:21.010 --> 00:41:22.990
+When foot and mouth disease comes,
+
+00:41:22.990 --> 00:41:27.350
+okay, I'll give you the data on where the cows are, right?
+
+00:41:27.350 --> 00:41:29.150
+But otherwise I'm not gonna share it.
+
+00:41:29.150 --> 00:41:30.710
+That's fine.
+
+00:41:30.710 --> 00:41:35.710
+That's up to you as a person who is sharing these data.
+
+00:41:36.590 --> 00:41:41.590
+And what we hope to see and what people in Europe have seen
+
+00:41:42.470 --> 00:41:46.250
+and the mobility dataspace is a good example of that,
+
+00:41:46.250 --> 00:41:49.270
+is as soon as they start seeing the benefit
+
+00:41:49.270 --> 00:41:52.390
+of sharing data without the bilateral sharing agreements
+
+00:41:52.390 --> 00:41:54.710
+and being able to do it quickly and at scale
+
+00:41:54.710 --> 00:41:57.490
+when they want to, with whom they want to,
+
+00:41:57.490 --> 00:42:00.550
+they start to see other groups
+
+00:42:00.550 --> 00:42:02.950
+that they want to share data with,
+
+00:42:02.950 --> 00:42:06.610
+that they ordinarily wouldn't have been sharing data with.
+
+00:42:06.610 --> 00:42:11.610
+So the amount of control is very much a big selling point
+
+00:42:15.430 --> 00:42:18.030
+to try and sink in early.
+
+00:42:18.950 --> 00:42:23.230
+And demos are magic.
+
+00:42:23.230 --> 00:42:27.750
+These slideshows are, it's part of the process unfortunately,
+
+00:42:27.750 --> 00:42:32.750
+but demos where you're actually able to kick the tires
+
+00:42:34.230 --> 00:42:37.810
+are gold and much more convincing
+
+00:42:37.810 --> 00:42:42.810
+than me rambling on about things that you should think about.
+
+00:42:42.930 --> 00:42:52.160
+So one of the first steps is to form a governance authority
+
+00:42:54.360 --> 00:42:57.960
+when you're setting up these organizations.
+
+00:42:57.960 --> 00:43:01.960
+And so the governance authority is essentially going to be
+
+00:43:01.960 --> 00:43:06.960
+the group of people that are governing the dataspace rulebook.
+
+00:43:08.360 --> 00:43:09.960
+So they're gonna take charge of it.
+
+00:43:09.960 --> 00:43:13.360
+The rulebook's gonna be formed from the community,
+
+00:43:13.360 --> 00:43:15.820
+but the governance authority is the one
+
+00:43:15.860 --> 00:43:18.340
+the governance authority is then going to administer
+
+00:43:18.340 --> 00:43:20.140
+that rulebook and update it,
+
+00:43:20.140 --> 00:43:22.500
+however the community wants to update it.
+
+00:43:22.500 --> 00:43:26.780
+So that might be an individual organization.
+
+00:43:26.780 --> 00:43:28.900
+It might be a representative body
+
+00:43:28.900 --> 00:43:31.580
+with members from each of the organizations.
+
+00:43:31.580 --> 00:43:35.740
+It might be funded in a variety of different ways.
+
+00:43:35.740 --> 00:43:40.220
+Like there's, it doesn't matter how you get there,
+
+00:43:40.220 --> 00:43:41.580
+what it looks like exactly,
+
+00:43:41.580 --> 00:43:44.300
+but there needs to be a governance authority in place.
+
+00:43:44.300 --> 00:43:48.580
+So there needs to be a group that's gonna be responsible
+
+00:43:48.580 --> 00:43:53.580
+for administering and governing the dataspace going forward.
+
+00:43:55.100 --> 00:43:57.500
+And it needs to agree on who can join,
+
+00:43:57.500 --> 00:43:59.740
+what trust framework are we going to use?
+
+00:43:59.740 --> 00:44:03.260
+So what attributes need to be proven,
+
+00:44:03.260 --> 00:44:05.900
+what kind of usage controls need to be in place,
+
+00:44:05.900 --> 00:44:07.020
+et cetera, et cetera.
+
+00:44:08.980 --> 00:44:11.940
+The usage policy framework that you're going to adopt.
+
+00:44:11.940 --> 00:44:13.300
+So maybe you don't,
+
+00:44:13.300 --> 00:44:16.940
+maybe you can live with the 18 to 23 policy classes
+
+00:44:16.940 --> 00:44:17.780
+that are available.
+
+00:44:17.780 --> 00:44:20.580
+Maybe you don't need to make any new ones at this time,
+
+00:44:21.780 --> 00:44:23.140
+but these are all discussions
+
+00:44:23.140 --> 00:44:25.260
+that you have with the stakeholders.
+
+00:44:26.100 --> 00:44:31.100
+Legal and contractual and policy things need to be agreed,
+
+00:44:31.940 --> 00:44:34.380
+and those things do take time,
+
+00:44:35.380 --> 00:44:37.420
+especially the more sensitive the data is
+
+00:44:37.420 --> 00:44:40.260
+or the more cross-jurisdictional work you're doing.
+
+00:44:41.180 --> 00:44:43.260
+And you need to agree on funding.
+
+00:44:43.260 --> 00:44:46.140
+How are we gonna keep the lights on, right?
+
+00:44:49.700 --> 00:44:54.500
+And again, the Sitra rulebook is a great place to start.
+
+00:44:55.940 --> 00:44:56.940
+It's a template.
+
+00:44:56.940 --> 00:44:59.340
+It allows people to work through these things
+
+00:44:59.340 --> 00:45:00.980
+at their own pace.
+
+00:45:00.980 --> 00:45:04.580
+And if legal isn't a big hurdle for them,
+
+00:45:04.580 --> 00:45:08.100
+then they don't have to go into detail on the legal, right?
+
+00:45:08.100 --> 00:45:11.100
+But generally, if you're talking
+
+00:45:11.100 --> 00:45:16.460
+to the right people, legal is gonna be involved.
+
+00:45:16.460 --> 00:45:19.900
+And so governance keeps shared data,
+
+00:45:19.900 --> 00:45:22.500
+make sure it's high quality, make sure it's private,
+
+00:45:22.500 --> 00:45:24.020
+make sure it's compliant
+
+00:45:24.020 --> 00:45:26.220
+with all the rules that have been agreed.
+
+00:45:26.220 --> 00:45:28.100
+So that's what the governance authority
+
+00:45:28.100 --> 00:45:30.140
+is gonna be charged with.
+
+00:45:30.140 --> 00:45:32.900
+It's gonna be charged with making sure
+
+00:45:32.900 --> 00:45:37.100
+that data sovereignty and security is respected, right?
+
+00:45:37.100 --> 00:45:39.860
+So that might include auditing,
+
+00:45:39.860 --> 00:45:42.820
+it might include all kinds of things.
+
+00:45:42.820 --> 00:45:47.340
+But it's gonna ensure that the usage control policies
+
+00:45:47.340 --> 00:45:49.140
+travel with the data,
+
+00:45:49.140 --> 00:45:55.290
+that the level of usage control is in place
+
+00:45:55.290 --> 00:45:56.930
+that users require.
+
+00:45:58.610 --> 00:46:01.690
+And that the data exchange is trusted,
+
+00:46:01.690 --> 00:46:03.850
+it has the right certifications,
+
+00:46:03.850 --> 00:46:06.090
+it has the right security levels.
+
+00:46:06.090 --> 00:46:10.290
+And it's going to, again, come to consensus
+
+00:46:10.290 --> 00:46:13.210
+on how we set these data sharing agreements
+
+00:46:13.210 --> 00:46:20.240
+and what usage policies are we going to lean into most.
+
+00:46:20.240 --> 00:46:25.030
+So those are what the governance framework
+
+00:46:25.030 --> 00:46:26.710
+is going to look at.
+
+00:46:26.710 --> 00:46:29.630
+And then within that governance framework,
+
+00:46:29.630 --> 00:46:31.150
+there's different building blocks
+
+00:46:31.150 --> 00:46:37.430
+that often different participants within the organizations
+
+00:46:37.550 --> 00:46:41.950
+that are active will come to agreement on, right?
+
+00:46:41.950 --> 00:46:46.950
+So this isn't just usually a handful of people doing this,
+
+00:46:47.470 --> 00:46:52.350
+it's a variety of stakeholders in each of the organizations
+
+00:46:52.350 --> 00:46:53.630
+that are coming together
+
+00:46:53.630 --> 00:46:56.990
+to deliver the full governance framework.
+
+00:46:56.990 --> 00:47:05.290
+So you need to think about organizational form and authority.
+
+00:47:06.010 --> 00:47:10.370
+So how are you gonna manage decision-making?
+
+00:47:10.370 --> 00:47:13.130
+Who has roles and responsibilities for what?
+
+00:47:13.130 --> 00:47:14.850
+How are you gonna divide things up?
+
+00:47:14.850 --> 00:47:16.450
+Are you gonna have a centralized catalog?
+
+00:47:16.450 --> 00:47:18.050
+Are you gonna have a federated catalog?
+
+00:47:18.050 --> 00:47:20.410
+Are you going to have a clearing house
+
+00:47:20.410 --> 00:47:23.930
+where all of the logs are kept in one place
+
+00:47:23.930 --> 00:47:26.810
+and people can visit those clearing houses
+
+00:47:26.810 --> 00:47:28.930
+and audit them as needed?
+
+00:47:28.930 --> 00:47:30.350
+So all of those,
+
+00:47:31.650 --> 00:47:36.450
+and who has a right to do what within the dataspace
+
+00:47:36.450 --> 00:47:38.690
+in terms of making changes to the rulebook?
+
+00:47:38.690 --> 00:47:41.930
+And so lots and lots of things to think about.
+
+00:47:43.050 --> 00:47:46.570
+And how are you gonna onboard a new participant
+
+00:47:46.570 --> 00:47:47.770
+to the dataspace?
+
+00:47:49.170 --> 00:47:52.610
+How do you figure out what a participant needs to have
+
+00:47:52.610 --> 00:47:55.970
+in place before they can become a part of the dataspace?
+
+00:47:57.410 --> 00:48:00.210
+And regulatory compliance,
+
+00:48:00.210 --> 00:48:03.810
+so this is where depending on the dataspace,
+
+00:48:03.810 --> 00:48:07.770
+you can really spend a lot of time, right?
+
+00:48:07.770 --> 00:48:09.970
+So Shannon's done some great work
+
+00:48:09.970 --> 00:48:13.490
+on working through some of these issues,
+
+00:48:13.490 --> 00:48:16.450
+but how do you make sure that everything's aligned
+
+00:48:16.450 --> 00:48:20.130
+with existing laws and rules
+
+00:48:20.130 --> 00:48:22.690
+associated with that particular dataspace?
+
+00:48:22.690 --> 00:48:26.530
+The biosecurity sector has biosecurity law
+
+00:48:26.530 --> 00:48:31.090
+that's in place and legislation and policies
+
+00:48:31.090 --> 00:48:33.070
+that need to be adhered to.
+
+00:48:35.230 --> 00:48:38.010
+And then finally, the contractual framework.
+
+00:48:38.010 --> 00:48:44.160
+So is ownership transferred of the data
+
+00:48:44.160 --> 00:48:45.520
+when data is transferred?
+
+00:48:45.520 --> 00:48:49.560
+Or is ownership strictly kept with the data provider?
+
+00:48:49.560 --> 00:48:52.720
+What do those usage rights need to look like?
+
+00:48:52.720 --> 00:48:54.800
+Who's liable if things go wrong?
+
+00:48:56.480 --> 00:48:58.640
+How do we enforce confidentiality?
+
+00:48:58.640 --> 00:49:00.560
+How do we deal with disputes?
+
+00:49:00.560 --> 00:49:05.560
+So all of these things are not one hour conversations, right?
+
+00:49:07.480 --> 00:49:10.400
+It takes a while to work through these things.
+
+00:49:10.400 --> 00:49:14.320
+But if you have people that are really keen
+
+00:49:14.320 --> 00:49:16.240
+and already sharing data at scale,
+
+00:49:16.240 --> 00:49:19.880
+but they're doing so through bilateral
+
+00:49:19.880 --> 00:49:21.880
+data sharing agreements,
+
+00:49:21.880 --> 00:49:25.160
+a lot of this is already sort of worked out, right?
+
+00:49:25.160 --> 00:49:32.240
+So ideally, you're not trying to force a solution on people,
+
+00:49:33.880 --> 00:49:36.040
+especially for these first couple of use cases
+
+00:49:36.040 --> 00:49:36.960
+is my thinking.
+
+00:49:36.960 --> 00:49:38.760
+You kind of want people that are really keen
+
+00:49:38.760 --> 00:49:39.640
+to get this going.
+
+00:49:39.640 --> 00:49:45.620
+They just have to get through these hurdles.
+
+00:49:45.620 --> 00:49:48.900
+Anyway, I thought rather than me
+
+00:49:49.020 --> 00:49:52.940
+just talking at you for two hours,
+
+00:49:52.940 --> 00:49:55.580
+that we would break up into groups
+
+00:49:55.580 --> 00:49:59.940
+and do a little bit of an exercise
+
+00:49:59.940 --> 00:50:04.660
+and give you about 15 minutes to do this.
+
+00:50:05.660 --> 00:50:08.540
+But we're gonna break into breakout groups
+
+00:50:08.540 --> 00:50:10.860
+and I think we'll just go into three breakout groups
+
+00:50:10.860 --> 00:50:13.060
+and randomly assign them.
+
+00:50:14.740 --> 00:50:18.220
+And what I want you to think about as a group
+
+00:50:18.220 --> 00:50:21.300
+is, okay, foot and mouth disease.
+
+00:50:21.300 --> 00:50:25.780
+So this is a terribly infectious disease that infects cattle.
+
+00:50:25.780 --> 00:50:27.180
+And as soon as you catch it,
+
+00:50:28.460 --> 00:50:30.660
+your export market shuts down.
+
+00:50:30.660 --> 00:50:34.340
+You're no longer to export cattle from Australia
+
+00:50:34.340 --> 00:50:36.700
+if foot and mouth disease were to arrive here.
+
+00:50:39.940 --> 00:50:44.020
+And responders urgently needs to know where the cows are,
+
+00:50:44.020 --> 00:50:49.020
+where the incidents of foot and mouth disease are occurring.
+
+00:50:49.300 --> 00:50:53.020
+And it needs to happen across the states,
+
+00:50:53.020 --> 00:50:58.410
+across producers, across the Commonwealth.
+
+00:50:58.410 --> 00:51:03.410
+So how would you set up a preventative dataspace?
+
+00:51:06.500 --> 00:51:08.060
+Who would need to be at the table
+
+00:51:08.060 --> 00:51:13.060
+in order to gather interest, prove the business case
+
+00:51:13.100 --> 00:51:15.260
+and decide to invest?
+
+00:51:15.260 --> 00:51:18.340
+So those are the three things I want you to think about.
+
+00:51:18.340 --> 00:51:21.860
+So who needs to be at the table
+
+00:51:21.860 --> 00:51:24.620
+to make sure that there's interest there?
+
+00:51:25.980 --> 00:51:29.060
+How are you gonna prove the business case and with whom?
+
+00:51:30.340 --> 00:51:35.340
+And what needs to be in place to go ahead and say,
+
+00:51:35.700 --> 00:51:38.060
+you know what, we're gonna make an investment decision.
+
+00:51:38.060 --> 00:51:39.980
+It's gonna be $5 million,
+
+00:51:39.980 --> 00:51:46.340
+even though foot and mouth disease is not here yet, right?
+
+00:51:46.340 --> 00:51:50.180
+So on that note, and what I'd like you to bring back
+
+00:51:50.180 --> 00:51:53.660
+is pick somebody in your individual groups
+
+00:51:54.940 --> 00:51:58.820
+and bring back one thing
+
+00:51:58.820 --> 00:52:02.540
+that your discussion highlights
+
+00:52:02.540 --> 00:52:07.540
+in terms of the insight that you think is a key thing
+
+00:52:07.740 --> 00:52:11.420
+to getting through these first three gates.
+
+00:52:11.420 --> 00:52:12.820
+And I'm gonna show up in a room,
+
+00:52:12.820 --> 00:52:19.620
+but I'm gonna stay quiet.
+
+00:52:20.580 --> 00:52:26.800
+So take a minute to think about these three things.
+
+00:52:26.800 --> 00:52:31.000
+So you wanna get a bunch of stakeholders together,
+
+00:52:31.000 --> 00:52:34.720
+gather interest, prove the business case
+
+00:52:34.720 --> 00:52:36.600
+and get them to invest.
+
+00:52:36.600 --> 00:52:38.040
+Who needs to be in the room?
+
+00:52:39.600 --> 00:52:44.600
+How are we gonna decide what's useful for them?
+
+00:52:44.600 --> 00:52:46.000
+What's valuable for them?
+
+00:52:47.080 --> 00:52:49.920
+And would it be worth the investment?
+
+00:52:49.920 --> 00:52:54.280
+And then come back with the one thing
+
+00:52:54.280 --> 00:52:57.880
+that you think is the deal breaker here
+
+00:52:57.880 --> 00:52:59.880
+or the one insight that's most important
+
+00:52:59.880 --> 00:53:02.440
+to get through those three gates.
+
+00:53:02.440 --> 00:53:08.280
+So just curious to get your thinking on this.
+
+00:53:08.280 --> 00:53:12.020
+So I'm going to,
+
+00:53:12.020 --> 00:53:15.940
+you should just be sent to a breakout room here in a second.
+
+00:53:16.940 --> 00:53:57.130
+So you should have a thing
+
+00:53:57.130 --> 01:12:13.810
+where you can join the breakout room.
+
+01:12:13.810 --> 01:12:14.650
+All right.
+
+01:12:15.810 --> 01:12:16.650
+Welcome back.
+
+01:12:20.130 --> 01:12:22.770
+So I'm curious how these discussions went.
+
+01:12:24.610 --> 01:12:26.970
+Maybe we can start with Alison's group.
+
+01:12:26.970 --> 01:12:31.890
+Was there somebody who was happy to speak?
+
+01:12:32.890 --> 01:12:35.050
+Yeah, I'm happy to do that.
+
+01:12:35.210 --> 01:12:40.130
+Rob, did you just want us to talk about the one thing
+
+01:12:40.130 --> 01:12:42.010
+or what we had on our list?
+
+01:12:43.730 --> 01:12:45.810
+Well, let's start with the one thing
+
+01:12:45.810 --> 01:12:47.410
+and then we might circle back.
+
+01:12:48.970 --> 01:12:49.930
+All right.
+
+01:12:49.930 --> 01:12:53.810
+So our one insight was that the communication
+
+01:12:54.850 --> 01:12:57.890
+with our stakeholders was gonna be really important.
+
+01:12:57.890 --> 01:13:00.970
+We didn't define what that meant,
+
+01:13:00.970 --> 01:13:04.410
+but we were considering that our list of stakeholders
+
+01:13:04.410 --> 01:13:05.810
+was extraordinarily long
+
+01:13:07.170 --> 01:13:08.610
+and how you actually work
+
+01:13:08.610 --> 01:13:10.490
+with such a large number of stakeholders.
+
+01:13:10.490 --> 01:13:13.530
+So we decided that, you know,
+
+01:13:13.530 --> 01:13:15.610
+you needed to communicate with those stakeholders
+
+01:13:15.610 --> 01:13:17.090
+and make sure that you're communicating
+
+01:13:17.090 --> 01:13:18.530
+with the decision makers
+
+01:13:18.530 --> 01:13:21.250
+within each of those organizations
+
+01:13:21.250 --> 01:13:22.890
+as well as, you know,
+
+01:13:22.890 --> 01:13:26.250
+really clearly communicating what it's going to cost them
+
+01:13:26.250 --> 01:13:28.410
+and the value to them of buying in.
+
+01:13:30.170 --> 01:13:31.810
+Is that all right, Alison and Chris?
+
+01:13:31.810 --> 01:13:32.650
+Did I cover that?
+
+01:13:32.650 --> 01:13:34.050
+Okay.
+
+01:13:34.850 --> 01:13:36.810
+It's hard without all the other context
+
+01:13:36.810 --> 01:13:37.930
+with the discussion that we had,
+
+01:13:37.930 --> 01:13:43.330
+but I think that, you know, sums it up quite nicely.
+
+01:13:43.330 --> 01:13:44.330
+Cool.
+
+01:13:44.330 --> 01:13:47.050
+So we'll circle back to the more of the discussion
+
+01:13:47.050 --> 01:13:47.890
+in a minute,
+
+01:13:47.890 --> 01:13:49.250
+but we might go to the next group
+
+01:13:49.250 --> 01:13:51.290
+to hear about their one thing.
+
+01:13:52.810 --> 01:14:02.640
+So Indika, did you have a spokesperson in your group?
+
+01:14:02.760 --> 01:14:06.160
+Eddie, can you, I haven't read it down.
+
+01:14:07.160 --> 01:14:12.560
+Yeah, I was a scribe, so I'm happy to report that.
+
+01:14:12.560 --> 01:14:13.560
+Thank you.
+
+01:14:16.320 --> 01:14:21.240
+So Indika put some notes in the meeting chat,
+
+01:14:21.240 --> 01:14:23.800
+which were really interesting as well.
+
+01:14:25.280 --> 01:14:29.480
+So other bits that we spoke about,
+
+01:14:30.520 --> 01:14:31.840
+we were listing
+
+01:14:32.480 --> 01:14:37.480
+the parties that were involved.
+
+01:14:39.160 --> 01:14:40.840
+It was a very long list,
+
+01:14:42.320 --> 01:14:45.280
+but it was an interesting exercise to go through
+
+01:14:45.280 --> 01:14:50.320
+just to see how many people,
+
+01:14:50.320 --> 01:14:54.680
+how many areas can be impacted by something like that.
+
+01:14:54.680 --> 01:14:59.680
+And we discussed the different type of access
+
+01:15:00.680 --> 01:15:02.680
+they would need to data,
+
+01:15:03.520 --> 01:15:07.680
+depending on what their interest was.
+
+01:15:09.040 --> 01:15:12.320
+I suppose the group with the,
+
+01:15:15.000 --> 01:15:18.040
+well, the clearest value,
+
+01:15:18.040 --> 01:15:19.040
+there were probably two actually.
+
+01:15:19.040 --> 01:15:24.040
+So we talked about local, state and federal government levels
+
+01:15:25.320 --> 01:15:27.960
+and primary producers and vets.
+
+01:15:29.920 --> 01:15:31.800
+So primary producers and vets,
+
+01:15:31.800 --> 01:15:35.840
+we figured have a similar sort of level of interest.
+
+01:15:38.800 --> 01:15:43.800
+And we were just discussing the cost of not,
+
+01:15:50.040 --> 01:15:55.040
+the cost of no action versus action is like a prevention
+
+01:15:55.880 --> 01:15:57.040
+rather than a cure.
+
+01:16:02.980 --> 01:16:06.780
+Michael, Indika, anything else that was particularly important?
+
+01:16:06.780 --> 01:16:08.220
+So I'm just skimming over the notes,
+
+01:16:08.220 --> 01:16:10.860
+trying to pick out the important bits.
+
+01:16:14.960 --> 01:16:18.440
+I certainly had an interesting thought on the,
+
+01:16:19.640 --> 01:16:22.280
+what actually happens in emergency responses
+
+01:16:22.280 --> 01:16:24.960
+is often a bit more chaotic potentially.
+
+01:16:24.960 --> 01:16:27.840
+I can only think of like Saturday fire responses
+
+01:16:27.840 --> 01:16:29.120
+where a lot of the time,
+
+01:16:29.120 --> 01:16:30.840
+we just ended up using Facebook groups
+
+01:16:30.840 --> 01:16:33.920
+because the system that was in place
+
+01:16:34.240 --> 01:16:36.240
+ended up being too complicated.
+
+01:16:36.240 --> 01:16:41.240
+So I think it's almost a case of potentially more business cases
+
+01:16:42.800 --> 01:16:45.280
+needs to be put in for the dataspaces.
+
+01:16:45.280 --> 01:16:47.640
+It's beyond the immediate emergency,
+
+01:16:47.640 --> 01:16:49.800
+just so people get used to using it,
+
+01:16:49.800 --> 01:16:52.400
+if anything, as a sort of a matter of course.
+
+01:16:52.400 --> 01:16:56.600
+So that was only insight I'd sort of brought up,
+
+01:16:56.600 --> 01:17:02.480
+but anything else, Charlie, Indika?
+
+01:17:02.480 --> 01:17:04.680
+No, I think that's it for me, thank you.
+
+01:17:04.680 --> 01:17:09.610
+Yeah, that's it.
+
+01:17:09.610 --> 01:17:11.330
+Okay, thanks.
+
+01:17:11.330 --> 01:17:16.210
+And the next group, so Nathan was in that group.
+
+01:17:16.210 --> 01:17:18.010
+Do you guys have a speaker?
+
+01:17:18.010 --> 01:17:21.570
+That'll be me, it's the scribe and speaker, I guess.
+
+01:17:21.570 --> 01:17:22.410
+Yep.
+
+01:17:23.410 --> 01:17:26.250
+So I guess the insight we had was that
+
+01:17:27.690 --> 01:17:30.170
+you're gonna need to have this set up ahead of time
+
+01:17:31.330 --> 01:17:36.330
+because if you try to spin it up
+
+01:17:37.330 --> 01:17:41.370
+after you've already got foot and mouth outbreak,
+
+01:17:41.370 --> 01:17:42.690
+you just haven't got time.
+
+01:17:42.690 --> 01:17:45.370
+And Nathan pointed out that there are
+
+01:17:45.370 --> 01:17:47.650
+Standing Emergency Management Committees,
+
+01:17:49.210 --> 01:17:51.130
+at least in Victorian State Government,
+
+01:17:51.130 --> 01:17:56.130
+which are ready to go and have access to knowledge
+
+01:17:56.770 --> 01:17:59.330
+and each of the areas of expertise.
+
+01:18:00.730 --> 01:18:04.290
+It could well be one around a foot and mouth outbreak
+
+01:18:04.290 --> 01:18:05.810
+as well.
+
+01:18:05.810 --> 01:18:09.170
+But if you start organizing meetings with stakeholders
+
+01:18:09.170 --> 01:18:12.930
+and things after the outbreak's been detected,
+
+01:18:12.930 --> 01:18:14.850
+it's gonna be a nationwide outbreak
+
+01:18:14.850 --> 01:18:17.450
+before you finish inviting people to a meeting
+
+01:18:17.450 --> 01:18:23.220
+and finding a good time slot that everyone can attend.
+
+01:18:23.220 --> 01:18:27.420
+Yep, yes, I definitely agree.
+
+01:18:29.700 --> 01:18:31.700
+And that's part of the value proposition
+
+01:18:31.700 --> 01:18:33.540
+that you try and sell, right, is that,
+
+01:18:33.820 --> 01:18:37.740
+hmm, but where do you think,
+
+01:18:39.020 --> 01:18:41.620
+and we'll come back to the other groups on these questions,
+
+01:18:41.620 --> 01:18:44.660
+but it sounds like who is at the table is fairly well.
+
+01:18:44.660 --> 01:18:46.180
+It's a long list.
+
+01:18:47.620 --> 01:18:51.100
+I like the idea that you guys were looking for the heads
+
+01:18:51.100 --> 01:18:55.220
+of the key decision makers,
+
+01:18:55.220 --> 01:18:57.100
+but also keeping the tent really broad.
+
+01:18:57.100 --> 01:18:59.660
+So that's what I was hearing.
+
+01:18:59.660 --> 01:19:04.660
+And the idea that communications
+
+01:19:06.380 --> 01:19:08.220
+and getting the timing right
+
+01:19:08.220 --> 01:19:11.500
+is the two values that I heard most clearly.
+
+01:19:12.740 --> 01:19:14.980
+I'm curious where you think it would stall,
+
+01:19:14.980 --> 01:19:17.020
+assuming that we did this preventatively
+
+01:19:17.020 --> 01:19:23.270
+instead of doing it when the outbreak occurs.
+
+01:19:27.310 --> 01:19:30.150
+So where do you think in this process it stalls?
+
+01:19:30.150 --> 01:19:33.470
+Does it stall at the first gate of just gathering interest?
+
+01:19:33.470 --> 01:19:38.470
+Does it stall with getting the business case sorted out?
+
+01:19:43.190 --> 01:19:46.910
+I think often departments are reluctant
+
+01:19:46.910 --> 01:19:49.350
+to see the value of preventative things,
+
+01:19:49.350 --> 01:19:51.750
+but then there's also the investment piece,
+
+01:19:51.750 --> 01:19:53.830
+which is quite substantial.
+
+01:19:53.830 --> 01:19:57.110
+So curious to get your thoughts on where you think
+
+01:19:57.110 --> 01:19:59.430
+where it would stall in those first three gates,
+
+01:19:59.430 --> 01:20:04.150
+given the scale of people that you need to be involved.
+
+01:20:08.420 --> 01:20:11.180
+Maybe put you on the spot first, Richard.
+
+01:20:11.180 --> 01:20:14.260
+I think you could easily stall at any of these points.
+
+01:20:14.260 --> 01:20:16.980
+You may just get every stakeholder,
+
+01:20:16.980 --> 01:20:18.860
+especially the industry groups,
+
+01:20:18.860 --> 01:20:22.740
+just saying in the typical Australian
+
+01:20:22.740 --> 01:20:25.180
+and particularly Northern Territorian way,
+
+01:20:25.180 --> 01:20:26.340
+she'll be right, mate.
+
+01:20:27.380 --> 01:20:28.220
+Yep.
+
+01:20:31.660 --> 01:20:35.100
+I think the value and the business case
+
+01:20:35.100 --> 01:20:40.100
+is absolutely obvious.
+
+01:20:40.660 --> 01:20:44.780
+The cost of an unmanaged foot and mouth outbreak
+
+01:20:44.780 --> 01:20:46.540
+across Australia would be measured
+
+01:20:46.540 --> 01:20:52.490
+in the billions and billions of dollars.
+
+01:20:52.490 --> 01:20:54.130
+Yep, exactly.
+
+01:20:54.130 --> 01:20:59.130
+I think it would stall on every other front.
+
+01:21:00.170 --> 01:21:02.050
+People aren't willing to put the time in,
+
+01:21:02.050 --> 01:21:03.210
+aren't willing to put the money in,
+
+01:21:03.210 --> 01:21:05.090
+aren't willing to put the effort in,
+
+01:21:05.090 --> 01:21:07.610
+aren't willing to bring data to the table.
+
+01:21:07.610 --> 01:21:10.570
+I just think there would be so many impediments
+
+01:21:10.570 --> 01:21:14.890
+that it's just chances of getting something
+
+01:21:14.890 --> 01:21:16.170
+over the line ahead of time
+
+01:21:16.170 --> 01:21:20.210
+that would be very small, I reckon.
+
+01:21:20.210 --> 01:21:24.330
+Yeah, I think when we talk to people
+
+01:21:24.330 --> 01:21:25.650
+who do surveillance for a living,
+
+01:21:25.650 --> 01:21:28.170
+they're very keen on this outcome.
+
+01:21:28.170 --> 01:21:30.370
+But with the PHA use case,
+
+01:21:33.450 --> 01:21:35.290
+Shannon and I very much felt like
+
+01:21:35.290 --> 01:21:38.290
+we weren't dealing with stakeholders
+
+01:21:38.290 --> 01:21:40.010
+that were high enough up the food chain
+
+01:21:40.010 --> 01:21:41.770
+to really push things along,
+
+01:21:41.770 --> 01:21:43.410
+and we're gonna end up with a use case
+
+01:21:43.410 --> 01:21:46.930
+that was sort of maybe a shiny little thing,
+
+01:21:46.930 --> 01:21:49.250
+but not one that anyone was necessarily
+
+01:21:49.250 --> 01:21:51.170
+gonna pay a whole lot of attention to.
+
+01:21:52.850 --> 01:21:55.770
+So I do think for a use case like this,
+
+01:21:55.770 --> 01:21:57.250
+you would need the big end of town
+
+01:21:57.250 --> 01:21:59.250
+to be backing you very solidly
+
+01:22:00.250 --> 01:22:03.690
+to get the rest of folks to buy in.
+
+01:22:04.810 --> 01:22:06.970
+A couple of really big stakeholders
+
+01:22:06.970 --> 01:22:11.370
+was my sense with this particular use case.
+
+01:22:11.370 --> 01:22:12.210
+Anyway.
+
+01:22:12.210 --> 01:22:13.890
+Nice one's got his hand up.
+
+01:22:15.090 --> 01:22:15.930
+Please.
+
+01:22:17.450 --> 01:22:19.610
+With this particular scenario,
+
+01:22:19.610 --> 01:22:24.610
+you go to the top, so it's DAFF,
+
+01:22:25.450 --> 01:22:29.010
+because this is all under policy and regulation.
+
+01:22:30.570 --> 01:22:33.810
+But Michael's suggestion before is a good one.
+
+01:22:37.010 --> 01:22:38.810
+Federal and state government
+
+01:22:38.810 --> 01:22:42.250
+have mock-up scenarios all the time.
+
+01:22:43.130 --> 01:22:47.610
+So what you could do is
+
+01:22:50.250 --> 01:22:52.330
+do some outreach,
+
+01:22:52.330 --> 01:22:56.450
+say DAFF and say MLA,
+
+01:22:57.730 --> 01:23:01.450
+because they would do these scenario models anyway,
+
+01:23:01.450 --> 01:23:05.050
+and see if it could be coupled up as a piece of work
+
+01:23:05.050 --> 01:23:07.410
+to demonstrate how it could support.
+
+01:23:07.410 --> 01:23:09.290
+So you don't even need real data.
+
+01:23:10.450 --> 01:23:12.250
+You could actually have a mock-up
+
+01:23:14.010 --> 01:23:17.050
+and almost a little bit like,
+
+01:23:17.050 --> 01:23:18.930
+what are those sessions where you put all the data up
+
+01:23:18.930 --> 01:23:20.810
+and see what you can do sort of thing.
+
+01:23:22.530 --> 01:23:25.370
+Something like that that could be run in parallel
+
+01:23:27.290 --> 01:23:31.210
+and think about the needs of the process,
+
+01:23:31.210 --> 01:23:35.290
+because I'll have a process defined that they must enforce.
+
+01:23:35.290 --> 01:23:37.730
+They'll bring out the guidelines,
+
+01:23:37.730 --> 01:23:40.530
+what we have to do in an emergency.
+
+01:23:40.530 --> 01:23:43.770
+So it'd be working through that in parallel
+
+01:23:44.610 --> 01:23:47.850
+to say, oh, where would some of these fit in
+
+01:23:47.850 --> 01:23:50.530
+or help support or improve.
+
+01:23:50.530 --> 01:23:53.450
+At the end of the day, it's improve the response.
+
+01:23:55.090 --> 01:23:56.730
+Because I think that's what we talked about,
+
+01:23:56.730 --> 01:24:00.410
+wasn't it, Richard, about all of a sudden
+
+01:24:00.410 --> 01:24:05.410
+if something blows out to six, nine, 10, 12 months,
+
+01:24:06.890 --> 01:24:09.770
+rather than it can contain it within a few,
+
+01:24:09.770 --> 01:24:12.890
+less than a month, the financial benefits are massive.
+
+01:24:12.890 --> 01:24:18.690
+So it's about the responsiveness to the need.
+
+01:24:18.690 --> 01:24:20.330
+Yeah.
+
+01:24:20.330 --> 01:24:21.450
+Yeah, I absolutely agree with that.
+
+01:24:21.450 --> 01:24:23.090
+And I think the folks at CEBRA
+
+01:24:23.090 --> 01:24:24.170
+at the University of Melbourne
+
+01:24:24.170 --> 01:24:25.770
+would agree with that as well.
+
+01:24:29.370 --> 01:24:32.250
+I think it helps if you're able to get some of the RDCs
+
+01:24:32.250 --> 01:24:34.810
+or some of the players that are able to invest in it
+
+01:24:34.810 --> 01:24:37.610
+a little bit more to make it more tangible.
+
+01:24:39.330 --> 01:24:43.170
+But yeah, that would be a useful approach, I think.
+
+01:24:47.420 --> 01:24:50.740
+Let's see, we might circle back to Brigitte
+
+01:24:50.740 --> 01:24:55.500
+and highlight where you think your scenario might stall
+
+01:24:55.500 --> 01:24:57.540
+and if there was other details
+
+01:24:57.540 --> 01:25:03.890
+that came out of your discussion that you wanna share.
+
+01:25:03.890 --> 01:25:05.330
+Not sure I've got anything to add
+
+01:25:05.330 --> 01:25:08.010
+on top of what's already just been said.
+
+01:25:08.010 --> 01:25:09.970
+The main thing we touched on
+
+01:25:09.970 --> 01:25:13.570
+was the fact that there were so many potential stakeholders
+
+01:25:13.570 --> 01:25:18.570
+and some will be data consumers or responders,
+
+01:25:19.090 --> 01:25:21.090
+some might be data providers.
+
+01:25:21.090 --> 01:25:23.370
+So trying to sort through how you engage
+
+01:25:23.370 --> 01:25:27.010
+all these people organisations would be challenging.
+
+01:25:28.210 --> 01:25:31.210
+But yeah, probably don't have much more to add
+
+01:25:31.210 --> 01:25:36.050
+unless Chris and Alison want me to point out anything.
+
+01:25:36.050 --> 01:25:38.450
+Oh, actually one of the things we did say is that
+
+01:25:40.050 --> 01:25:42.650
+because we thought that the value proposition
+
+01:25:42.650 --> 01:25:46.690
+was about the prevention of bigger costs down the track,
+
+01:25:46.690 --> 01:25:48.650
+which has already been noted.
+
+01:25:49.410 --> 01:25:54.370
+And so we thought that one of the things that you'd need to do
+
+01:25:54.370 --> 01:25:56.890
+to make it demonstrate why it's worth investing
+
+01:25:56.890 --> 01:26:01.730
+is to do some scenarios, economic scenarios to go again.
+
+01:26:01.730 --> 01:26:04.570
+This is what happens if you don't do this preparedness
+
+01:26:04.570 --> 01:26:06.330
+exercise that costs five million,
+
+01:26:06.330 --> 01:26:09.570
+it will end up costing you five billion or something.
+
+01:26:09.570 --> 01:26:11.730
+So that we thought that scenarios
+
+01:26:11.730 --> 01:26:15.280
+would be useful there too.
+
+01:26:15.280 --> 01:26:16.240
+Yeah, that makes sense.
+
+01:26:16.240 --> 01:26:19.160
+And CEBRA has done some amazing work in that space.
+
+01:26:19.160 --> 01:26:21.520
+So they've calculated the cost of
+
+01:26:22.840 --> 01:26:26.040
+what the biosecurity sector in its current state,
+
+01:26:26.040 --> 01:26:28.320
+what the savings that it provides is
+
+01:26:28.320 --> 01:26:30.520
+and it's in the billions of dollars.
+
+01:26:30.520 --> 01:26:32.800
+And they also have a workflow that allows you
+
+01:26:32.800 --> 01:26:35.760
+to estimate the cost of different scenarios.
+
+01:26:35.760 --> 01:26:39.080
+So actually to model that for specific incursions.
+
+01:26:40.840 --> 01:26:44.600
+So yeah, all of that thinking is definitely in play
+
+01:26:44.600 --> 01:26:46.640
+on the side of the fence that would love
+
+01:26:46.640 --> 01:26:48.640
+to see a dataspace, but doesn't have
+
+01:26:48.640 --> 01:26:51.560
+the backing to pull it off.
+
+01:26:55.740 --> 01:26:57.380
+Was there anything else anybody else
+
+01:26:57.380 --> 01:27:19.080
+wanted to say before we move on?
+
+01:27:19.080 --> 01:27:22.920
+Yeah, I see in the chat, there's a plan in place,
+
+01:27:22.920 --> 01:27:25.480
+but I don't think the plan in place is
+
+01:27:29.040 --> 01:27:31.880
+probably sufficient if you talk to the folks at CEBRA.
+
+01:27:31.880 --> 01:27:36.640
+But anyway, we'll go ahead and move on.
+
+01:27:37.120 --> 01:27:41.480
+So I think it's just a useful exercise to think about.
+
+01:27:41.480 --> 01:27:46.480
+And one of the reasons that dataspaces often start
+
+01:27:47.440 --> 01:27:50.960
+with a smaller use case is because taking on
+
+01:27:50.960 --> 01:27:55.960
+the entire biosecurity sector in one, it is too much, right?
+
+01:27:56.880 --> 01:28:00.420
+So you identify a specific use case where,
+
+01:28:01.360 --> 01:28:04.120
+so if we go back to Varroa mites and the bees
+
+01:28:04.120 --> 01:28:06.560
+that had a little parasite living on them
+
+01:28:06.560 --> 01:28:09.640
+that infected New South Wales honey or something,
+
+01:28:09.640 --> 01:28:14.040
+and you let that data play out,
+
+01:28:14.040 --> 01:28:16.920
+that's one way that people build use cases
+
+01:28:16.920 --> 01:28:20.240
+that then can scale later, and you don't have to start
+
+01:28:20.240 --> 01:28:22.080
+with the whole kettle of fish.
+
+01:28:23.220 --> 01:28:27.320
+Often that's the only thing you have resource to pull off,
+
+01:28:27.320 --> 01:28:32.320
+but in an ideal world, you do have that top-end buy-in
+
+01:28:32.440 --> 01:28:35.120
+from the real movers and shakers,
+
+01:28:35.120 --> 01:28:39.040
+and you have that broad scale engagement across everyone
+
+01:28:39.040 --> 01:28:42.540
+to build the rulebook in the first instance.
+
+01:28:42.540 --> 01:28:44.360
+That just rarely happens.
+
+01:28:44.360 --> 01:28:48.500
+But if you come across that gold nugget of a use case
+
+01:28:48.500 --> 01:28:51.520
+or of a group of stakeholders who wanna build a dataspace,
+
+01:28:51.520 --> 01:28:54.140
+then you're really away, and you're gonna scale
+
+01:28:54.140 --> 01:28:58.180
+and build much faster than if you start with a use case.
+
+01:28:58.180 --> 01:29:01.040
+But often in Europe, they start with a use case,
+
+01:29:01.040 --> 01:29:03.120
+so they start with a much smaller scope
+
+01:29:03.120 --> 01:29:05.000
+and number of actors.
+
+01:29:05.820 --> 01:29:06.920
+And just demonstrate value.
+
+01:29:08.320 --> 01:29:13.320
+So, anyway, these is all my two cents on all of this,
+
+01:29:13.840 --> 01:29:18.360
+but I also wanted to highlight something
+
+01:29:18.360 --> 01:29:23.360
+that Buy Data in Spain has worked really well for them,
+
+01:29:23.800 --> 01:29:26.640
+and I think touched on this with some of the team
+
+01:29:26.640 --> 01:29:28.440
+and Richard and Helen.
+
+01:29:28.440 --> 01:29:33.070
+But to really kickstart the process,
+
+01:29:33.070 --> 01:29:35.570
+to get a sense of how much buy-in there is
+
+01:29:35.570 --> 01:29:39.370
+without spending oodles of time on it,
+
+01:29:39.370 --> 01:29:44.370
+is to invite a ton of participants into a one hour session,
+
+01:29:44.370 --> 01:29:46.570
+something like what we had at the last session
+
+01:29:46.570 --> 01:29:50.330
+that just introduces what dataspaces are as a concept.
+
+01:29:50.330 --> 01:29:52.130
+Follows that up the following week
+
+01:29:52.130 --> 01:29:55.090
+with a three to four hour session
+
+01:29:55.090 --> 01:30:00.090
+where everybody's able to individually log into a testbed
+
+01:30:00.790 --> 01:30:05.250
+along the lines of what the demo from RMIT was showing.
+
+01:30:05.810 --> 01:30:07.650
+And each one of you would play a role,
+
+01:30:07.650 --> 01:30:09.550
+for example, in this biosecurity space,
+
+01:30:09.550 --> 01:30:10.890
+somebody might be the vets,
+
+01:30:10.890 --> 01:30:14.810
+somebody might be the jurisdictions, Queensland,
+
+01:30:14.810 --> 01:30:17.290
+somebody might be Northern territory,
+
+01:30:17.290 --> 01:30:19.490
+so somebody might be the commonwealth,
+
+01:30:19.490 --> 01:30:23.810
+somebody might be operations personnel.
+
+01:30:23.810 --> 01:30:25.690
+And you would start to push data
+
+01:30:25.690 --> 01:30:28.450
+and publish data between each other
+
+01:30:28.450 --> 01:30:30.530
+and watch it show up on your laptop
+
+01:30:30.530 --> 01:30:33.490
+and then get pushed to somebody else
+
+01:30:33.490 --> 01:30:37.100
+on the call's laptop, right?
+
+01:30:37.100 --> 01:30:38.580
+That seems to work really well,
+
+01:30:38.580 --> 01:30:40.100
+the penny drops for people
+
+01:30:41.260 --> 01:30:44.020
+when that kind of activity happens.
+
+01:30:44.020 --> 01:30:47.020
+And then you're a follow-up session
+
+01:30:47.020 --> 01:30:48.660
+where you go through in an hour
+
+01:30:48.660 --> 01:30:51.940
+and you get them to articulate
+
+01:30:54.340 --> 01:30:56.020
+what their problem is
+
+01:30:56.020 --> 01:30:59.700
+and whether they see any value
+
+01:30:59.700 --> 01:31:01.800
+in what they saw in the dataspace solution
+
+01:31:01.800 --> 01:31:03.140
+for them going forward.
+
+01:31:04.140 --> 01:31:08.740
+So it's a format that works really well in Spain.
+
+01:31:10.820 --> 01:31:12.300
+If you get a chance to try it,
+
+01:31:12.300 --> 01:31:14.300
+it might be fun to try it here,
+
+01:31:14.300 --> 01:31:21.480
+but we'll see what emerges.
+
+01:31:21.480 --> 01:31:26.000
+So the other activity that I think I'd like us
+
+01:31:26.000 --> 01:31:28.640
+to all jump into
+
+01:31:28.640 --> 01:31:32.160
+is just to practice talking about dataspaces.
+
+01:31:32.160 --> 01:31:36.440
+So this isn't a long activity,
+
+01:31:36.440 --> 01:31:40.560
+but it's just, if in a couple of minutes,
+
+01:31:40.560 --> 01:31:45.560
+so I would like you to explain to your colleague at work
+
+01:31:47.160 --> 01:31:50.440
+who has no understanding of dataspaces,
+
+01:31:52.240 --> 01:31:53.920
+one of the dataspace concepts.
+
+01:31:53.920 --> 01:31:54.840
+And if you don't like these,
+
+01:31:54.840 --> 01:31:56.000
+you can choose a different one
+
+01:31:56.000 --> 01:31:57.640
+if you wanna focus on connectors,
+
+01:31:57.640 --> 01:32:02.640
+but you could focus on governance before technology,
+
+01:32:02.960 --> 01:32:04.560
+the two types of planes,
+
+01:32:04.560 --> 01:32:06.460
+the control plane and the data plane.
+
+01:32:08.660 --> 01:32:12.200
+What does trust is what you can prove mean?
+
+01:32:12.200 --> 01:32:14.360
+What does a rulebook decide?
+
+01:32:14.360 --> 01:32:16.340
+What does a connector enforce?
+
+01:32:17.320 --> 01:32:19.240
+Why does value come first?
+
+01:32:19.240 --> 01:32:23.240
+So whatever it is that you would want to explain,
+
+01:32:23.240 --> 01:32:27.360
+come up with an explanation on your own,
+
+01:32:27.400 --> 01:32:30.840
+in a Word doc or on a notes pad.
+
+01:32:30.840 --> 01:32:32.200
+And then in two minutes,
+
+01:32:32.200 --> 01:32:37.200
+I'm gonna ask everybody to drop that answer into the chat.
+
+01:32:38.640 --> 01:32:43.640
+So just copy and paste two, three sentences
+
+01:32:44.000 --> 01:32:49.000
+on the part of a dataspace that appeals to you most maybe
+
+01:32:50.600 --> 01:32:52.360
+that you could explain to somebody else.
+
+01:32:52.360 --> 01:32:53.760
+And again, this is just getting you
+
+01:32:53.760 --> 01:32:56.920
+to practice talking about dataspaces.
+
+01:32:57.760 --> 01:33:02.240
+So I'll give you two minutes
+
+01:33:02.240 --> 01:33:04.420
+and then hopefully everybody can drop something
+
+01:33:04.420 --> 01:35:00.460
+in the chat that explains a concept.
+
+01:35:00.460 --> 01:35:04.140
+Okay, so if everybody's got something written down,
+
+01:35:04.140 --> 01:35:05.700
+if you can drop it in the chat,
+
+01:35:08.420 --> 01:35:15.480
+we'll just have a quick look at how you're explaining
+
+01:35:15.480 --> 01:37:32.560
+dataspaces to somebody who's new to it.
+
+01:37:32.560 --> 01:37:33.720
+Sorry, I'm just reading.
+
+01:37:33.720 --> 01:37:37.800
+And yeah, it's very encouraging.
+
+01:37:39.120 --> 01:37:43.040
+There's certainly no red flags.
+
+01:37:43.040 --> 01:37:47.680
+Does anyone want to volunteer there to read theirs?
+
+01:37:47.680 --> 01:37:49.240
+Otherwise I might pick two out.
+
+01:38:07.020 --> 01:38:13.400
+So I think Indica, yours is quite comprehensive.
+
+01:38:14.800 --> 01:38:16.200
+Are you happy to read yours?
+
+01:38:18.670 --> 01:38:23.670
+Yeah, so it's like, I'll read my answer.
+
+01:38:24.670 --> 01:38:27.550
+It's like, you know how when two organizations
+
+01:38:27.550 --> 01:38:30.230
+want to share data, they usually spend month
+
+01:38:30.230 --> 01:38:33.310
+on lawyers, emails, and one of agreements
+
+01:38:33.310 --> 01:38:36.190
+and then do all again from the scratch
+
+01:38:36.190 --> 01:38:37.910
+with the next partner.
+
+01:38:37.910 --> 01:38:40.830
+A dataspace is fixed that by splitting the job
+
+01:38:40.830 --> 01:38:42.070
+into two parts.
+
+01:38:42.070 --> 01:38:43.630
+First, there's a rulebook.
+
+01:38:43.630 --> 01:38:46.470
+That's just a group of organizations sitting down once
+
+01:38:46.470 --> 01:38:49.630
+and agreeing the rules, who's allowed to join.
+
+01:38:50.790 --> 01:38:53.470
+What you are allowed to do with the data.
+
+01:38:53.470 --> 01:38:55.790
+What happened if someone break the rules?
+
+01:38:55.790 --> 01:38:57.510
+It's written by people.
+
+01:38:57.510 --> 01:39:00.670
+It's about the trust and law,
+
+01:39:00.670 --> 01:39:04.950
+and it's only have to be agreed one.
+
+01:39:04.950 --> 01:39:06.350
+Then there's a connector.
+
+01:39:07.270 --> 01:39:10.070
+That's the piece of software each organization's run.
+
+01:39:10.070 --> 01:39:12.030
+When someone actually asks for data,
+
+01:39:12.030 --> 01:39:14.310
+the connector automatically check the rules.
+
+01:39:14.310 --> 01:39:16.150
+The group already agreed.
+
+01:39:17.350 --> 01:39:20.390
+Is this person allowed to see this?
+
+01:39:20.390 --> 01:39:24.630
+Are they using it for a permanent purpose
+
+01:39:24.630 --> 01:39:28.430
+and only lets the exchange happen if the answer is yes.
+
+01:39:28.430 --> 01:39:31.190
+So the human agreed with the rules up front
+
+01:39:31.190 --> 01:39:35.950
+and the software enforce them every time automatically.
+
+01:39:35.950 --> 01:39:39.270
+You agreed once and then sharing become repeatable.
+
+01:39:39.270 --> 01:39:41.430
+You don't negotiate from the scratch
+
+01:39:41.430 --> 01:39:44.030
+with every new partner.
+
+01:39:44.030 --> 01:39:48.160
+That's the whole idea.
+
+01:39:48.160 --> 01:39:50.080
+Yeah, so I liked,
+
+01:39:50.080 --> 01:39:52.560
+you've really nailed the value proposition there,
+
+01:39:53.560 --> 01:39:54.480
+which I like.
+
+01:39:57.080 --> 01:39:59.120
+I would circle back to the rulebook.
+
+01:39:59.120 --> 01:40:01.440
+It is a living document, so it can be changed
+
+01:40:01.440 --> 01:40:03.880
+and the governance authority can change it.
+
+01:40:03.880 --> 01:40:05.920
+However, the community agrees
+
+01:40:05.920 --> 01:40:08.480
+that those changes can be implemented.
+
+01:40:08.480 --> 01:40:11.160
+So that can have flow on effects
+
+01:40:11.160 --> 01:40:13.080
+for your technical architecture as well.
+
+01:40:13.080 --> 01:40:17.400
+So those decisions are up to the governance authority.
+
+01:40:17.400 --> 01:40:21.440
+And then Richard, you're much more concise
+
+01:40:21.440 --> 01:40:29.640
+and we might have you read yours.
+
+01:40:29.640 --> 01:40:31.480
+I think we're gonna find in the chat.
+
+01:40:32.560 --> 01:40:35.120
+So governance before technology,
+
+01:40:35.120 --> 01:40:37.720
+a dataspace is a social and technical framework
+
+01:40:37.720 --> 01:40:40.320
+for finding, sharing and using data.
+
+01:40:40.320 --> 01:40:42.040
+For this to function there needs to be trust
+
+01:40:42.040 --> 01:40:45.360
+between participants and trust of the system.
+
+01:40:45.360 --> 01:40:47.200
+This trust is developed through strong rules
+
+01:40:47.200 --> 01:40:49.160
+and policies being adopted.
+
+01:40:49.160 --> 01:40:51.720
+Therefore governance comes before technology.
+
+01:40:54.720 --> 01:40:56.200
+I feel like my job is done.
+
+01:40:58.000 --> 01:41:03.000
+You all are, you have the 101 understanding.
+
+01:41:03.920 --> 01:41:08.200
+I guess the next issue is the 201 classes
+
+01:41:08.200 --> 01:41:10.200
+is pretty in depth as well.
+
+01:41:12.840 --> 01:41:16.760
+So again, just the things I want us to think about
+
+01:41:16.760 --> 01:41:19.640
+from these first couple of sessions,
+
+01:41:19.640 --> 01:41:22.200
+the governance first, you've all gotten that message.
+
+01:41:22.200 --> 01:41:25.120
+The two planes, you all have all gotten that message
+
+01:41:25.120 --> 01:41:27.600
+as well, the control plane and the data plane.
+
+01:41:29.440 --> 01:41:34.000
+That trust is something that you prove through attributes.
+
+01:41:34.000 --> 01:41:36.640
+It's also something built through the rulebook
+
+01:41:36.640 --> 01:41:41.640
+and it's also something that is a function
+
+01:41:41.800 --> 01:41:44.840
+of the technological and legal agreements
+
+01:41:44.840 --> 01:41:46.600
+that you've put in place.
+
+01:41:47.440 --> 01:41:49.920
+So you're not necessarily trusting New South Wales
+
+01:41:49.920 --> 01:41:52.120
+with your data, but you are trusting
+
+01:41:52.120 --> 01:41:54.480
+that all of the systems that you have in place
+
+01:41:54.480 --> 01:41:58.920
+is gonna control your data exactly as you want it controlled.
+
+01:41:58.920 --> 01:42:03.080
+Value first, that message is clearly dropped
+
+01:42:03.080 --> 01:42:07.080
+and I do want you to think about the rulebook
+
+01:42:07.080 --> 01:42:10.160
+versus the connector and the dataspace protocol
+
+01:42:10.160 --> 01:42:15.160
+and sort of the first steps of how you build governance.
+
+01:42:15.160 --> 01:42:17.400
+So hopefully that's come through a bit today.
+
+01:42:21.080 --> 01:42:26.080
+I do wanna highlight that these resources are there
+
+01:42:28.600 --> 01:42:31.920
+where you can take your next step of the learning journey.
+
+01:42:31.920 --> 01:42:36.920
+You can always ping me on any questions that you might have.
+
+01:42:38.480 --> 01:42:41.240
+These really are the sources of truth
+
+01:42:41.240 --> 01:42:43.120
+that we point people to.
+
+01:42:43.120 --> 01:42:45.280
+I would encourage you to get across these
+
+01:42:45.280 --> 01:42:47.760
+before you start jumping down other holes
+
+01:42:47.760 --> 01:42:51.440
+like Gaia-X or other things.
+
+01:42:51.440 --> 01:42:53.000
+If you're familiar with these
+
+01:42:53.000 --> 01:42:55.360
+and you have a working knowledge of them,
+
+01:42:55.360 --> 01:42:59.600
+if you're in tech, focus more on the RAM.
+
+01:42:59.600 --> 01:43:04.600
+If you're in policy or working with community,
+
+01:43:07.240 --> 01:43:12.000
+focus more on the IDSA rulebook and the Sitra rulebook.
+
+01:43:12.000 --> 01:43:14.960
+Those are wonderful resources.
+
+01:43:14.960 --> 01:43:19.680
+And the DSSC Blueprint is really a nice summary
+
+01:43:19.680 --> 01:43:21.800
+of all the steps that you need to take.
+
+01:43:21.800 --> 01:43:24.720
+So that's probably a good one for everyone to get across.
+
+01:43:27.560 --> 01:43:29.040
+All good resources.
+
+01:43:30.280 --> 01:43:34.760
+There was also in the survey, a number of you highlighted
+
+01:43:34.760 --> 01:43:39.760
+that you would welcome circling back for a one-on-one session
+
+01:43:40.760 --> 01:43:42.960
+just to discuss some things.
+
+01:43:42.960 --> 01:43:45.120
+I'm very keen to do that just to get a sense
+
+01:43:45.120 --> 01:43:47.920
+of how these sessions were for you.
+
+01:43:47.920 --> 01:43:51.600
+So for myself, we've never done this second session.
+
+01:43:51.600 --> 01:43:53.600
+We've always done the one-on-one sessions
+
+01:43:53.600 --> 01:43:54.880
+over the last year and a half.
+
+01:43:54.880 --> 01:43:57.200
+So we've gotten pretty good at those.
+
+01:43:57.200 --> 01:44:00.920
+But whether this second session delivered some value for you
+
+01:44:00.920 --> 01:44:03.800
+or not, I'd be curious to hear
+
+01:44:03.800 --> 01:44:05.160
+because this is the kind of thing
+
+01:44:05.160 --> 01:44:08.480
+we would do for others if it works.
+
+01:44:08.640 --> 01:44:10.240
+And if it doesn't, we will pivot.
+
+01:44:11.280 --> 01:44:15.840
+So some good feedback from me would be good,
+
+01:44:15.840 --> 01:44:19.240
+but it's also a chance for you to delve deeper
+
+01:44:19.240 --> 01:44:22.600
+into questions that you still have about dataspaces.
+
+01:44:22.600 --> 01:44:24.240
+So I'll send you a calendar invite,
+
+01:44:24.240 --> 01:44:27.880
+but unfortunately the calendar invite won't go out until,
+
+01:44:27.880 --> 01:44:30.080
+well, I won't be available until August
+
+01:44:30.080 --> 01:44:33.920
+because I'm going away to Canada to play with bears
+
+01:44:33.920 --> 01:44:36.520
+and other things, I guess, for a couple of weeks.
+
+01:44:38.800 --> 01:44:41.440
+But certainly happy to touch base with anyone
+
+01:44:41.440 --> 01:44:43.600
+from the team who wants to touch base more
+
+01:44:43.600 --> 01:44:45.760
+on any of these facets.
+
+01:44:45.760 --> 01:44:48.400
+And oftentimes I'm the facilitator of the training.
+
+01:44:48.400 --> 01:44:52.480
+So you might be asking questions that are out of my league,
+
+01:44:52.480 --> 01:44:56.920
+but we have a lot of contacts that we can pull in
+
+01:44:56.920 --> 01:45:00.280
+and provide the information that you all need.
+
+01:45:00.280 --> 01:45:02.800
+And that's kind of my job is to be the facilitator
+
+01:45:02.800 --> 01:45:06.680
+of the gurus and the people who need to learn.
+
+01:45:06.760 --> 01:45:11.760
+That's, I'm not the teacher of all things, thank goodness,
+
+01:45:12.640 --> 01:45:14.280
+but I do facilitate that.
+
+01:45:14.280 --> 01:45:16.680
+So I'm curious to know what you guys wanna learn.
+
+01:45:18.400 --> 01:45:22.760
+We've also gonna update the FAQ to be more of an FAQ
+
+01:45:22.760 --> 01:45:24.760
+on the ARDC website.
+
+01:45:24.760 --> 01:45:28.240
+That QR code will take you to the existing FAQ.
+
+01:45:29.440 --> 01:45:31.040
+And I would really encourage you,
+
+01:45:32.040 --> 01:45:33.740
+it would be a big help to me
+
+01:45:33.740 --> 01:45:35.560
+if you're able to look at that
+
+01:45:35.560 --> 01:45:37.480
+and you're a fresh learner,
+
+01:45:37.480 --> 01:45:42.160
+what's not in that FAQ that when you first start
+
+01:45:42.160 --> 01:45:44.240
+to learn about dataspaces is something you'd like
+
+01:45:44.240 --> 01:45:47.080
+to learn about or what maybe could be dropped.
+
+01:45:48.020 --> 01:45:50.880
+Getting fresh eyes on that content would be wonderful.
+
+01:45:50.880 --> 01:45:54.640
+And I would like to keep that as a living document
+
+01:45:54.640 --> 01:45:57.240
+that the team regularly just,
+
+01:45:57.240 --> 01:45:59.680
+they learn something and they go, oh, you should add this.
+
+01:45:59.680 --> 01:46:03.240
+And then we can add it to the ARDC FAQ.
+
+01:46:03.240 --> 01:46:07.380
+And then the current ARDC FAQ is gonna be revised.
+
+01:46:08.600 --> 01:46:10.760
+So it's just for the implementers.
+
+01:46:10.760 --> 01:46:12.600
+So a lot of that content will stay there,
+
+01:46:12.600 --> 01:46:15.200
+but we'll also kill a lot of the links
+
+01:46:15.200 --> 01:46:17.020
+that take people down rabbit holes
+
+01:46:17.020 --> 01:46:22.020
+that are distracting from learning the core concepts,
+
+01:46:22.260 --> 01:46:24.960
+which is where we want people to start.
+
+01:46:24.960 --> 01:46:27.960
+We don't want you to learn all about Gaia-X
+
+01:46:27.960 --> 01:46:30.560
+and all the other options, all the other connectors.
+
+01:46:30.560 --> 01:46:33.080
+And there's so many FIWARE and blah, blah, blah,
+
+01:46:33.160 --> 01:46:37.000
+until the core concepts are in place.
+
+01:46:37.000 --> 01:46:41.360
+So we're gonna trim that one down a little bit
+
+01:46:41.360 --> 01:46:46.360
+and please do keep the conversation going.
+
+01:46:48.000 --> 01:46:52.000
+We've got a few minutes for questions,
+
+01:46:53.840 --> 01:46:56.840
+if anybody has any questions at this stage.
+
+01:47:07.950 --> 01:47:10.930
+And I might just send an anonymous survey form
+
+01:47:11.770 --> 01:47:14.050
+to see if this session to hit the mark or not.
+
+01:47:14.050 --> 01:47:15.250
+That would be good to know.
+
+01:47:16.690 --> 01:47:18.010
+I think the session was great.
+
+01:47:18.010 --> 01:47:21.570
+I learned some things out of it.
+
+01:47:21.570 --> 01:47:24.570
+And I think it's a really well-paced follow-on
+
+01:47:24.570 --> 01:47:28.910
+from the intro session that you ran previously.
+
+01:47:31.370 --> 01:47:33.090
+So yeah, thanks very much for putting that together.
+
+01:47:33.090 --> 01:47:37.130
+And I'm sure other people will value it as well
+
+01:47:37.130 --> 01:47:39.930
+when you get back from Canada
+
+01:47:39.930 --> 01:47:42.210
+and spreading it more widely.
+
+01:47:42.210 --> 01:47:43.250
+Yeah, good stuff.
+
+01:47:45.930 --> 01:47:48.290
+And I'll read all of your responses
+
+01:47:48.290 --> 01:47:50.330
+in more detail in the chat,
+
+01:47:50.330 --> 01:47:51.930
+just in case anything else comes up,
+
+01:47:51.930 --> 01:47:56.210
+but at a glance, my goodness, job done.
+
+01:47:56.210 --> 01:48:01.210
+I wish our stakeholders last year had this understanding
+
+01:48:02.570 --> 01:48:04.450
+before we started, so that's good.
+
+01:48:06.210 --> 01:48:09.690
+And again, I really am keen to hear
+
+01:48:09.690 --> 01:48:10.930
+what you wanna learn next.
+
+01:48:10.930 --> 01:48:12.770
+So some of you are really technical
+
+01:48:13.810 --> 01:48:15.130
+and we can tee up Mohammed
+
+01:48:15.130 --> 01:48:17.370
+or we can tee up people from IDSA
+
+01:48:17.370 --> 01:48:19.610
+or to help you walk you through
+
+01:48:19.610 --> 01:48:23.610
+some of the more nitty-gritty things.
+
+01:48:23.610 --> 01:48:28.030
+Anyway, that's it for me.
+
+01:48:28.030 --> 01:48:29.870
+Thanks for giving up your lunch hour
+
+01:48:29.870 --> 01:48:34.740
+to learn some more about dataspaces.
+
+01:48:34.740 --> 01:48:39.040
+And I'll see you when I get back from Canada.
+
+01:48:40.500 --> 01:48:42.500
+Thanks Rob. Thanks.
+
+01:48:42.580 --> 01:48:43.420
+Thanks Rob.
+
+01:48:43.420 --> 01:48:44.260
+It's great.
+
+01:48:44.260 --> 01:48:45.060
+See ya.
+
+01:48:45.860 --> 01:48:46.700
+Bye.
+
+01:48:46.700 --> 01:49:06.100
+Bye.
+
+01:49:06.100 --> 01:49:06.940
+Good.

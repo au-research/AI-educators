@@ -1,0 +1,838 @@
+WEBVTT
+
+NOTE
+Captions were generated automatically (faster-whisper small.en) and key terms corrected; they may contain errors.
+
+00:00:00.660 --> 00:00:04.660
+So welcome to the first of two sessions.
+
+00:00:04.660 --> 00:00:08.660
+This is on Dataspaces 101.
+
+00:00:08.660 --> 00:00:14.660
+And I'm Rob Clemens. I'm a skills development lead at the Australian Research Data Commons.
+
+00:00:14.660 --> 00:00:22.660
+And at ARDC we've been working on understanding dataspaces for a little over a year.
+
+00:00:22.660 --> 00:00:29.660
+And in that first year there's been a number of things that we've learned that we want to make sure that our stakeholders
+
+00:00:29.660 --> 00:00:36.660
+and others who are interested in dataspaces, they don't miss these concepts.
+
+00:00:36.660 --> 00:00:44.660
+So to learn to take a full Dataspaces 101 class, there's courses in Europe and that would run for about eight hours.
+
+00:00:44.660 --> 00:00:52.660
+So this is not that. We'll be going over these ideas in less than an hour.
+
+00:00:52.660 --> 00:01:02.660
+So this is just an introduction to some of these core concepts that we want to make sure that people understand early in the piece.
+
+00:01:02.660 --> 00:01:09.660
+And before I get started, I do want to acknowledge and celebrate the first Australians on whose traditional lands we meet.
+
+00:01:09.660 --> 00:01:14.660
+And we pay our respect to their elders past and present.
+
+00:01:15.660 --> 00:01:27.660
+As an ecologist and a trained ornithologist, I have had the opportunity to meet many Indigenous Australians.
+
+00:01:27.660 --> 00:01:36.000
+And I'm very grateful for the conversations that I've been able to listen to.
+
+00:01:36.000 --> 00:01:43.000
+So I would encourage you, if you haven't listened to Indigenous people, please take the chance.
+
+00:01:45.790 --> 00:01:54.790
+So today, if you're tuning in to learn about dataspaces, you're one of a handful of people in Australia.
+
+00:01:54.790 --> 00:01:57.790
+There's not many of us yet.
+
+00:01:57.790 --> 00:02:01.790
+So there's a good chance that you are going to become a teacher of dataspaces as well.
+
+00:02:01.790 --> 00:02:05.790
+People are going to ask you questions about it.
+
+00:02:05.790 --> 00:02:21.790
+So I want today for you to learn the core ideas about dataspaces, but I want in the back of your mind to be thinking about, well, how am I going to explain these ideas to others?
+
+00:02:21.790 --> 00:02:26.790
+And then how might I go about establishing dataspaces?
+
+00:02:26.790 --> 00:02:35.790
+In Australia, we've had a phase one, and in phase two, we're going to try and get two dataspaces developed thanks to our partners at Federation University.
+
+00:02:35.790 --> 00:02:46.790
+So hopefully, you'll start to think about dataspaces well enough to be able to teach it, because there's not a lot of us yet.
+
+00:02:46.790 --> 00:02:49.790
+But I think the number of us is growing.
+
+00:02:52.360 --> 00:03:05.360
+So what we're going to cover in this session is touch on a real use case, what it might look like, define what a dataspace is.
+
+00:03:05.360 --> 00:03:15.360
+We want to highlight three ideas that are easy to miss when you first start exploring the concept of dataspaces and touch on what it might take to build a dataspace.
+
+00:03:17.670 --> 00:03:22.670
+So we're going to start with a real but imagined problem, right?
+
+00:03:22.670 --> 00:03:33.670
+So I don't know what the latest is in this sector, but let's pretend that foot and mouth disease is detected near Darwin.
+
+00:03:33.670 --> 00:03:45.210
+Now, foot and mouth disease is a biosecurity threat that could arrive in Australia and infect cattle.
+
+00:03:45.210 --> 00:03:55.210
+It's highly infectious, and it would have huge trade implications if it was detected in Australia.
+
+00:03:55.210 --> 00:04:04.210
+It has the potential to shut down all cattle exports from Australia if it is here and spread widely.
+
+00:04:04.210 --> 00:04:18.210
+So in order to contain it, responders would urgently need to know where the cattle are, where this disease is showing up, how cattle might be moving, so where it might be spreading to.
+
+00:04:18.210 --> 00:04:28.210
+And it's a national biosecurity issue. So think of it as something on the scale of COVID but happening to the cattle industry.
+
+00:04:29.210 --> 00:04:34.210
+So let's imagine foot and mouth disease arrives somewhere near Darwin.
+
+00:04:34.210 --> 00:04:50.840
+And if that did happen today, the chances are that we wouldn't have a shared understanding of where livestock are in the country.
+
+00:04:50.840 --> 00:04:54.840
+So where are all the cattle currently, and where are they moving?
+
+00:04:54.840 --> 00:05:00.840
+We wouldn't have a snapshot ability to pull all that data together quickly.
+
+00:05:00.840 --> 00:05:05.840
+And we wouldn't be able to share it between the jurisdictions and the Commonwealth and others.
+
+00:05:05.840 --> 00:05:14.840
+So often these data sets are locked away with industry, so individual producers might have some of it.
+
+00:05:14.840 --> 00:05:19.840
+Some of the agencies might have some of it, the departments, some of the jurisdictions, the Commonwealth.
+
+00:05:19.840 --> 00:05:28.840
+Again, there's a lot of piecemeal data that is out there, and the cattle trucks and other movement data.
+
+00:05:28.840 --> 00:05:34.840
+That data might be available somewhere, but it's not consolidated. It's not easy to share.
+
+00:05:34.840 --> 00:05:44.840
+And there's really no standing mechanism to allow people to start sharing that data at scale if something like this were to happen.
+
+00:05:44.840 --> 00:06:00.840
+So right now, it would be a real scramble. Think about how public health agencies and hospitals had to sort of scramble to understand where COVID was and where it was spreading.
+
+00:06:01.840 --> 00:06:14.840
+It was very on the fly working out agreements and sending data around, but it sort of delayed the effectiveness of understanding spread.
+
+00:06:14.840 --> 00:06:23.280
+And ideally, that's not what we would want to happen if a similar thing worked to impact the cattle industry.
+
+00:06:23.280 --> 00:06:39.280
+And I guess while you're thinking about this idea of foot and mouth disease arriving in Darwin, I want you to have a think about what's the first thing you would want to happen in this example in order to get the data flowing.
+
+00:06:39.280 --> 00:06:57.280
+So would you have worked all of this data sharing out beforehand? And if so, what kinds of steps would you initially have started to take to get the data flowing quickly when an emergency like this arises?
+
+00:06:57.280 --> 00:07:09.620
+So I just want you to have that idea in the back of your mind. What would you do first if foot and mouth disease arrived in northern Australia?
+
+00:07:09.620 --> 00:07:18.380
+But before we go any further, I just want to highlight what is a dataspace? What are we talking about?
+
+00:07:19.380 --> 00:07:36.380
+And in one sentence, and I'm just going to read this, a dataspace is digital infrastructure that lets participants find access and use data under the agreed governance framework of that dataspace.
+
+00:07:36.380 --> 00:07:42.380
+So restricted access can be shared while providers keep control.
+
+00:07:43.380 --> 00:08:02.340
+So it's data sharing of sensitive data done at scale and made very easy. So it's machine actionable data sharing. And it's usually a decentralized system.
+
+00:08:02.340 --> 00:08:14.340
+So instead of bringing all the data into one aggregator or one central database, you're just connecting data from various repositories around the place.
+
+00:08:14.340 --> 00:08:28.340
+So I guess the important thing to keep in mind here is a dataspace is not just that technological solution. It's the whole picture. It's a process.
+
+00:08:28.340 --> 00:08:45.340
+So dataspaces is a years long process, an ongoing process that includes governance. It includes how are we going to deal with all the legal considerations, the policy considerations, the security considerations.
+
+00:08:45.340 --> 00:08:53.340
+How are we going to deal with all of that? So a dataspace isn't just the technology that shifts data around. It's the whole picture.
+
+00:08:53.340 --> 00:09:09.970
+And there's four pillars that a dataspace is sort of built around. And the first one is identity. So first you have to prove who is who, who's trying to access the data.
+
+00:09:09.970 --> 00:09:15.970
+Are they who they say they are? But also there might be a whole lot of other attributes that need to be proven.
+
+00:09:15.970 --> 00:09:30.970
+So it's not just the identity of the users, but it can be all kinds of other attributes that need to be proven before data can be allowed to flow between two entities.
+
+00:09:30.970 --> 00:09:38.970
+Trustworthiness is a huge part of the dataspace, why it works, the dataspace framework.
+
+00:09:38.970 --> 00:09:53.970
+And it's a shared framework that allows participants to understand how data is going to be moved within that individual dataspace. So we'll touch more on that later.
+
+00:09:53.970 --> 00:09:58.970
+But trustworthiness is a huge thing and it takes a long time to develop that.
+
+00:09:59.970 --> 00:10:12.970
+And data sovereignty is probably one of the biggest selling points of dataspaces. So each provider, so there might be multiple providers in your dataspace who all have different bits of data.
+
+00:10:12.970 --> 00:10:24.970
+Each one of those providers can completely decide who they're going to share data with, how much of their data are they going to share, when are they going to share it, for how long are they going to share it.
+
+00:10:24.970 --> 00:10:32.970
+All of the conditions around data sharing, and if they share it all, is totally up to the provider.
+
+00:10:32.970 --> 00:10:47.970
+So there's this umbrella agreement that all the providers have to come together on. But under that umbrella, individual providers can do whatever they want in terms of how they share data.
+
+00:10:47.970 --> 00:11:00.970
+So that's a big selling point of dataspaces. And one of the things that I'm most excited about in dataspaces is that it allows for unprecedented interoperability with sensitive data.
+
+00:11:00.970 --> 00:11:22.970
+So if you set up a dataspace, for example, in the biosecurity sector, and you set up another dataspace in the health sector, data from those two dataspaces will be able to move across to one another much more easily than if they weren't dataspaces.
+
+00:11:22.970 --> 00:11:37.970
+So there's a standardized process that both the machines and all the legal agreements and everything else have in place, so it's much easier to start sharing data between different domains.
+
+00:11:37.970 --> 00:11:41.970
+So that's one of the things that we get excited about at ARDC.
+
+00:11:44.540 --> 00:12:08.540
+And when I talk about this umbrella rule, rulebook, it's these agreed rules where all of the people who are participating in a dataspace or all of the organizations will have representation in working out this community agreed set of rules.
+
+00:12:08.540 --> 00:12:30.540
+So all the participants understand how it's going to work. So that's a big part of the process of setting up a dataspace. The technology is simply the way in which software and hardware are developed to make sure that all of those rules are carried out technically.
+
+00:12:31.540 --> 00:12:48.540
+But the big part of a dataspace is, how do we agree on all these rules with a bunch of different participants? And importantly, so you don't think of a dataspace as a bit of software that you buy and you install it, something you grab off the shelf and you run with.
+
+00:12:48.540 --> 00:12:55.900
+It is not that. It is the whole process of sharing sensitive data.
+
+00:12:55.900 --> 00:13:08.900
+So I wanted to highlight three things that when we first started talking to stakeholders about dataspaces, they didn't fully understand.
+
+00:13:08.900 --> 00:13:21.900
+And I think these are fairly novel to dataspaces, but three things that not everybody understood. So we want to make sure from here forward everybody understands these three concepts.
+
+00:13:21.900 --> 00:13:44.900
+The first one is the governance comes before the technology, rules before tools. And the reason rules before tools is important is because you can set a whole bunch of different rules, a wide variety of things that you can set up while you're setting up a dataspace.
+
+00:13:44.900 --> 00:14:00.900
+But those agreements might point to very different technological solutions. So you can't really build a dataspace until you know what kinds of specifications need to be met by the participants in that dataspace.
+
+00:14:00.900 --> 00:14:22.900
+So rules come first. And the kinds of things you have to agree on are who can participate? How are we going to establish trust? What kinds of conditions need to be in place to say, okay, well, I can shift the data to your organization if the following conditions are met.
+
+00:14:22.900 --> 00:14:34.900
+Right? That's how you establish trust is you have technology and rules and legal and policy all understood by all the parties involved.
+
+00:14:34.900 --> 00:14:44.900
+How can the data be used in a dataspace? How is compliance going to be checked? Right? So how are we going to make sure everybody's doing what they said they were going to do?
+
+00:14:44.900 --> 00:14:52.900
+What if they don't do what they said they were going to do? What if there's a breach? Are there fines? Are there legal ramifications?
+
+00:14:52.900 --> 00:15:06.900
+And the rulebook that you're agreeing on is this living document. So it's something that can change over time. How often is it going to be updated? Who's going to update it?
+
+00:15:06.900 --> 00:15:21.900
+All of these things are worked out by all of the participants, representatives from all of the organizations that are sharing data coming to an agreement on what these global rules are going to look like.
+
+00:15:21.900 --> 00:15:36.410
+And so if we go back to that example of foot and mouth disease in Darwin, it is very difficult to negotiate all of this while the emergency is happening.
+
+00:15:37.410 --> 00:15:48.410
+Oftentimes you might start sharing data, but you're doing it in a suboptimal way. You're breaching all kinds of security protocols.
+
+00:15:48.410 --> 00:15:59.410
+It's very difficult to even find who all the providers might be for the kinds of data that you need to optimally respond to an outbreak like this.
+
+00:15:59.410 --> 00:16:11.410
+So keep in mind the technology can be brought together fairly quickly, but what takes time is these agreements about how are we going to get this data to flow?
+
+00:16:11.410 --> 00:16:24.410
+What kinds of conditions need to be in place? Who needs to be a participant in this? You know, you might have veterinarians, you might have operational staff who are driving around to different cattle stations.
+
+00:16:24.410 --> 00:16:48.410
+You might have people who are doing other surveillance work. You might have the various jurisdictions, researchers who are trying to model how the disease is most likely spreading, and those researchers will need the latest data in order to come up with the best projections of where this thing might have spread out away from Darwin.
+
+00:16:48.410 --> 00:17:02.410
+So all of these things need to be shared relatively quickly, but it can't happen at the drop of a hat because these things take time to negotiate.
+
+00:17:02.410 --> 00:17:21.410
+So there's five kinds of dimensions of building this rulebook. So the first thing that people who are thinking about creating a dataspace need to come to agreement on is what's the business case for me participating in this dataspace?
+
+00:17:21.410 --> 00:17:36.410
+So how am I going to get value by participating in this dataspace? What's in it for me? And all of the participants need to come to an understanding, whether they're a data provider or a data consumer.
+
+00:17:36.410 --> 00:17:43.410
+All of them need to understand, well, this is why sharing data would be valuable to me.
+
+00:17:43.410 --> 00:18:01.410
+Then we need to check off on all of the legal constraints. There's a lot of legal constraints around biosecurity data, sharing data between jurisdictions and the Commonwealth, privacy concerns, other policy concerns that need to be taken into account.
+
+00:18:01.410 --> 00:18:09.410
+Legal plays a big part in understanding what can and cannot be shared and under what conditions.
+
+00:18:09.410 --> 00:18:28.410
+And then the group of dataspace participants need to agree on who's going to manage the day-to-day operation of the dataspace. Is it going to be a group of us? How are we going to fund that group that's going to do that work?
+
+00:18:28.410 --> 00:18:38.410
+Or are we going to contract it out? All of these things. How are we going to operationalize the running of the dataspace?
+
+00:18:38.410 --> 00:18:46.410
+And importantly, what does this dataspace ultimately have to do? So obviously, it needs to push data from one person to another.
+
+00:18:46.410 --> 00:19:00.410
+But what are the other things that it needs to do? Does it need to be able to push data into an analytics platform where nobody can see the data, but we get an understanding of where foot and mouth disease might be spreading?
+
+00:19:00.410 --> 00:19:10.410
+What kinds of functional things does this dataspace need to be able to do in order to deliver value for all of those participants?
+
+00:19:10.410 --> 00:19:29.410
+And then the technical is all of the standards and all of the software that implements all of these rules. So those are the five things that you need to think about when you're setting up a dataspace. And again, it's not a small thing.
+
+00:19:29.410 --> 00:19:40.410
+So there's a big upfront cost to setting up a dataspace. But once you kind of agree on the rules and you've captured them in something called a rulebook, and that rulebook might change over time.
+
+00:19:40.410 --> 00:19:53.410
+But then once you have the rulebook set, then you can build the solution to make sure all of those things specified in the rulebook are taken care of by the technology.
+
+00:19:53.410 --> 00:20:01.410
+And once that happens, it becomes very easy to share. Maybe you're only going to share data when the emergency hits.
+
+00:20:01.410 --> 00:20:08.410
+But when the emergency does hit, it's easy to share the data that needs to be shared to whomever.
+
+00:20:08.410 --> 00:20:22.410
+And often once you start sharing sensitive data, you find that there are other organizations or other groups that you can also see value in starting to share some of that data with other parties.
+
+00:20:22.410 --> 00:20:43.410
+So it starts to scale data sharing of sensitive data, and that process is very easy, much, much easier at least, than trying to negotiate bilateral data sharing agreements or whatever the current process might be.
+
+00:20:43.410 --> 00:20:48.410
+So it becomes very repeatable, very easy to do that.
+
+00:20:49.410 --> 00:21:04.410
+So that was the first thing that wasn't understood, is that there's this community effort to build the rulebook, and only after you build the rulebook with all of the participants engaged in that can you build a dataspace.
+
+00:21:04.410 --> 00:21:15.410
+The second thing that we found a lot of stakeholders missed was this idea that the technology has two types of things going on.
+
+00:21:15.410 --> 00:21:23.410
+And one is called the control plane, and one is called the data plane. And they're very different things.
+
+00:21:23.410 --> 00:21:39.410
+So the control plane, that coordinates all of the rules of data exchange. So it takes care of negotiating contracts, it takes care of identifying
+
+00:21:39.410 --> 00:21:53.410
+if the person who is trying to access data has all of the necessary attributes to actually be able to see that data. How are we going to log these contracts?
+
+00:21:53.410 --> 00:22:01.410
+All of that takes place in the control plane. Unfortunately, there's a lot of standards that are built around that.
+
+00:22:01.410 --> 00:22:12.410
+So there's not a lot of flexibility in how you specify these things, but what you specify is wide open. So again, the rules can vary quite a lot.
+
+00:22:12.410 --> 00:22:25.410
+But from a technical standpoint, there are standards and vocabularies that you have to use in the control plane so that two connectors can talk to each other, and we'll talk about connectors in a second.
+
+00:22:26.410 --> 00:22:34.410
+So control plane, highly standardized, but flexible in terms of what you can enact within that.
+
+00:22:34.410 --> 00:22:49.410
+The data plane, you can do whatever you want in the data plane, essentially. So the data plane just handles the actual transfer of the data, and we'll talk more about what that might look like, but it's very, very flexible.
+
+00:22:49.410 --> 00:22:57.410
+So you have a very standardized control plane, and you have a very flexible data plane.
+
+00:22:57.410 --> 00:23:14.410
+So in the control plane, what does the control plane comprise of? So primarily, one of the key aspects of the control plane is this thing called the dataspace protocol, which is essentially a communications protocol so that
+
+00:23:14.410 --> 00:23:26.410
+our machines in different organizations are speaking the same language. And so when they go and ask for data, the other machine knows what it's asking for, because it's asking for it in the right way.
+
+00:23:26.410 --> 00:23:36.410
+And then it can say, oh, well, here's an offer, and here's a contract. And all of those things, if they're standardized, the machines can just do them automatically.
+
+00:23:36.410 --> 00:23:47.410
+So it's the way you talk about contract negotiation that is standardized so that any organization within the dataspace can talk to one another.
+
+00:23:47.410 --> 00:23:58.410
+And so if you're in one dataspace, you can talk to another dataspace. So it's all of those standards, and we'll talk about that a little bit more later as well.
+
+00:23:58.410 --> 00:24:18.410
+The control plane has to identify not only is the person who they say they are, are they from the organization they say they are, but there might be all kinds of other attributes that they also need to verify before data will be shared between those two organizations.
+
+00:24:18.410 --> 00:24:29.410
+All of this has to be machine readable and machine actionable. So you've got to express all of these things in written code, essentially.
+
+00:24:29.410 --> 00:24:45.410
+And then finally, you have the contracts that are negotiated and logged. So every single piece of data that is exchanged through a dataspace gets a contract.
+
+00:24:45.410 --> 00:24:55.410
+And that might sound like a lot of work, but all of that happens automatically. So the control plane are where the standards do the work.
+
+00:24:55.410 --> 00:25:10.380
+And within the control plane, the primary differentiator within a dataspace, the thing that makes dataspaces most novel is this thing called a connector.
+
+00:25:10.380 --> 00:25:19.380
+And a connector is the software that implements contract negotiation and usage control.
+
+00:25:19.380 --> 00:25:25.380
+So it's the software that every participant needs to be able to run.
+
+00:25:25.380 --> 00:25:38.380
+And think of it like the security guard that stands outside your organization's door who's going to check to make sure, okay, the person knocking on the door is who they say they are.
+
+00:25:38.380 --> 00:25:48.380
+And we're going to implement all of these rules, the contract negotiation within the control plane.
+
+00:25:48.380 --> 00:25:58.380
+We're going to check on who they are. So all of the things that are happening in the control plane are being done by this connector, which is a bundle of software.
+
+00:25:58.380 --> 00:26:02.380
+And that bundle of software wraps around the data plane.
+
+00:26:02.380 --> 00:26:08.380
+So again, anything you can push and pull data any way you want through the data plane.
+
+00:26:08.380 --> 00:26:20.660
+But the connector is the security guard that makes sure everything happens as it's supposed to, as it was specified by that rulebook.
+
+00:26:20.660 --> 00:26:32.660
+So when we're thinking about identity, most of us are familiar with an identity provider that offers role based access controls, right?
+
+00:26:32.660 --> 00:26:40.660
+So it's going to verify you are who you say you are, you are from the organization you say you're from.
+
+00:26:40.660 --> 00:26:45.660
+The Australian Access Federation does a lot of this work for most universities.
+
+00:26:45.660 --> 00:26:58.660
+When you log into a platform, there might be a verification step to verify that you are working on a university computer.
+
+00:26:58.660 --> 00:27:11.660
+Your email has been verified as the one that's logged into that computer, and you therefore are able to access that particular service.
+
+00:27:11.660 --> 00:27:17.660
+So most of us are familiar with those kinds of role based access controls.
+
+00:27:17.660 --> 00:27:22.660
+But again, in a dataspace, identity is much more than a name.
+
+00:27:22.660 --> 00:27:33.950
+There's a whole lot of other components to be verified, a whole lot of other attributes that need to be verified.
+
+00:27:33.950 --> 00:27:41.950
+And let's think about the contract negotiation that's part of the dataspace protocol.
+
+00:27:41.950 --> 00:27:46.950
+So the dataspace protocol has these two connectors that are talking to each other.
+
+00:27:46.950 --> 00:27:49.950
+So one, you discover the data set, then you request the data set.
+
+00:27:49.950 --> 00:27:54.950
+The other connector will negotiate some terms.
+
+00:27:54.950 --> 00:28:04.950
+Then the other connector will confirm your identities, and both connectors will verify that all the identities,
+
+00:28:04.950 --> 00:28:11.950
+all the attributes that are being looked for are indeed being met by this organization.
+
+00:28:11.950 --> 00:28:15.950
+Then you're going to agree to the contract, and that goes back and forth.
+
+00:28:15.950 --> 00:28:20.950
+And then finally, you're going to give it a green light and say, okay, we can now transfer the data.
+
+00:28:20.950 --> 00:28:24.950
+So the security guard can wave the data through, right?
+
+00:28:24.950 --> 00:28:30.950
+So all of that needs to happen within each connector.
+
+00:28:30.950 --> 00:28:35.950
+And the dataspace protocol ensures that all of your machines are talking the same language.
+
+00:28:35.950 --> 00:28:37.950
+They're talking to each other well.
+
+00:28:37.950 --> 00:28:51.840
+And one of the really hard parts about all of this is taking a policy around appropriate data use.
+
+00:28:51.840 --> 00:28:54.840
+Say you need to delete the data after 30 days.
+
+00:28:54.840 --> 00:28:59.840
+We're going to give it to you for 30 days, but you can't hang on to it for longer than that.
+
+00:28:59.840 --> 00:29:05.310
+And there might be a whole lot of other things that are within that policy.
+
+00:29:05.310 --> 00:29:13.310
+To turn that policy into machine-readable and machine-actionable code takes a lot of work.
+
+00:29:13.310 --> 00:29:19.310
+So one way that it's often done is using Open Digital Rights Language (ODRL).
+
+00:29:19.310 --> 00:29:23.310
+And essentially, this is a World Wide Web standard.
+
+00:29:23.310 --> 00:29:32.310
+So it translates this plain English policy into something that a machine can read in action.
+
+00:29:32.310 --> 00:29:34.310
+But it's hard to write a good one.
+
+00:29:34.310 --> 00:29:41.310
+So we're lucky in the dataspaces community, dataspaces have been going on for 10 years in Europe.
+
+00:29:41.310 --> 00:29:50.310
+And they have some off-the-shelf policies that you can grab, between 18 and 23 of them, depending on which connectors you're using.
+
+00:29:50.310 --> 00:29:54.310
+But those have been certified.
+
+00:29:54.310 --> 00:29:58.310
+Those do what the policy says they will do.
+
+00:29:58.310 --> 00:30:08.310
+It's hard to make sure that your connector policy does exactly what it says on the tin.
+
+00:30:08.310 --> 00:30:17.310
+So it takes a lot of work to certify that your policy written code is doing exactly what it says on the tin.
+
+00:30:17.310 --> 00:30:29.310
+So you can implement policies that aren't off-the-shelf ready for you, but just keep in mind it's going to take some cost and some time to get that done.
+
+00:30:29.310 --> 00:30:35.310
+If you have a policy that's different from the 18 to 23 that are already available.
+
+00:30:35.310 --> 00:30:47.860
+So if we think about the data plane, the data plane is able to do whatever you want.
+
+00:30:47.860 --> 00:30:59.860
+So, again, the data might go from one participant to another through an API access or some kind of file transfer, but there might be a secure container involved.
+
+00:30:59.860 --> 00:31:03.860
+You might be pushing data into a trusted research environment.
+
+00:31:03.860 --> 00:31:10.860
+You might be pushing data into an analytics platform, a Databricks solution.
+
+00:31:10.860 --> 00:31:18.860
+You might be using a secure vault where nobody can actually, you push the data into the secure vault, but nobody sees it.
+
+00:31:18.860 --> 00:31:31.180
+And you can't take it out of the secure vault, but you can do analysis on those data and take out the data products.
+
+00:31:31.180 --> 00:31:36.180
+All kinds of things that you can do in the data plane. It's totally up to you.
+
+00:31:36.180 --> 00:31:43.180
+A lot of those solutions are not available out of the box from Europe, but you can do whatever you want to do.
+
+00:31:43.180 --> 00:31:47.180
+Some of them just might be a little more costly than others.
+
+00:31:47.180 --> 00:31:56.180
+You can also do something called federated learning. So you can actually bring the compute to the data.
+
+00:31:56.180 --> 00:32:07.180
+So essentially you set up an analysis and you gather all of the bits of information that you need from each of the organization's databases.
+
+00:32:07.180 --> 00:32:13.180
+And then you pull that information together to get your final result.
+
+00:32:13.180 --> 00:32:30.620
+So if we think about the foot and mouth disease example, so you might have different producers that have different amount of data on where their data, where their cows are.
+
+00:32:33.220 --> 00:32:58.220
+They don't want to give you access to the raw data, but they'll give you access to be able to say, well, what's the incidence rate and the detection rates and the surveillance rates of looking for this disease in the various stations around the Northern Territory.
+
+00:32:58.220 --> 00:33:11.220
+So they're not going to give you all the data on the raw cows, but they might be able to give you summary results that you can then pull together for a global picture of what surveillance and spread is looking like at the moment.
+
+00:33:11.220 --> 00:33:24.220
+So federated learning is an increasingly popular solution. It's probably the most secure. Your data never actually leaves your organization.
+
+00:33:24.220 --> 00:33:37.220
+You just pull the required summary data out of those raw data, but it's not an out of the box solution. So it is a little bit more costly to implement.
+
+00:33:37.220 --> 00:33:43.220
+There are some people in Australia who are doing this kind of work. QCIF is one of those.
+
+00:33:43.220 --> 00:33:56.340
+And at a glance, there's some essential components in a dataspace.
+
+00:33:56.340 --> 00:34:03.340
+And at ARDC, I think we'd argue that even the optional ones are a really good idea, but the mandatory ones are you need a connector.
+
+00:34:03.340 --> 00:34:14.340
+Every organization who's participating, whether you're a data provider or a data consumer, needs this data connector, which is the bit of software, the security guard.
+
+00:34:14.340 --> 00:34:20.340
+You need an identity provider. You need a way to prove the attributes that you're looking for.
+
+00:34:20.340 --> 00:34:28.340
+You need some sort of policy enforcement mechanisms, and you need a data source and a data destination.
+
+00:34:28.340 --> 00:34:35.880
+So where are you moving data from and to? Usually, you need a catalog.
+
+00:34:36.880 --> 00:34:49.880
+So you need somewhere where somebody can log in and the catalog might have access control. So you might have to have a certain credential or be from a certain organization to even see the catalog.
+
+00:34:49.880 --> 00:34:57.880
+But once you're in the catalog, you should be able to see all of the data that's available from the various organizations.
+
+00:34:57.880 --> 00:35:06.130
+Usually, you're going to want a clearinghouse. A clearinghouse tracks all of the things that are going on in your dataspace.
+
+00:35:06.130 --> 00:35:19.130
+It gives you an audit trail, and it gives you a way for someone to look and verify that all of the things that we agree to are actually happening within the dataspace.
+
+00:35:19.130 --> 00:35:29.440
+Often, there's something called an app store. So an app store is just an application that sits on top of a dataspace.
+
+00:35:29.440 --> 00:35:44.440
+And it will do extra things. So an analytics platform would be an example of an app that would also have to have connectors, but could pull data together to do analyses.
+
+00:35:44.440 --> 00:35:54.440
+So a lot of the exciting things happen in an app store, an application that sits on top of the dataspace that does something downstream of just the raw data.
+
+00:35:55.440 --> 00:36:10.440
+And usually, so within the dataspace protocol, there'll be some vocabularies that you have to use, but often there'll be some domain-specific vocabularies that you will want to use so everybody understands the data that's being shared.
+
+00:36:13.650 --> 00:36:31.650
+So the third concept that we want to come back to is this idea, and that a lot of people missed, and I've already alluded to it a few times, is trust isn't just based on who you are, but it's also based on what you can prove.
+
+00:36:31.650 --> 00:36:51.650
+So for example, traditionally, and we've talked about this, AAF would identify who you are and what organization you're from, but there might be a whole lot of other attributes that you want to prove before you start to share data with another organization.
+
+00:36:51.650 --> 00:37:03.650
+So that could be, for example, you might want to prove that, okay, the organization is who they say they are, they are from the state that we're working in, they're from the jurisdiction of the Northern Territory.
+
+00:37:03.650 --> 00:37:13.650
+They actually are a veterinarian with authority to do surveillance for foot and mouth disease, so the role and the authority to act.
+
+00:37:14.650 --> 00:37:29.650
+You might want information on their certification status, so their connector is a five-star connector. The organization that's asking for data in this dataspace has kept their connector up to date, and they've even certified it to a level of five stars.
+
+00:37:30.650 --> 00:37:48.650
+You might want to understand the security posture of the organization that you're sharing data with. Have they gone through the process of becoming, their data becoming ISO 27001 certified, and to what level have they gone through that process?
+
+00:37:49.650 --> 00:37:57.650
+There might be professional accreditations, so somebody who's in the field doing operations understands foot and mouth disease really well.
+
+00:37:58.650 --> 00:38:08.650
+If they do, and they've gone through the requisite trainings, they could have access to that data. So there's all kinds of things that you might have to prove aside from just, I am who I say I am.
+
+00:38:12.140 --> 00:38:30.140
+And again, if we think about responders on the ground, often people who are trying to understand how this disease might be spreading need the movement data right away, but they can't get that with a generic login.
+
+00:38:31.140 --> 00:38:39.140
+Again, they might have to prove that they're an accredited veterinary officer with an understanding of animal disease.
+
+00:38:42.140 --> 00:38:57.900
+They have the authority to act during this emergency, right? So all of these things, if they're set up ahead of time, can be scaled really quickly and easily.
+
+00:38:58.900 --> 00:39:04.900
+So once the front end cost is there, once the dataspace is set up, all of this data gets pushed around very quickly.
+
+00:39:05.900 --> 00:39:24.310
+So one of the other things in a dataspace that is a little bit unique is all of these claims, all of these attributes need to be proven, and there are organizations that manage the way those things are proven.
+
+00:39:25.310 --> 00:39:43.310
+So we've talked about AAF, the Australian Access Federation, so they do a lot of this for universities, proving you are an individual with the right email address and the right two-factor authentications with a university computer.
+
+00:39:44.310 --> 00:40:03.310
+Those organizations that do this work are called trust anchors. And so again, they might reach, trust anchors might be certified bodies. So IDSA could say, yes, your connector is a top grade connector. It's at the highest level of certification.
+
+00:40:04.310 --> 00:40:24.310
+There might be other certification authorities that manage different kinds of certifications. There are government and industry registers. So yes, this person is from New South Wales or Queensland and working in the correct government department.
+
+00:40:25.310 --> 00:40:41.310
+There might be standard bodies. So people who have come up with the vocabularies of how we're going to talk about foot and mouth disease, right? We're all going to talk about it in the same way. When I say surveillance, this is what I mean. When I say detection, this is what I mean.
+
+00:40:41.310 --> 00:41:09.310
+And I'm always going to report what the sensitivity of that test is. So there's all kinds of things that might need to be verified before data starts to flow. So everybody needs to be talking about surveillance in the same way before we're going to start sharing data about surveillance, so there's no misunderstandings, right?
+
+00:41:12.750 --> 00:41:27.750
+I just want to briefly touch on what it takes to build a dataspace. So hopefully I've touched on what a dataspace is and what some of the things that early stakeholders that we were explaining dataspace is often missed.
+
+00:41:28.750 --> 00:41:52.540
+But to build one, again, you have to come up with this group that have worked together that represent all of the organizations that are wanting to either provide data or consume data, and they've come together to understand who, what, and how all of this is going to work.
+
+00:41:53.540 --> 00:42:18.530
+And it's that group effort that sort of builds trust. So coming to an understanding of all of these parts of how we're going to set up a rulebook, coming to those understandings builds trust because we understand exactly what needs to be in place before I'm willing to share data.
+
+00:42:19.530 --> 00:42:42.350
+And this is just an indication. This is a guest by Muhammad, who's also at ARDC and myself. We were sort of throwing out some figures, so these might not be totally accurate. Again, we're fairly new to dataspaces in Australia. We might find that things cost more or less than this.
+
+00:42:42.350 --> 00:43:10.350
+But it looks like if we were just going to set up a demonstrator in your domain to demonstrate how data can flow from a provider to a consumer and meet a number of policy obligations, just that demonstrator, that software that allows data to go from one database to another would cost upwards of $150,000.
+
+00:43:12.350 --> 00:43:24.350
+If we were going to have a limited production dataspace where you have one consumer and one provider, that could be upwards of $1 to $1.5 million.
+
+00:43:24.350 --> 00:43:35.350
+We've got a whole bunch of organizations that are starting to share data at scale, and it's a fully production ready dataspace
+
+00:43:35.350 --> 00:43:50.980
+that could cost anywhere from $2 to $5 million. And in the case of biosecurity or finance or health, if the data is highly sensitive, those costs could even go up, right?
+
+00:43:50.980 --> 00:44:02.980
+And just coming back to the foot and mouth disease example, I don't think we have enough resource to pull that off in the biosecurity sector in the next year, for example.
+
+00:44:02.980 --> 00:44:10.980
+I just don't think we have enough resource to get all of the players involved and starting to share data.
+
+00:44:10.980 --> 00:44:20.980
+So in animal biosecurity, it might make more sense to start off with a real obvious use case where you have a data provider and a data consumer.
+
+00:44:21.980 --> 00:44:33.980
+And you know that there would be a lot of value if they were pushing and pulling data between one another and work on that smaller use case before you take on the whole biosecurity sector, right?
+
+00:44:33.980 --> 00:44:40.790
+Because that's going to be a much more expensive operation.
+
+00:44:40.790 --> 00:45:00.790
+So again, you start with a shared problem, you identify what's the problem that we're trying to solve. In the case of foot and mouth disease, we want to be prepared so we can identify all of the locations where foot and mouth disease has spread to and contain it as quickly as possible.
+
+00:45:00.790 --> 00:45:09.790
+So it doesn't spread throughout Australia and shut down exports of cattle, right, or cattle products.
+
+00:45:09.790 --> 00:45:13.790
+And that takes some real commitment to do that ahead of time.
+
+00:45:13.790 --> 00:45:23.790
+But if the value is there, you're going to likely agree that, okay, we understand that there's some short-term costs to make this happen.
+
+00:45:23.790 --> 00:45:31.790
+But when an emergency happens, the data is going to be able to be flowing as needed, right?
+
+00:45:31.790 --> 00:45:41.190
+So here in Australia, again, ARDC has been at this for a little over a year.
+
+00:45:41.190 --> 00:45:49.190
+And we've had a couple of pilots where we've learned a lot about dataspaces.
+
+00:45:50.190 --> 00:45:57.190
+We've learned about the concepts, but also how to describe the concepts.
+
+00:45:57.190 --> 00:46:11.630
+A testbed has been built, so it's a place where you can demo the technology and start to explore whether what you've built meets different standards.
+
+00:46:11.630 --> 00:46:16.630
+So the IDSA, the testbed is in place.
+
+00:46:16.630 --> 00:46:29.100
+And generally, we're now moving on to phase two where we're looking to actually build a couple of these dataspaces in the next year and a half or so.
+
+00:46:29.100 --> 00:46:36.100
+Globally, there's over 200 dataspaces that are being developed. Some of those are quite mature.
+
+00:46:36.100 --> 00:46:46.100
+So Catena-X is an example of a very mature dataspace. The mobility dataspace is another example where you started out with limited data sharing,
+
+00:46:46.100 --> 00:46:49.100
+but that has grown to many different industries.
+
+00:46:49.100 --> 00:47:01.100
+So the mobility dataspace is including insurance companies and automobile manufacturers and local city jurisdictions and countries.
+
+00:47:01.100 --> 00:47:10.100
+And so all of these different data sets and all of these players are starting to share data at scale.
+
+00:47:11.100 --> 00:47:18.100
+And all of these are backed by standards. It's all backed by open source data.
+
+00:47:18.100 --> 00:47:24.100
+So you can find connectors online and use those.
+
+00:47:24.100 --> 00:47:27.100
+So there's lots and lots of tools.
+
+00:47:27.100 --> 00:47:38.100
+Because this has been happening for 10 years in Europe, there's almost nothing that you could think about regarding sharing sensitive data
+
+00:47:38.100 --> 00:47:44.100
+that hasn't been thought about in excruciating detail by the Europeans over the last 10 years.
+
+00:47:44.100 --> 00:47:53.100
+So it's nice because we can borrow a lot of that. The things that we can't borrow are legal and policy things that are specific to Australia that we have to work through.
+
+00:47:53.100 --> 00:48:04.100
+But there is so much rich information to draw from that it makes it much easier for us to stand up dataspaces than it would have been for the Europeans originally.
+
+00:48:04.100 --> 00:48:16.450
+So just keep in mind that there is a second session on dataspaces and we'll go a little more deeply into some of what we've discussed today.
+
+00:48:16.450 --> 00:48:29.270
+But this first session, I just wanted to sort of drive home the idea that what a dataspace is and what are some of the key concepts.
+
+00:48:29.270 --> 00:48:41.270
+There's some other resources here on this page that would allow you to learn more. So there's a dataspaces FAQ page on the ARDC website.
+
+00:48:41.270 --> 00:48:56.270
+We have something called a dataspace educator, which is a chat bot that's trained on a local RAG architecture. So it's trained on actual dataspace information from IDSA and DSSC.
+
+00:48:56.270 --> 00:49:09.270
+And we also have a community page if you want to start getting involved. So there's tons more to learn. Again, usually a dataspaces 101 class is going to run for eight hours.
+
+00:49:09.270 --> 00:49:13.270
+So there's a lot to know. We've just sort of skimmed on it.
+
+00:49:13.270 --> 00:49:29.270
+But the three things that I want you to take away from today are rules before tools, governance that's a community process of all of the participants who are sharing data have to build those rules.
+
+00:49:29.270 --> 00:49:40.270
+Once those rules are in place, that specifies what technology to build. You can't build the technology first because you don't know what to build until the rules are in place.
+
+00:49:41.270 --> 00:49:51.270
+The control plane and the data plane are very different things. The control plane has a lot of standards. The data plane you can do almost anything you can imagine in.
+
+00:49:51.270 --> 00:50:06.270
+And trust is more what you can prove, not just who you are. So there's a whole bunch of attributes that you might need to prove as part of operating within the dataspace beyond I am who I say I am.
+
+00:50:06.270 --> 00:50:22.270
+So those are the things I want you to keep in mind. And if you are able to do a deeper dive, there is tons of information out there. I would encourage you to focus on these four main sources of information.
+
+00:50:22.270 --> 00:50:31.270
+So the DSSC dataspaces blueprint is a great place to understand how to get started in building dataspaces.
+
+00:50:31.270 --> 00:50:47.270
+The IDSA rulebook gives you an understanding of all of the components that we're talking about today. The Sitra rulebook gives you sort of a step-by-step way of working through the process of developing a rulebook.
+
+00:50:47.270 --> 00:50:58.270
+And the IDS reference architecture manual, that's something that your tech team needs to understand, especially your technical architects.
+
+00:50:59.270 --> 00:51:15.270
+And that specifies all the technology that's available to make this feasible. All of that is described in the RAM, the reference architecture model.
+
+00:51:15.270 --> 00:51:27.270
+So that's it for today. If you want to learn more, we'll have the second session in a separate video. Thank you.
+
+00:51:28.270 --> 00:51:30.270
+Thank you.

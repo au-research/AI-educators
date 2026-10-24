@@ -46,10 +46,10 @@ and in every generated file's provenance header - attribution requirements
 (largely CC BY 4.0) apply to what you rebuild.
 
 If you deploy your own instance, please: use your own branding and contact address
-(the prompts reference skills@ardc.edu.au - change this), keep the source-attribution
+(the prompts reference rob.clemens@ardc.edu.au - change this), keep the source-attribution
 footer pattern, and check each source's licence still permits your use.
 
 ## Provenance
 
 Built by the ARDC skills team (Rob Clemens) with AI-assisted development, September 2026.
-Questions: skills@ardc.edu.au
+Questions: rob.clemens@ardc.edu.au
