@@ -59,8 +59,13 @@ plus whatever content you choose to write.
   statistics as JSON, redaction included. Adapt the app IDs at the top and the
   test-user exclusion to your instance.
 - `template.html` - the page, with `__DATA_JSON__` / `__SUMMARY_JSON__` /
-  `__GOLDEN_JSON__` / `__JEV_JSON__` placeholders. Plain HTML + vanilla JS,
-  no build tooling.
+  `__GOLDEN_JSON__` / `__JEV_JSON__` / `__GITHUB_JSON__` placeholders. Plain
+  HTML + vanilla JS, no build tooling.
+- `github_traffic.py` - optional daily GitHub card: page views, clones,
+  referrers, stars, forks and "We're using this" issues for your public repo,
+  kept as a growing history (GitHub itself keeps only 14 days). Needs a
+  read-only token with access to the repository's traffic, stored with
+  `save_github_token.sh`. Without a token the card stays hidden.
 - `build_dashboard.sh` - injects the JSONs into the template. Run it from cron
   daily.
 - `golden_check.py` - the weekly retrieval + behaviour checks: fixed questions

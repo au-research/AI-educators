@@ -19,12 +19,14 @@ def load(p):
 summary = load("/home/ubuntu/idsa-dify-project/dashboard/weekly_summary.json")
 golden = load("/home/ubuntu/idsa-dify-project/dashboard/golden_results.json")
 jev = load("/home/ubuntu/idsa-dify-project/dashboard/jev_analysis.json")
+github = load("/home/ubuntu/idsa-dify-project/dashboard/github_traffic.json")
 tpl = open("/home/ubuntu/idsa-dify-project/dashboard/template.html", encoding="utf-8").read()
 assert "__DATA_JSON__" in tpl and "__SUMMARY_JSON__" in tpl and "__GOLDEN_JSON__" in tpl and "__JEV_JSON__" in tpl, "placeholder missing from template"
 out = tpl.replace("__DATA_JSON__", json.dumps(stats, separators=(",", ":")))
 out = out.replace("__SUMMARY_JSON__", json.dumps(summary, separators=(",", ":")))
 out = out.replace("__GOLDEN_JSON__", json.dumps(golden, separators=(",", ":")))
 out = out.replace("__JEV_JSON__", json.dumps(jev, separators=(",", ":")))
+out = out.replace("__GITHUB_JSON__", json.dumps(github, separators=(",", ":")))
 open("/home/ubuntu/idsa-dify-project/dashboard/dashboard_built.html", "w", encoding="utf-8").write(out)
 print("dashboard_built.html:", len(out), "bytes; users:", stats["unique_users"], "questions:", stats["total_questions"],
       "summary:", "yes" if summary.get("text") else "none",

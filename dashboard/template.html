@@ -83,6 +83,7 @@
 <script id="summary-data" type="application/json">__SUMMARY_JSON__</script>
 <script id="golden-data" type="application/json">__GOLDEN_JSON__</script>
 <script id="jev-data" type="application/json">__JEV_JSON__</script>
+<script id="github-data" type="application/json">__GITHUB_JSON__</script>
 
 <div class="wrap">
   <div class="eyebrow">ARDC · chat.dresa.org.au</div>
@@ -157,6 +158,22 @@
     <p class="hint" style="margin-top:0">Share of the passages retrieved for answers in the last 30 days, by knowledge base. Retrieval searches all four bases the same way and keeps the best eight passages per question; the prompt then prefers Wiki Brain material only for questions about Australia.</p>
     <div class="legend" id="kb-legend"></div>
     <div id="kb-share"></div>
+  </div>
+
+  <h2>Public repository on GitHub</h2>
+  <div class="card" id="gh-card" hidden>
+    <p class="hint" style="margin-top:0">Visits to <a href="https://github.com/au-research/AI-educators">github.com/au-research/AI-educators</a>, where others can copy the educators. GitHub keeps only 14 days, so this dashboard records each day from <span id="gh-since" class="mono"></span>. A clone is a full download of the repository; many come from automated tools (mirrors, code-search indexers), so unique cloners and the "We're using this" count are the better signs of real reuse.</p>
+    <div class="tiles">
+      <div class="tile"><div class="label">Page views, 14 days</div><div class="value" id="gh-v"></div><div class="sub" id="gh-v-sub"></div></div>
+      <div class="tile"><div class="label">Clones, 14 days</div><div class="value" id="gh-c"></div><div class="sub" id="gh-c-sub"></div></div>
+      <div class="tile"><div class="label">Recorded so far</div><div class="value" id="gh-all"></div><div class="sub">views / clones since tracking began</div></div>
+      <div class="tile"><div class="label">Stars · forks · adopters</div><div class="value" id="gh-s"></div><div class="sub">adopters = "We're using this" issues</div></div>
+    </div>
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-top:.6rem;font-size:.92rem">
+      <div><strong>Where visitors came from</strong><ul id="gh-refs" style="margin:.3rem 0 0 1rem;padding:0"></ul></div>
+      <div><strong>Most-viewed pages</strong><ul id="gh-paths" style="margin:.3rem 0 0 1rem;padding:0"></ul></div>
+    </div>
+    <div class="meta" id="gh-meta" style="margin-top:.5rem"></div>
   </div>
 
   <h2>Ask the AI about this data</h2>
@@ -352,6 +369,27 @@
     }).join("") + "<p class=\"hint\" style=\"margin-bottom:0\">Right-hand column: passages retrieved. Hover a bar for the split.</p>";
     document.getElementById("kb-card").hidden = false;
   })();
+
+  // GitHub statistics for the public repository (baked in from github_traffic.json; hidden if empty)
+  try {
+    var GH = JSON.parse(document.getElementById("github-data").textContent || "{}");
+    if (GH && GH.updated) {
+      var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+      document.getElementById("gh-since").textContent = GH.tracking_since || "";
+      document.getElementById("gh-v").textContent = GH.views_14;
+      document.getElementById("gh-v-sub").textContent = GH.visitors_14 + " unique visitors";
+      document.getElementById("gh-c").textContent = GH.clones_14;
+      document.getElementById("gh-c-sub").textContent = GH.cloners_14 + " unique cloners";
+      document.getElementById("gh-all").textContent = GH.views_all + " / " + GH.clones_all;
+      document.getElementById("gh-s").textContent = GH.stars + " · " + GH.forks + " · " + GH.adopters;
+      document.getElementById("gh-refs").innerHTML = (GH.referrers || []).map(function(r){
+        return "<li>" + esc(r.name) + ": " + r.count + " views (" + r.uniques + " people)</li>"; }).join("") || "<li>none yet</li>";
+      document.getElementById("gh-paths").innerHTML = (GH.paths || []).map(function(p){
+        return "<li>" + esc(p.path) + ": " + p.count + " (" + p.uniques + ")</li>"; }).join("") || "<li>none yet</li>";
+      document.getElementById("gh-meta").textContent = "Updated " + GH.updated + (GH.error ? " · " + GH.error : "");
+      document.getElementById("gh-card").hidden = false;
+    }
+  } catch (e) { /* a bad GitHub file must never break the rest of the dashboard */ }
 
   function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
   var chart = null;
