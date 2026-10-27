@@ -49,7 +49,28 @@ If you deploy your own instance, please: use your own branding and contact addre
 (the prompts reference rob.clemens@ardc.edu.au - change this), keep the source-attribution
 footer pattern, and check each source's licence still permits your use.
 
+If you redistribute the code or configuration, the Apache-2.0 licence asks you to include
+the [NOTICE](NOTICE) file's attribution with it.
+
+## How to acknowledge or cite
+
+If you use or adapt these educators, please acknowledge the ARDC, for example:
+
+> This work builds on the ARDC AI Educators (ARDC skills team, Australian Research Data
+> Commons), https://github.com/au-research/AI-educators. The ARDC is enabled by the
+> Australian Government's National Collaborative Research Infrastructure Strategy (NCRIS).
+
+In a chat page you build from `web/`, a footer line such as "Based on the ARDC AI Educators"
+with a link to this repository is enough. For papers and reports, use the **Cite this
+repository** button on GitHub (from [CITATION.cff](CITATION.cff)).
+
+## Using this? Tell us
+
+We would love to hear how you are using or adapting the educators: it helps us show impact
+and decide what to improve. Open a ["We're using this" issue](../../issues/new?template=using-this.yml)
+(one minute, all optional) or email contact@ardc.edu.au.
+
 ## Provenance
 
 Built by the ARDC skills team (Rob Clemens) with AI-assisted development, September 2026.
-Questions: rob.clemens@ardc.edu.au
+Questions: contact@ardc.edu.au

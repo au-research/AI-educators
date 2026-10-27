@@ -1,0 +1,26 @@
+# Citation metadata for this repository (Citation File Format 1.2.0, https://citation-file-format.github.io/).
+# GitHub reads this file and shows a "Cite this repository" button with ready-made APA and BibTeX text.
+cff-version: 1.2.0
+message: "If you use or adapt the ARDC AI Educators, please cite them as below."
+title: "ARDC AI Educators: Dify configuration and corpus kit for dataspace learning assistants"
+type: software
+authors:
+  - name: "ARDC skills team, Australian Research Data Commons"
+    email: contact@ardc.edu.au
+    website: "https://ardc.edu.au/"
+repository-code: "https://github.com/au-research/AI-educators"
+url: "https://dresa.org.au/educators"
+license: Apache-2.0
+version: "2026.10"
+date-released: "2026-10-28"
+abstract: >-
+  Configuration, prompts, knowledge-corpus recipe and usage dashboard for the Australian Research
+  Data Commons' AI learning assistants for dataspaces: an open question-and-answer Educator with
+  source-validation banners, and four guided Socratic coaches with fixed knowledge checks, running on
+  the open-source Dify platform.
+keywords:
+  - dataspaces
+  - AI tutor
+  - research data
+  - Dify
+  - digital research skills

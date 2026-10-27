@@ -1,0 +1,39 @@
+# GitHub issue form: lets people who reuse the ARDC AI Educators tell us about it in a minute.
+# It appears as "We're using this" when someone clicks "New issue" on the repository.
+name: "We're using this"
+description: Tell the ARDC skills team you have used or adapted the AI Educators. It helps us show impact and keep improving them.
+title: "Using the AI Educators: <your organisation or project>"
+labels: ["adopter"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for letting us know. Everything here is optional and will be public on this repository.
+        If you would rather tell us privately, email contact@ardc.edu.au.
+  - type: input
+    id: who
+    attributes:
+      label: Organisation or project
+      placeholder: e.g. Example University Library, Research Data Team
+  - type: dropdown
+    id: what
+    attributes:
+      label: What did you use?
+      multiple: true
+      options:
+        - The Educator (open Q&A)
+        - One or more of the coaches
+        - The prompts or prompt patterns
+        - The corpus recipe or scraper
+        - The usage dashboard kit
+        - Something else
+  - type: textarea
+    id: how
+    attributes:
+      label: How are you using it?
+      description: Domain, audience and roughly how many learners, if you can share it.
+  - type: input
+    id: link
+    attributes:
+      label: Link (optional)
+      description: A public page, repository or paper where it appears.
