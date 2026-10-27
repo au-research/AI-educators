@@ -68,9 +68,9 @@ repository** button on GitHub (from [CITATION.cff](CITATION.cff)).
 
 We would love to hear how you are using or adapting the educators: it helps us show impact
 and decide what to improve. Open a ["We're using this" issue](../../issues/new?template=using-this.yml)
-(one minute, all optional) or email contact@ardc.edu.au.
+(one minute, all optional) or email rob.clemens@ardc.edu.au.
 
 ## Provenance
 
 Built by the ARDC skills team (Rob Clemens) with AI-assisted development, September 2026.
-Questions: contact@ardc.edu.au
+Questions: rob.clemens@ardc.edu.au

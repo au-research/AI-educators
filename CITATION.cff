@@ -6,7 +6,7 @@ title: "ARDC AI Educators: Dify configuration and corpus kit for dataspace learn
 type: software
 authors:
   - name: "ARDC skills team, Australian Research Data Commons"
-    email: contact@ardc.edu.au
+    email: rob.clemens@ardc.edu.au
     website: "https://ardc.edu.au/"
 repository-code: "https://github.com/au-research/AI-educators"
 url: "https://dresa.org.au/educators"

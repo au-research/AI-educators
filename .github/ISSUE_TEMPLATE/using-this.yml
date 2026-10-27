@@ -9,7 +9,7 @@ body:
     attributes:
       value: |
         Thank you for letting us know. Everything here is optional and will be public on this repository.
-        If you would rather tell us privately, email contact@ardc.edu.au.
+        If you would rather tell us privately, email rob.clemens@ardc.edu.au.
   - type: input
     id: who
     attributes:

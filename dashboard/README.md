@@ -87,4 +87,4 @@ A Dify-based deployment (or any platform whose message log you can query -
 the SQL is the only Dify-specific part), somewhere to run two cron jobs, and
 a static place to put an HTML file. That's all.
 
-Questions: contact@ardc.edu.au
+Questions: rob.clemens@ardc.edu.au
