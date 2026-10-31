@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAIR - Leading Coach (beta) | ARDC</title>
+    <!-- DRESA-65: description, canonical address, link previews and structured data for search engines -->
+    <meta name="description" content="A free guided module on leading FAIR data in services, repositories, platforms and programs, with Socratic coaching, examples from your field, a knowledge check and a personal next-steps plan. An AI coach from the Australian Research Data Commons (ARDC).">
+    <link rel="canonical" href="https://dresa.org.au/fair_leading/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dresa.org.au/fair_leading/">
+    <meta property="og:title" content="FAIR - Leading Coach (beta) | ARDC">
+    <meta property="og:description" content="A free guided module on leading FAIR data in services, repositories, platforms and programs, with Socratic coaching, examples from your field, a knowledge check and a personal next-steps plan. An AI coach from the Australian Research Data Commons (ARDC).">
+    <meta property="og:image" content="https://dresa.org.au/fair_leading/ardc-logo.jpg">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "FAIR - Leading Coach (beta)", "url": "https://dresa.org.au/fair_leading/", "description": "A free guided module on leading FAIR data in services, repositories, platforms and programs, with Socratic coaching, examples from your field, a knowledge check and a personal next-steps plan. An AI coach from the Australian Research Data Commons (ARDC).", "isAccessibleForFree": true, "inLanguage": "en-AU", "learningResourceType": "AI tutor", "about": "FAIR data", "provider": {"@type": "Organization", "name": "Australian Research Data Commons", "url": "https://ardc.edu.au/"}, "isPartOf": {"@type": "CollectionPage", "name": "ARDC AI Educators", "url": "https://dresa.org.au/educators"}, "isBasedOn": "https://github.com/au-research/AI-educators"}</script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ardc-navy: #0C223F;
+            --ardc-teal: #00B0D5;
+            --ardc-yellow: #f8b20e;
+            --ardc-bg: #F4F7F9;
+            --text-main: #404041;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--ardc-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            background-color: #FFFFFF;
+            width: 100%;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-img {
+            height: 60px;
+            display: block;
+        }
+
+        /* DRESA-63 (Oct 2026): one-line strip (here: the matching ARDC FAIR videos) */
+        .video-strip {
+            width: 100%;
+            background-color: #E6F6FA;
+            border-bottom: 1px solid var(--ardc-teal);
+            font-size: 0.95rem;
+        }
+        .video-strip .content-wrapper {
+            padding: 8px 20px;
+            text-align: center;
+        }
+        .video-strip a {
+            color: var(--ardc-navy);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .video-strip a:hover, .video-strip a:focus {
+            color: #FFFFFF;
+            background: var(--ardc-navy);
+            outline: 2px solid var(--ardc-navy);
+            text-decoration: none;
+        }
+        @media (max-width: 480px) {
+            .video-strip .content-wrapper { padding: 8px 12px; font-size: 0.9rem; }
+        }
+
+        /* DRESA-27 (Oct 2026): logo on the left, a way back to DReSA on the right */
+        .header-bar .content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .back-link {
+            font-weight: 600;
+            color: var(--ardc-navy);
+            text-decoration: none;
+            padding: 8px 14px;
+            border: 2px solid var(--ardc-teal);
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .back-link:hover, .back-link:focus {
+            background: var(--ardc-teal);
+            color: #FFFFFF;
+            outline: 2px solid var(--ardc-navy);
+            outline-offset: 2px;
+        }
+        @media (max-width: 480px) {
+            .header-bar .content-wrapper { box-sizing: border-box; padding: 0 12px; }
+            .logo-img { height: 44px; }
+            .back-link { padding: 6px 8px; font-size: 0.85rem; white-space: normal; text-align: center; max-width: 52%; }
+        }
+
+        .hero-section {
+            background: var(--ardc-navy);
+            width: 100%;
+            padding: 60px 0 80px 0;
+            border-bottom: 6px solid var(--ardc-teal);
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .hero-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.6rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            color: #E0E7ED;
+        }
+
+        .hero-section a {
+            color: var(--ardc-teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .hero-section a:hover {
+            color: var(--ardc-yellow);
+            text-decoration: underline;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: -40px auto 40px auto;
+            /* Reduced bottom margin to fit footer */
+            height: 75vh;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-toolbar {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 10px 18px;
+            background: #F4F8F7;
+            border-bottom: 1px solid #E0E7ED;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .fullwindow-btn {
+            background: var(--ardc-teal);
+            color: #FFFFFF;
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.2s ease;
+        }
+
+        .fullwindow-btn:hover {
+            background: var(--ardc-navy);
+            color: #FFFFFF;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            flex: 1 1 auto;
+            border: none;
+        }
+
+        .toolbar-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .refresh-btn {
+            background: #FFFFFF;
+            color: var(--ardc-navy);
+            border: 1px solid var(--ardc-navy);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font: inherit;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .refresh-btn:hover,
+        .refresh-btn:focus-visible {
+            /* Navy, not teal: white on teal fails WCAG AA contrast. */
+            background: var(--ardc-navy);
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-bar">
+        <div class="content-wrapper">
+            <img class="logo-img" alt="Australian Research Data Commons Logo" src="ardc-logo.jpg">
+            <a class="back-link" href="https://dresa.org.au/educators">&larr; Back to DReSA Educators</a>
+        </div>
+    </div>
+
+    <div class="video-strip">
+        <div class="content-wrapper">
+            Watch first: <a href="https://dresa.org.au/media/fair/fair-vision-for-the-future.html">A vision for the future</a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="content-wrapper">
+            <h1>FAIR - Leading Coach <span style="font-size: 0.55em; vertical-align: middle;">(beta)</span></h1>
+            <p>
+                A guided learning module for people running data services, repositories, platforms and institutional programs: we work through the core FAIR concepts at this level, with examples
+                from your own field, then a knowledge check and a personal plan of next steps. The AI coach asks before
+                it tells, so expect questions, hints and exercises rather than instant answers. For open-ended questions,
+                use the <a href="/fair_ed/">ARDC FAIR Educator</a> instead.
+            </p>
+            <p style="font-size: 0.95rem;">
+                This module is in beta, and its curated knowledge base is still being reviewed by ARDC FAIR experts.
+                Want a quick read on where you stand first? Try the
+                <a href="https://ardc.edu.au/resource/fair-data-self-assessment-tool/" target="_blank" rel="noopener">ARDC FAIR Data Self-Assessment Tool</a>.
+                Other levels: <a href="/fair_start/">FAIR - Getting started</a> &middot;
+                <a href="/fair_practising/">FAIR - Practising</a> &middot; <a href="/fair_leading/">FAIR - Leading</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-toolbar">
+            <span>Want to come back to this conversation later? Chats in this embedded window may not keep
+                their history in every browser; a full window remembers more reliably.<br><strong>Tip:</strong> type &ldquo;Go to Topic 3&rdquo; (or any topic) or &ldquo;Skip to the knowledge check&rdquo; at any time. Copy your next-steps plan before you leave: chats are not saved.</span>
+            <div class="toolbar-actions">
+                <button type="button" class="refresh-btn" id="refresh-chat"><span aria-hidden="true">&#8635;</span> Refresh chat</button>
+                <a class="fullwindow-btn" href="https://chat.dresa.org.au/chat/hPyWFUuIfdxkTSDl"
+               target="_blank" rel="noopener">Open in full window &#8599;</a>
+            </div>
+        </div>
+        <iframe id="educator-frame" src="" data-src="https://chat.dresa.org.au/chat/hPyWFUuIfdxkTSDl"
+            style="width: 100%;" frameborder="0" allow="microphone">
+        </iframe>
+    </div>
+
+    <script>
+        // The chat autofocuses its input when it loads, which makes the browser
+        // scroll the page down past the header and title. Load the chat only
+        // after the page has settled, and pin the scroll position back to the
+        // top in case the focus still tugs it.
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        // Keep the page pinned to the top while the chat wakes up, but back off
+        // the instant the user scrolls, taps or types themselves.
+        var userMoved = false;
+        ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (e) {
+            window.addEventListener(e, function () { userMoved = true; }, { passive: true, once: true });
+        });
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var f = document.getElementById('educator-frame');
+                f.src = f.getAttribute('data-src');
+                var pin = setInterval(function () {
+                    if (userMoved) { clearInterval(pin); return; }
+                    if ((window.scrollY || document.documentElement.scrollTop) > 0) { window.scrollTo(0, 0); }
+                }, 250);
+                setTimeout(function () { clearInterval(pin); }, 10000);
+            }, 1200);
+        });
+    </script>
+
+    <p style="font-size: 0.85em; color: #666; text-align: center; margin: -28px auto 6px; max-width: 700px;">
+        Answers can take 15 to 30 seconds: the coach retrieves and checks its curated sources before it responds.
+    </p>
+
+    <div
+        style="font-size: 0.85em; color: #666; text-align: center; padding: 15px 20px 40px 20px; line-height: 1.5; max-width: 1000px; margin: 0 auto;">
+        <p style="margin-bottom: 8px;">
+            <strong>Knowledge Base &amp; Attributions:</strong> This AI Educator draws on ARDC materials and openly
+            licensed international guidance on FAIR data.
+        </p>
+        <p style="margin: 0 0 8px 0;">
+            Australian sources: ARDC guides, tools and research data commons pages from the
+            <a href="https://ardc.edu.au/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">ARDC website</a> and
+            <a href="https://zenodo.org/communities/ardc/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">ARDC publications on Zenodo</a>
+            (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">CC BY 4.0</a>), and the
+            <a href="https://dresa.org.au/media/fair/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">ARDC FAIR video series</a>.
+        </p>
+        <p style="margin: 0;">
+            International sources (all CC BY 4.0): <a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">GO FAIR</a>,
+            <a href="https://www.openaire.eu/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">OpenAIRE</a>, <a href="https://codata.org/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">CODATA</a> and the
+            <a href="https://worldfair-project.eu/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">WorldFAIR project</a>, <a href="https://fair-impact.eu/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">FAIR-IMPACT</a>,
+            <a href="https://rdmkit.elixir-europe.org/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">ELIXIR RDMkit</a> and
+            <a href="https://faircookbook.elixir-europe.org/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">FAIR Cookbook</a>,
+            <a href="https://datacite.org/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">DataCite</a>, the
+            <a href="https://www.dpconline.org/" target="_blank" rel="noopener noreferrer" style="color: #0056b3; text-decoration: none;">Digital Preservation Coalition</a>, and open-access journal articles
+            (each cited in the answers that use it).
+        </p>
+    </div>
+
+    <script>
+        // Each open window keeps its own snapshot of the chat and never
+        // updates itself, so a learner who carried on in another window comes
+        // back to an old view. Two remedies:
+        // 1. the "Refresh chat" button reloads just the chat panel;
+        // 2. returning to this tab after more than two minutes away reloads
+        //    it automatically. Two minutes is longer than an answer takes
+        //    (15-30 seconds), and answers are saved on the server, so nothing
+        //    finished is lost; only an unsent, half-typed message would be.
+        function refreshChat() {
+            var f = document.getElementById('educator-frame');
+            var src = f.getAttribute('data-src');
+            // Blank the panel briefly, then load the chat again from scratch.
+            f.src = 'about:blank';
+            setTimeout(function () { f.src = src; }, 50);
+        }
+        document.getElementById('refresh-chat').addEventListener('click', refreshChat);
+        var hiddenSince = null;
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) { hiddenSince = Date.now(); return; }
+            var f = document.getElementById('educator-frame');
+            // Only refresh a chat that has already loaded (src is set after
+            // the page settles), and only after a real absence.
+            if (hiddenSince && Date.now() - hiddenSince > 120000 && f.getAttribute('src')) {
+                refreshChat();
+            }
+            hiddenSince = null;
+        });
+    </script>
+</body>
+
+</html>
