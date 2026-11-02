@@ -160,7 +160,7 @@
     <div id="kb-share"></div>
   </div>
 
-  <h2>Public repository on GitHub</h2>
+  <h2 id="gh-h2" hidden>Public repository on GitHub</h2>
   <div class="card" id="gh-card" hidden>
     <p class="hint" style="margin-top:0">Visits to <a href="https://github.com/au-research/AI-educators">github.com/au-research/AI-educators</a>, where others can copy the educators. GitHub keeps only 14 days, so this dashboard records each day from <span id="gh-since" class="mono"></span>. A clone is a full download of the repository; many come from automated tools (mirrors, code-search indexers), so unique cloners and the "We're using this" count are the better signs of real reuse.</p>
     <div class="tiles">
@@ -280,7 +280,7 @@
     }
   } catch (e) {}
 
-  // per-educator activity table (v6 stats: all five apps)
+  // per-educator activity table (v6 stats: all educator apps, incl. FAIR from 30 Oct 2026)
   var pa = D.per_app || [];
   if (pa.length) {
     document.querySelector("#perapp-table tbody").innerHTML = pa.map(function(a){
@@ -350,7 +350,7 @@
     });
     var sum = function(o){ return Object.keys(o).reduce(function(n, k){ return n + o[k]; }, 0); };
     var apps = Object.keys(byApp).sort(function(a, b){ return sum(byApp[b]) - sum(byApp[a]); });
-    var rows = [["All five", totals]].concat(apps.map(function(a){ return [a, byApp[a]]; }));
+    var rows = [["All educators", totals]].concat(apps.map(function(a){ return [a, byApp[a]]; }));
     var present = ORDER.filter(function(k){ return totals[k]; });
     document.getElementById("kb-legend").innerHTML = present.map(function(k){
       return "<span><span class=\"sw\" style=\"background:" + COLOR[k] + "\"></span>" + esc(k) + "</span>";
@@ -388,6 +388,7 @@
         return "<li>" + esc(p.path) + ": " + p.count + " (" + p.uniques + ")</li>"; }).join("") || "<li>none yet</li>";
       document.getElementById("gh-meta").textContent = "Updated " + GH.updated + (GH.error ? " · " + GH.error : "");
       document.getElementById("gh-card").hidden = false;
+      document.getElementById("gh-h2").hidden = false;
     }
   } catch (e) { /* a bad GitHub file must never break the rest of the dashboard */ }
 
@@ -481,7 +482,12 @@
   // ---- AI buttons (viewer's own Claude account via the sample capability) ----
   var btnSum = document.getElementById("btn-sum"), btnRev = document.getElementById("btn-rev");
   var status = document.getElementById("ai-status");
-  var samplePromise = (window.claude && window.claude.use) ? claude.use("sample") : Promise.resolve(null);
+  // The page may sit in a frame of the tabbed dashboard: the claude.ai link (window.claude) is then on the
+  // outer page. Both are the same site, so reading it is allowed; try/catch guards any other host.
+  var parentClaude = null;
+  try { if (window.parent && window.parent !== window) parentClaude = window.parent.claude || null; } catch (e) {}
+  var CL = (window.claude && window.claude.use) ? window.claude : parentClaude;
+  var samplePromise = (CL && CL.use) ? CL.use("sample") : Promise.resolve(null);
   samplePromise.then(function(sample){
     if (!sample) {
       btnSum.disabled = true; btnRev.disabled = true;
