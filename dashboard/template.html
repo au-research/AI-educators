@@ -487,6 +487,14 @@
   var parentClaude = null;
   try { if (window.parent && window.parent !== window) parentClaude = window.parent.claude || null; } catch (e) {}
   var CL = (window.claude && window.claude.use) ? window.claude : parentClaude;
+  // Settings passed to Claude must be made by the page that owns the Claude link (the outer page
+  // when this view is in a frame), or its checker refuses them as "not a plain object".
+  function mkOpts(o){
+    if (CL === window.claude) return o;
+    var p; try { p = new window.parent.Object(); } catch (e) { return o; }
+    for (var k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) p[k] = o[k]; }
+    return p;
+  }
   var samplePromise = (CL && CL.use) ? CL.use("sample") : Promise.resolve(null);
   samplePromise.then(function(sample){
     if (!sample) {
@@ -499,7 +507,7 @@
       var out = document.getElementById("sum-out"); out.hidden = false; out.textContent = "";
       var qs = qa.map(function(r){ return "- " + redact(r.q).slice(0, 220); }).join("\n");
       var prompt = "You are analysing usage of the ARDC Dataspace Educator, an AI assistant that answers questions about data spaces (IDS-RAM 4.0, the IDSA Rulebook, DSSC toolbox, dataspace roles and skills). Below are the " + qa.length + " most recent user questions.\n\nProduce, in plain text with simple hyphen bullets and short headings:\n1. THEMES: 5-8 themes people ask about, each with a rough share of questions and one representative example.\n2. GAPS: questions the knowledge base may not cover well.\n3. RECOMMENDATIONS: 3 concrete content or configuration improvements.\nBe concise and specific. Questions:\n" + qs;
-      sample(prompt, { onText: function(t){ out.textContent = t.text; } })
+      sample(prompt, mkOpts({ onText: function(t){ out.textContent = t.text; } }))
         .then(function(r){ out.textContent = r.text; status.textContent = "Summary generated just now (not stored - copy it if you want to keep it)."; })
         .catch(function(e){ status.textContent = e && e.code === "not_granted" ? "Permission declined." : "Analysis failed: " + (e && e.message || e); })
         .finally(function(){ btnSum.disabled = false; });
