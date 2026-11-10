@@ -1,7 +1,7 @@
 # ARDC AI Educators
 
 Everything needed to stand up your own copies of the ARDC's AI learning assistants:
-five for the dataspaces domain and four for FAIR data (beta).
+five for the dataspaces domain and four for FAIR data.
 
 ### Dataspaces
 
@@ -17,7 +17,7 @@ five for the dataspaces domain and four for FAIR data (beta).
   and technical implementation (RAM, connectors, ODRL, DSP, the Testbed).
   Live under https://dresa.org.au/educators
 
-### FAIR data (beta, October 2026)
+### FAIR data (October 2026)
 
 - **ARDC FAIR Educator** - open Q&A about making research data and software Findable,
   Accessible, Interoperable and Reusable, pitched to the user's role and FAIR maturity level
